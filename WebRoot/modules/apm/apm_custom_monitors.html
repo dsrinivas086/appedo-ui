@@ -1,0 +1,37 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer" data-ng-controller="apm_custom_monitor_controller">
+    <div class="row">
+        <div class="apd-fldwdt apd-custom-calendar">
+			<label class="font_14 apd-mrgntp-lable clr3569a">From Date Time</label> 
+			<input type="text" class="form-control font_18"
+				datepicker-popup="{{format}}" 
+				ng-model="from_date_time" is-open="opened"
+				close-on-date-selection="false" 
+				ng-click="open($event)"
+				min-date="minDate" 
+				datepicker-options="dateOptions"
+				date-disabled="disabled(date, mode)" 
+				close-text="OK"
+				data-ng-readonly="true" />
+				<i class="glyphicon glyphicon-calendar apd-custom-calendar-icon" ng-click="open($event)"></i>
+	
+		</div>
+		<div class="apd-fldwdt apd-custom-calendar">
+			<label class="font_14 apd-mrgntp-lable clr3569a">To Date Time</label> 
+			<input type="text" class="form-control font_18"
+				datepicker-popup="{{format}}" 
+				ng-model="to_date_time" is-open="opened"
+				close-on-date-selection="false" 
+				ng-click="open($event)"
+				min-date="minDate" 
+				datepicker-options="dateOptions"
+				date-disabled="disabled(date, mode)" 
+				close-text="OK"
+				data-ng-readonly="true" />
+				<i class="glyphicon glyphicon-calendar apd-custom-calendar-icon" ng-click="open($event)"></i>
+	
+		</div>
+	</div>
+	
+</div>
+<!-- apd-center01 -->

@@ -1,0 +1,92 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+	<div class="row thadr-tp" data-ng-controller="form_controller">
+		<!--left heading-->
+
+		<div class="apd-ftplog">
+			<img src="assets/images/appedo.svg" />
+		</div>
+		<div class="font_22 apdo-adttl apd-rbtmdmfnfmly">Add</div>
+		<!--right icons-->
+		<div class="apd-clsewr">
+			<div class="aped-apiconcls">
+				<i class="icon-help font_22" title="help"></i>
+			</div>
+			<!-- <div class="aped-apiconcls">
+				<i class="icon-close font_18 apd-curpnt" data-ng-click="close()"
+					title="close"></i>
+			</div> -->
+		</div>
+	</div>
+	<div class="apdad-mbdy">
+		<div class="apd-admcntwrpr">
+		<div class="row apd-admcnt">
+			<div class="row apdeo-adForm">
+				<div class="aped-apiconttlewr">
+					<i class="icon-rum aped-apiconttle" style="color:#cd8527"></i> <span
+						class="font_20 clr388F3C aped-apiconttlewr"><span class="apd-rbtrbfnfmly apd-first-char-up">{{moduleAddData.moduleName}}</span>&nbsp;<span class="apd-rbtrglfnfmly">has been added successfully.</span></span>
+				</div>
+				<div>
+<!-- 					<div class="clr84A1C1 font_14 apd-mrgntp10 apd-rbtrglfnfmly">Add another?</div> -->
+					<p class="clr9E9EA1 font_11 apd-lineheight12 apd-mrgntp40 apd-rbtrglfnfmly">The website will be monitored once you download and install the agents provided below.<br/>
+					You can close this window and proceed to download later.
+					</p>
+					<div class="clr84A1C1 font_14 apd-mrgntp10 apd-rbtrglfnfmly">Need help in installing agents?</div>
+				</div>
+				<div class="apd-dwnld-btns">
+					<a href="" ng-href="./apm/downloadAgent?type=RUM&guid={{moduleDownloadData.guid}}&modulename={{moduleDownloadData.moduleName}}">
+						<button class="apd-adbtnmrtp font_12 apd-dwnld-btn btn" type="button" ng-click="redirectCardLayout(moduleDownloadData.message)">
+							<span><i class="icon-monitor1 font_36"></i></span>
+	                        <span>RUM</span>
+	                        <span><i class="icon-Download font_36"></i></span>
+						</button>
+					</a>
+					
+					<a href="" ng-href="./apm/downloadAgent?type=CI_ANDROID&guid={{moduleDownloadData.guid}}">
+						<button class="apd-adbtnmrtp font_12 apd-dwnld-btn btn" type="button">
+							<span><i class="icon-profiler1 font_36"></i></span>
+	                        <span>Android CI</span>
+	                        <span><i class="icon-Download font_36"></i></span>
+						</button>
+					</a>
+					<br/>
+					<a href="" ng-href="./apm/downloadAgent?type=CI_CSHARP&guid={{moduleDownloadData.guid}}">
+						<button class="apd-adbtnmrtp font_12 apd-dwnld-btn btn" type="button">
+							<span><i class="icon-profiler1 font_36"></i></span>
+	                        <span>C# CI</span>
+	                        <span><i class="icon-Download font_36"></i></span>
+						</button>
+					</a>
+					<a href="" ng-href="./apm/downloadAgent?type=CI_JAVA&guid={{moduleDownloadData.guid}}">
+						<button class="apd-adbtnmrtp font_12 apd-dwnld-btn btn" type="button">
+							<span><i class="icon-profiler1 font_36"></i></span>
+	                        <span>Java CI</span>
+	                        <span><i class="icon-Download font_36"></i></span>
+						</button>
+					</a>
+					<br/>
+					<a href="" ng-href="./apm/downloadAgent?type=CI_JS&guid={{moduleDownloadData.guid}}">
+						<button class="apd-adbtnmrtp font_12 apd-dwnld-btn btn" type="button">
+							<span><i class="icon-profiler1 font_36"></i></span>
+	                        <span>JS CI</span>
+	                        <span><i class="icon-Download font_36"></i></span>
+						</button>
+					</a>
+					<a href="" ng-href="./apm/downloadAgent?type=CI_PHP&guid={{moduleDownloadData.guid}}">
+						<button class="apd-adbtnmrtp font_12 apd-dwnld-btn btn" type="button">
+							<span><i class="icon-profiler1 font_36"></i></span>
+	                        <span>PHP CI</span>
+	                        <span><i class="icon-Download font_36"></i></span>
+						</button>
+					</a>
+				</div>
+                <div class="pull-right"  data-ng-controller="form_controller">
+                    <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="close()">CLOSE</button>
+                </div>
+				<div ></div>
+			</div>
+			</div>
+		</div>
+
+	</div>
+</div>

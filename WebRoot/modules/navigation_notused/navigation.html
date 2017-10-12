@@ -1,0 +1,39 @@
+<!--dashboard subnavigation-->
+<div class="apdomaincdsbrd-subnav" data-ng-controller="navigation_controller">
+    <div class="apdomaincdsbrdnv-list">
+
+        <i ng-class="{true: 'dbactive', false: 'dbinactive'}[displayflag_sum]" tooltip-placement="bottom" tooltip="SUM Metrics" data-ng-click="setDashboardType('sum')"></i>
+
+        <i ng-class="{true: 'dbactive', false: 'dbinactive'}[displayflag_rum]" tooltip-placement="bottom" tooltip="RUM Metrics" data-ng-click="setDashboardType('rum')"></i>
+
+        <i ng-class="{true: 'dbactive', false: 'dbinactive'}[displayflag_apm]" tooltip-placement="bottom" tooltip="App Deep Dive Metrics" data-ng-click="setDashboardType('apm')"></i>
+
+        <i ng-class="{true: 'dbactive', false: 'dbinactive'}[displayflag_loadtest]" tooltip-placement="bottom" tooltip="Load Test Metrics" data-ng-click="setDashboardType('loadtest')"></i>
+
+    </div>
+
+
+    <div ng-switch="dbtype">
+        
+        <div ng-switch-when="sum">
+            <div class="apd-testingcnt apdmrgtp25 apd-subpnl">
+                <div data-ng-include="'modules/sum/dashboard/apm_home.html'"></div>
+            </div>  
+        </div>
+        <div ng-switch-when="rum">
+            <div class="apd-testingcnt apdmrgtp25 apd-subpnl">
+                RUM Dashboard is selected.
+            </div>
+        </div>
+        <div ng-switch-when="apm">
+            <div data-ng-include="'modules/apm/dashboard/apm_dashboard_content.html'">
+
+            </div>
+        </div>
+        <div ng-switch-when="loadtest">
+            <div class="apd-testingcnt apdmrgtp25 apd-subpnl">
+                <div data-ng-include="'modules/load_test/dashboard/loadtest_home.html'">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,281 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer" ng-controller="loadTestScenarioReportsController" >
+	
+	<div class="row">
+		<div class="apdo-crdtlte col-lg-4 col-md-4 col-sm-6 col-xs-6 font_18 clr1b639e">
+<!-- 			<span class="apd-curpnt" style="position: absolute; top: 16px; left: 30px;" data-ng-click="backToLTCardPage()"><img src="assets/images/back.png"></span> -->
+			<back-button><img src="assets/images/back.png" class="apd-curpnt"/></back-button> 
+			<span class="apd-mrgnlft10">Load Test - {{scenarioName}} - Reports</span>
+			
+			<span class="apd-apmslct col-lg-11 apd-no-margin apd-mrgnlft10"  >
+				<!-- <h1 class="font_14 clr1b639e ">Choose Report</h1> -->
+				<span class="apd-adchsf apd-mrgnlft10">
+					<select class="clr444444 font_18" data-ng-model="selectedReport" ng-change="getSelectedReportDetails()" 
+						data-ng-options="report as report.reportName for report in scenarioReports"></select>
+				</span>
+			</span>
+		</div>
+<!--
+			<div class="apd-apmslct col-lg-8">
+				<h1 class="font_14 clr1b639e ">Choose Scenario</h1>
+				<div class="apd-adchsf">
+					<select class="clr444444 font_18" data-ng-model="selectedScenario" ng-change="getScenarioReports()" 
+						data-ng-options="scenario as scenario.scenarioName for scenario in scenarios"></select>
+				</div>
+			</div>
+-->
+		
+		<div class="col-lg-5">
+			<div class="apm-radiobtn apm-radiobtn-no-margin apd-mrrt20">
+				<div class="apd-rdbtn" ng-show="selectedReport.testType=='APPEDO_LT'">
+					<input type="radio" name="radioLTReports" id="radioLTStatusReport" class="css-checkbox" value="STATUS" ng-model="ltReportType" ng-change="loadSelectedTypeReport()" />
+					<label for="radioLTStatusReport" class="css-label radGroup1 font_16 ">Status</label>
+			    </div>
+				<div class="apd-rdbtn" >
+					<input type="radio" name="radioLTReports" id="radioLTSummaryReport" class="css-checkbox" value="SUMMARY" ng-model="ltReportType" ng-change="loadSelectedTypeReport()" />
+					<label for="radioLTSummaryReport" class="css-label radGroup1 font_16 ">Summary</label>
+			    </div>
+				<div class="apd-rdbtn" >
+					<input type="radio" name="radioLTReports" id="radioLTChartReport" class="css-checkbox" value="CHART" ng-model="ltReportType" ng-change="loadSelectedTypeReport()" />
+					<label for="radioLTChartReport" class="css-label radGroup1 font_16 ">Charts</label>
+				</div>
+				<div class="apd-rdbtn" ng-show="selectedReport.testType=='APPEDO_LT'">
+					<input type="radio" name="radioLTReports" id="radioLTLogReport" class="css-checkbox" value="LOG" ng-model="ltReportType" ng-change="loadSelectedTypeReport()" />
+					<label for="radioLTLogReport" class="css-label radGroup1 font_16 ">Logs</label>
+				</div>
+				<div class="apd-rdbtn" ng-show="loadTestType == 'APPEDO_LT'">
+					<input type="radio" name="radioLTReports" id="radioLTErrorReport" class="css-checkbox" value="ERROR" ng-model="ltReportType" ng-change="loadSelectedTypeReport()" />
+					<label for="radioLTErrorReport" class="css-label radGroup1 font_16 ">Errors</label>
+				</div>
+			</div>
+			
+			<!-- Tried radio btns using n-repeat 
+			<div class="apm-radiobtn apm-radiobtn-no-margin apd-mrrt20">
+				<div class="apd-rdbtn" ng-repeat="type in reportTypes" >
+					<input type="radio" name="radioLTReports" id="radioLT_{{type.reportTypeName}}_Report" class="css-checkbox" ng-value="{{type.reportTypeValue}}" ng-model="ltSelectedReportType.reportTypeValue" ng-change="loadSelectedTypeReport()" />
+					<label for="radioLT_{{type.reportTypeName}}_Report" class="css-label radGroup1 font_16 ">{{type.reportTypeName}}</label>
+			    </div>
+			</div>
+			 -->
+			 
+			 
+			<!-- 
+			<div class="apd-mrbtm10 apdcrd-mrtp10 " >
+				<button type="submit" class=" btn btn-success apd-mrrt20" >Generate Chart</button>
+				<button type="submit" class=" btn btn-success apd-mrrt20" >View report</button>
+				<button type="submit" class=" btn btn-success apd-mrrt20" >Log report</button>
+				<button type="submit" class=" btn btn-success apd-mrrt20" >Error report</button>
+			</div>
+			-->
+		</div>
+	</div>
+	
+	<!-- 
+	<div class="apdcrdcatgrywrpr" >
+		<div class="row apdcrdcatgry apd-rbtrgfnfmly">
+			
+			<div class="apd-apmslct col-lg-4 apd-no-margin">
+				<h1 class="font_14 clr1b639e ">Choose Report</h1>
+				<div class="apd-adchsf">
+					<select class="clr444444 font_18" data-ng-model="selectedReport" ng-change="getSelectedReportDetails()" 
+						data-ng-options="report as report.reportName for report in scenarioReports"></select>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	 -->
+	 
+	<div class="apdcrdcatgrywrpr" >
+		<div class="row apdcrdcatgry apd-rbtrgfnfmly" >
+			<div class="row " >
+				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Report Name</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 apd-first-char-up">{{selectedReport.reportName}}</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Run Start Time</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{selectedReport.runStartTime | date:'dd-MMM-yyyy HH:mm:ss '}}</div>
+				</div>
+				
+				
+				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Run End Time</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{selectedReport.runEndTime != 0 ? (selectedReport.runEndTime | date:'dd-MMM-yyyy HH:mm:ss '): ''}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Run duration</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{selectedReport.runTime | millisecAsHoursMinSec}}</div>
+				</div>
+			</div>
+			<!-- 
+			<div ng-switch="ltReportType">
+				<div ng-switch-when="SUMMARY">
+					<div data-ng-include="'modules/load_test/loadTestSummaryReport.html'"></div>
+					<!--  <iframe ng-src="{{runId | summaryReportIframeURL}}"></iframe> -- >
+				</div>
+				<div ng-switch-when="LOG">
+					<div data-ng-include="'modules/load_test/loadTestLogReport.html'"></div>
+				</div>
+			</div>
+			 -->
+		</div>
+	</div>
+	
+	 
+	<div ng-switch="ltReportType">
+		<div ng-switch-when="STATUS">
+			<div data-ng-include="'modules/load_test/loadTestRunningScriptDetails.html'"></div>
+		</div>
+		<div ng-switch-when="SUMMARY">
+			<div data-ng-include="'modules/load_test/loadTestSummaryReport.html'"></div>
+			<!-- 
+			<div class="apdcrdcatgrywrpr" >
+				<div class="row apdcrdcatgry apd-rbtrgfnfmly">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apd-mrbtm10	apd-border-bottom ">
+						<div class="font_18 clr1b639e">Summary</div>
+					</div>
+					
+							
+					<div class="row "><!-- lt-status-scripts-border -- >
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apdbgdcolor">
+							<ng-include src="runId | summaryReportIframeURL"></ng-include>
+						</div>
+					</div>
+				</div>
+			</div>
+			 -->
+		</div>
+		<div ng-switch-when="CHART">
+			<div data-ng-include="'modules/load_test/loadTestChartReport.html'"></div>
+		</div>
+		<div ng-switch-when="LOG">
+			<div data-ng-include="'modules/load_test/loadTestLogReport.html'"></div>
+		</div>
+		<div ng-switch-when="ERROR">
+			<div data-ng-include="'modules/load_test/loadTestErrorReport.html'"></div>
+		</div>
+	</div>
+	
+	
+	<!-- <div data-ng-include="reportTypes[ltReportType].templateURL"></div>  -->
+	
+	
+	
+<!--  
+	<div class="apdcrdcatgrywrpr" >
+		<div class="row apdcrdcatgry apd-rbtrgfnfmly" ng-repeat="scenario in ltScenarioReport" >
+			<div class="row " >
+				<div class="col-lg-4 col-md-4 col-sm-8 col-xs-12 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Report Name</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 apd-first-char-up">{{scenario.reportName}}</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-8 col-xs-10 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Run Start Time</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{scenario.runStartTime}}</div>
+				</div>
+				
+				
+				<div class="col-lg-2 col-md-2 col-sm-8 col-xs-10 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Created User</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{scenario.createdUser}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-8 col-xs-10 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Completed User</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{scenario.completedUser}}</div>
+				</div>
+				<!-- 
+				<div class="col-lg-2 col-md-2 col-sm-8 col-xs-10 apdbgdcolor">
+					<div class="apd-center01 apdcrd-vrscnt lt-stop-circle " title="Stop" ></div>
+				</div>
+				 -- >
+			</div>
+			
+			<div class="row lt-status-scripts-border">
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Script Name</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Created User(s)</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Completed User(s)</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-8 col-xs-12 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apdcrdchd01 ">
+						HTTP Status Count<br/>
+						
+						<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">2xx</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">3xx</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">4xx</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">5xx</div>
+						<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">Oth</div>
+					</div>
+						
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">Error Count</div>
+				</div>
+				
+				<div class="col-lg-1 col-lg-1 col-sm-6 col-xs-8 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Status</div>
+				</div>
+			</div>
+			
+			
+			<div class="row " ng-repeat="script in scenario.scripts">
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{script.scriptName}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{script.createdUser}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{script.completedUser}}</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-8 col-xs-12 apdbgdcolor ">
+					<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+						{{script.http200Status}}
+					</div>
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+						{{script.http300Status}}
+					</div>
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+						{{script.http400Status}}
+					</div>
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+						{{script.http500Status}}
+					</div>
+					
+					<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+						{{script.httpOthStatus}}
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">{{script.errorCount}}</div>
+				</div>
+				
+				<div class="col-lg-1 col-lg-1 col-sm-6 col-xs-8 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{script.status}}</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+ -->	
+</div>

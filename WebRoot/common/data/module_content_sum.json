@@ -1,0 +1,11 @@
+[
+  {
+    "selection": "SUM",
+    "module_name": "Synthetic User Monitor",
+    "desc_middle": "You can add various tests to monitor the synthetic performance",
+    "desc_end": "from over 45 locations around the World",
+    "icon_name": "icon-sum",
+    "icon_color": "#24A35D",
+    "class": "apd-sum"
+  }
+]  

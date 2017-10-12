@@ -1,0 +1,217 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer" data-ng-controller="slaCardController">
+    <div class="row">
+        <div class="apdo-crdtlte col-lg-6 col-md-6 col-sm-6 col-xs-12 font_18 clr1b639e" ng-show="slaMsg=='SLA Policy'?true:false">{{slaMsg}}</div>
+        <div class="apdo-crdtlte col-lg-6 col-md-6 col-sm-6 col-xs-12 font_18 clr1b639e" ng-show="slaMsg=='SLA Policy'?false:true">
+        		<lable ng-click="goBack()"><img src="assets/images/back.png"></lable> {{slaMsg}}
+        </div>
+<!--         <div class="apdo-crdtlte col-lg-3 col-md-3 col-sm-3 col-xs-12 font_12 clr1b639e"  align="right"> -->
+<!--         	<button type="submit" class="btn btn-success" data-ng-click="">SLA Settings</button> -->
+<!--         </div> -->
+        <div class="apdo-crdtlte col-lg-2 col-md-2 col-sm-2 col-xs-12 font_12 clr1b639e">
+        	<a href="./#/sla_home/slave_status" title="SLA Verification engine.">
+        		<button type="submit" class="btn btn-success" data-ng-click="">SLAVE Status</button>
+        	</a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 font_12 clr1b639e">
+			<div style="margin-top: 10px;">
+				<!-- div>
+					<a href="./apm/downloadAgent?type=SLA&os=windows" title="SLA Verification engine.">
+						<b></b><i class="fa fa-cloud-download apd-mntor-dwnicon_color download-icon"></i><u>SLAVE(Windows) </u></b><br>
+					</a>
+				</div -->
+				<div align="center" style="margin-top: -22px;">
+					<a href="./apm/downloadAgent?type=SLA&os=linux" title="SLA Verification engine.">
+						<b></b><i class="fa fa-cloud-download apd-mntor-dwnicon_color download-icon"></i><u>SLAVE(Linux) </u></b><br>
+					</a>
+				</div>
+				<div>
+					<span class="clr626161 font_11 apd-rbtrbfnfmly apd-mrbtm10 apdcrd-mrtp05">
+						SLAVE must be installed in all the servers where healing need to take place.
+					</span>
+				</div>
+			</div>
+		</div>
+    </div>
+    <!--cardlist start-- apd-lineheight26 apd-lineheight30 apdo-cnterver-->
+    <div class="apdcrdcatgrywrpr" data-ng-repeat="sla in slas" ng-show="showSLAGrid">
+
+        <div class="row apdcrdcatgry apd-rbtrgfnfmly">
+           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 apdbgdcolor">
+                <div class="font_22 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 clr626161 apd-first-char-up wordbreak">{{sla.sla_name}}</div>
+                <span class="cdcccc font_14 apd-rbtrglfnfmly apd-mrbtm10">Added by {{sla.created_by}} on {{sla.created_on | date:'dd-MMM-yyyy HH:mm:ss'}}</span>
+                <div class="font_14 apdcrd-mrtp05 apd-rbtrglfnfmly" ng-click="openModuleDetailGrpahs()">
+	                <span class="apd-rbtrgfnfmly clr626161">Type:</span><span class="apd-rbtrgfnfmly"> {{sla.type}}</span>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 apdbgdcolor">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Alerted</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161">{{sla.alerted}}</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 apdbgdcolor">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Healed</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161">{{sla.healed}}</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 apdbgdcolor">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Mapped Counters</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161">{{sla.mapped_counters}}</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 apdbgdcolor" style="padding-top:15px;">
+<!--                  <a href="./#/sla_home/alert_log"> -->
+                    <div class="apdcrd-leftwrpr apdo-crdiconpadd" ng-click="openAlertLog()">
+                        <div class="sla-alert-log" style="margin-left: 15px;">
+                            <i class="lt-stop-circle"></i>
+                        </div>
+                        <div class="apdcrd-leftcnt font_16 clr626161">Alert Log</div>
+                    </div>
+<!--                	</a> -->
+<!--                 <a href="./#/sla_home/heal_log"> -->
+                    <div class="apdcrd-leftwrpr apdo-crdiconpadd" ng-click="openHealLog()">
+                        <div class="sla-heal-log" style="margin-left: 15px;">
+                            <i class="lt-stop-circle"></i>
+                        </div>
+                        <div class="apdcrd-leftcnt font_16 clr626161">Heal Log</div>
+                    </div>
+<!--                	</a> -->
+	                <div class="pull-right apdosmopt dropdown" style="margin-top: -10px;" dropdown >
+                        <div class="apd-apm-dropdown dropdown-toggle" dropdown-toggle>
+                            <i class="icon-svg8" style="padding-top: 10px;"></i>
+                        </div>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a ng-click="editSLAPolicy()">Edit</a></li>
+                            <li><a ng-click="deleteSLAPolicy()">Delete</a></li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="apdcrdcatgrywrpr" ng-show="showAlertLog">
+		<div class="row apdcrdcatgry apd-rbtrgfnfmly">
+			<div class="row apd-border-btm">
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Email/Mobile</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Sent</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Success</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-8 col-xs-12 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26  ">Email/SMS Text</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-8 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">Sent On</div>
+				</div>
+			</div>
+			
+			<div class="row apd-border-bottom" ng-repeat="alert in slaAlerts">
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{alert.email_id}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26" align="center">{{alert.is_sent==true?'Yes':'No'}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26" align="center">{{alert.is_success==true?'Yes':'No'}}</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-8 col-xs-12 apdbgdcolor ">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">
+						{{alert.alert_content_email}}
+					</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-8 apdbgdcolor ">
+					<div class="font_14 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">{{alert.received_on | date:'dd-MMM-yyyy HH:mm:ss'}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="apdcrdcatgrywrpr" ng-show="showHealLog">
+		<div class="row apdcrdcatgry apd-rbtrgfnfmly">
+			<div class="row apd-border-btm">
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-8 apdbgdcolor">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Action Name</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Exec. Script</div>
+				</div>
+				
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Server IP</div>
+				</div>
+				
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 apdbgdcolor">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26  ">OS</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-8 apdbgdcolor ">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">Reason</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-8 apdbgdcolor ">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">Action Taken On</div>
+				</div>
+				
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-8 apdbgdcolor ">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">Success</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-8 apdbgdcolor ">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">Exce. Log</div>
+				</div>
+			</div>
+			
+			
+			<div class="row apd-border-bottom" ng-repeat="heal in slaHeals">
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-8 apdbgdcolor">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{heal.action_name}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{heal.exec_script}}</div>
+				</div>
+				
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{heal.server_ip}}</div>
+				</div>
+				
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 apdbgdcolor">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{heal.os}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-8 apdbgdcolor ">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 breakWord">{{heal.reason}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-8 apdbgdcolor ">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">{{heal.action_taken_on | date:'dd-MMM-yyyy HH:mm:ss'}}</div>
+				</div>
+				
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-8 apdbgdcolor ">
+					<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">{{heal.success==true?'Yes':'No'}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-8 apdbgdcolor">
+					<a href="" ng-click="showLogFile()">
+						<div class="font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">{{heal.Exec_log}}</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

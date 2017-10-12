@@ -1,0 +1,43 @@
+<div data-ng-include="'modules/header/login_header.html'"></div>
+<!--div data-ng-controller="header_controller" style="background-color:white"></div-->
+<div class="container-login col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="container">
+		<div class="apd-frm">
+			<form class="apd-frmwrpr" action="./loginSession" method="post">
+				<div class="apd-login_home icon-login"></div>
+				<div class="apd-frmtitl font_20 apd-rbtrgfnfmly clr1b639e">
+					Login</div>
+				<div class="apd-frmfld font_14">
+					<label for="inputEmail3" class="control-label clr969597 font_14">Email</label>
+					<input type="email" class="clr444444 font_18" name="emailId"
+						id="emailId" placeholder="Email" ng-model="loginData.email"
+						focus="true" select-on-click>
+				</div>
+				<div class="apd-frmfld font_14">
+					<label for="inputPassword3" class="control-label clr969597 font_14">Password</label>
+					<input type="password" class="clr444444 font_18" name="password"
+						id="password" placeholder="Password" ng-model="loginData.pwd">
+				</div>
+
+				<label class="alert alert-danger apd-frmfld control-label font_14"
+					ng-show="showErrorMsg"> {{errorMsg}} </label> <label
+					class="alert alert-success apd-frmfld control-label font_14"
+					ng-show="showSuccessMsg"> {{successMsg}} </label>
+
+				<div class="apd-sbmtbtn-wrper font_18">
+					<div class="apd-frgotps clr1b639e">
+						<a href="#/forgotPassword">Forgot your password?</a>
+					</div>
+					<div class="apd-frgotps pull-right">
+						<button type="submit"
+							class="apdo-loginbtn btn btn-success font_18">Login</button>
+					</div>
+				</div>
+				<div class="apd-frmfld font_20 clr7e7e7e apd-sgnup">
+					Don't have an account yet? <span class="clr1b639e"><a
+						href="#/signup">Sign up</a></span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

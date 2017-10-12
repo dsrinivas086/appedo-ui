@@ -1,0 +1,81 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 apdo-addheader apd-rbtmdmfnfmly">
+            Assign Load Generator
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm">
+                <form class="apd-rbtrgfnfmly font_12" name="regionsForm">
+                <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="icon-load aped-apiconttle" style="color: #977E31;"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">Load Testing</span>
+	                </div>
+	            </div>
+	            <br/>
+	            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+						<table class="table table-hover  table-condensed table-responsive">
+							<thead>
+								<tr>
+									<th>Region</th>
+									<th>Distribution</th>
+								</tr>
+							</thead>
+							<tbody id="array">
+								<tr data-ng-repeat="region in regionData">
+									<td style="border: none;">
+										<div ng-show="!region.showRadio">
+											<label >
+												<input type="checkbox" ng-disabled="region.license" name="ltregionCheck" id="regionCheck_({region.lt_region_id}}" value="{{region}}" ng-model="region.showRegion" />
+												<span style="font-weight:400;">{{region.region}}</span>
+											</label>
+										</div>
+										 <div ng-show="region.showRadio">
+											<label >
+												<input type="radio" name="JMchkLoadRegions" id="jmeterRegion_({region.lt_region_id}}" value="{{region}}" checked/>
+												<span style="font-weight:400;">{{region.region}}</span>
+											</label>	
+										</div>
+									</td>
+									<td style="border: none;">
+<!-- 										<input type="text" name="" id="" ng-model="region.distribution" ng-disabled="region.userLicense=='level0'?region.showRegion:!region.showRegion" ondrop="return false" onpaste="return false" oninput="maxLengthCheck(this)" maxlength = "3" min = "0" max = "100" only-digits/>% -->
+									<div class="apd-fldwdt">
+			                            <input type="text" name="reportName" ng-model="region.distribution" class="clr444444" ng-disabled="region.userLicense=='level0'?region.showRegion:!region.showRegion" ondrop="return false" onpaste="return false" maxlength = "3" min = "0" max = "100" only-numbers>
+			                        </div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="apd-fldwdt">
+                            <label class="font_14">Report Name <font size="3px" color="red"><sup>*</sup></font></label>
+                            <input type="text" name="reportName" ng-model="moduledata.moduleName" placeholder="{{moduleCardContent.module_name}} Name" class="clr444444 apd-first-char-up" required>
+                        </div>
+					</div>
+                    <!--  <label class="alert alert-danger apd-frmfld control-label font_14"
+					ng-show="showConfigCountersErrorMsg"> {{ConfigCountersErrorMsg}} </label> -->
+                    <div class="pull-right" data-ng-controller="form_controller">
+                        <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="runAgentLoadGenerator()">RUN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

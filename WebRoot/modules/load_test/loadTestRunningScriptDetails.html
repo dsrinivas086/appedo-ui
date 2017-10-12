@@ -1,0 +1,153 @@
+<div class="apdcrdcatgrywrpr" >
+	<div class="row apdcrdcatgry apd-rbtrgfnfmly">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apd-mrbtm10	apd-border-bottom ">
+			<div class="font_18 clr1b639e">Script(s) details</div>
+		</div>
+		<!-- 
+		<div class="row " ng-if="isReportPage">
+			<div class="col-lg-2 col-md-2 col-sm-8 col-xs-10 apdbgdcolor apdcrdchd01">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Created User</div>
+				<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.createdUser}}</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-8 col-xs-10 apdbgdcolor apdcrdchd01">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Completed User</div>
+				<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.completedUser}}</div>
+			</div>
+			
+			<div class="col-lg-5 col-md-5 col-sm-8 col-xs-12 apdbgdcolor">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apdcrdchd01 ">
+					HTTP Status Count<br/>
+					
+					<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">
+						<div class="font_16 clr626161 apd-lineheight26">2xx</div>
+						<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.total_2XX}}</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">
+						<div class="font_16 clr626161 apd-lineheight26">3xx</div>
+						<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.total_3XX}}</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">
+						<div class="font_16 clr626161 apd-lineheight26">4xx</div>
+						<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.total_4XX}}</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">
+						<div class="font_16 clr626161 apd-lineheight26">5xx</div>
+						<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.total_5XX}}</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">
+						<div class="font_16 clr626161 apd-lineheight26">Oth</div>
+						<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.total_oth}}</div>
+					</div>
+				</div>
+			</div>
+		
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Error Count</div>
+				<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.total_error}}</div>
+			</div>
+		</div>
+		 -->
+		
+		
+		<div class="row apd-border-bottom">
+			<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Script Name</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Created User(s)</div>
+				<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 " ng-show="loadTestType == 'APPEDO_LT'">{{ltRunningScenario.createdUser}}</div>
+				<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 " ng-show="loadTestType == 'JMETER'">{{ltRunningScenario.createdUser != 0 ? ltRunningScenario.createdUser : ''}}</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Completed User(s)</div>
+				<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 " ng-show="loadTestType == 'APPEDO_LT'">{{ltRunningScenario.completedUser}}</div>
+				<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 " ng-show="loadTestType == 'JMETER'">{{ltRunningScenario.completedUser != 0 ? ltRunningScenario.completedUser : ''}}</div>
+			</div>
+			
+			<div class="col-lg-3 col-md-3 col-sm-8 col-xs-12 apdbgdcolor">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apdcrdchd01 ">
+					HTTP Status Count<br/>
+					
+					<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">
+						<div class="font_16 clr626161 apd-lineheight26">2xx</div>
+						<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.total_2XX}}</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">
+						<div class="font_16 clr626161 apd-lineheight26">3xx</div>
+						<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.total_3XX}}</div>
+					</div> 
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">
+						<div class="font_16 clr626161 apd-lineheight26">4xx</div>
+						<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.total_4XX}}</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">
+						<div class="font_16 clr626161 apd-lineheight26">5xx</div>
+						<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.total_5XX}}</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">
+						<div class="font_16 clr626161 apd-lineheight26">Oth</div>
+						<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.total_oth}}</div>
+					</div>
+				</div>
+					
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor ">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">Error Count</div>
+				<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 apd-center01">{{ltRunningScenario.total_error}}</div>
+			</div>
+			
+			<div class="col-lg-1 col-lg-1 col-sm-6 col-xs-8 apdbgdcolor">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Status</div>
+			</div>
+		</div>
+		
+		
+		<div class="row " ng-repeat="script in ltRunningScenario.scripts">
+			<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{script.scriptName}}</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{script.createdUser}}</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{script.completedUser}}</div>
+			</div>
+			
+			<div class="col-lg-3 col-md-3 col-sm-8 col-xs-12 apdbgdcolor ">
+				<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+					{{script.http200Status}}
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+					{{script.http300Status}}
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+					{{script.http400Status}}
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+					{{script.http500Status}}
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+					{{script.httpOthStatus}}
+				</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor ">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">{{script.errorCount}}</div>
+			</div>
+			
+			<div class="col-lg-1 col-lg-1 col-sm-6 col-xs-8 apdbgdcolor">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{script.status}}</div>
+			</div>
+		</div>
+	</div>
+</div>

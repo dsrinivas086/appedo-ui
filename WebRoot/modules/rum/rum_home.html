@@ -1,0 +1,150 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer" data-ng-controller="rumCardController">
+    <div class="row">
+    	<div class="apdo-crdtlte col-lg-12 col-md-12 col-sm-12 col-xs-12 font_18 clr1b639e" ng-if="showCardEmptyMsg">
+	    	Please click on <span class="apdo-ntfctn-add" style="margin-right: 4px;" data-ng-click="openAddModuleType()">
+	    	<i class="icon-svg9"></i></span>to create new Real User Monitor.
+   		</div>
+		<div class="apdo-crdtlte col-lg-3 col-md-3 col-sm-3 col-xs-3 font_18 clr1b639e" ng-if="showCard">Real User Monitoring</div>
+		
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 font_14 clr1b639e" ng-show="showCard">
+			<div class="apm-radiobtn apm-radiobtn-no-margin apd-mrrt20 apd-center01">
+	        	<div class="apd-rdbtn">
+			        <input type="radio" name="radioRUM" id="radioRUMDetails" class="css-checkbox" ng-model="selectedRUMRadioValue" value="RUM"  checked="checked" />
+					<label for="radioRUMDetails" class="css-label radGroup1 font_12 ">RUM</label>
+			    </div>
+			    <div class="apd-rdbtn" >
+					<input type="radio" name="radioRUM" id="radioCIDetails" class="css-checkbox" ng-model="selectedRUMRadioValue" value="EVENTS" />
+					<label for="radioCIDetails" class="css-label radGroup1 font_12 ">Events</label>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-offset-3 col-lg-6 col-md-6 col-sm-6 col-xs-6 apd-mrbtm10" ng-show="selectedRUMRadioValue == 'EVENTS'" >
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-left font_18 clr1b639e apd-dsbslct" > <!--apd-adchsf-->
+				<select name="selectedAgentType" id="selectedAgentType" ng-model="selectedAgentType" ng-options="type as type.name for type in defaultAgentTypes" ng-change="getUserEventsVisitorsCount()">
+					<option value="">Select Agent Type</option>
+				</select>
+			</div>
+			
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-left font_18 clr1b639e apd-dsbslct" > <!--apd-adchsf-->
+				<select name="selectedEnvironment" id="selectedEnvironment" ng-model="selectedEnvironment" ng-options="environment as environment.env for environment in eventsDistinctEnvironments"  ng-change="getUserEventsVisitorsCount()">
+					<option value="">Select Environment</option>
+				</select>
+			</div>
+		</div>
+    </div>
+    
+    <div class="apdcrdcatgrywrpr" data-ng-repeat="appcardcontent in appcardscontent">
+        <div class="row apdcrdcatgry apd-rbtrgfnfmly">
+           <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 apdbgdcolor">
+                <div class="font_22 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 clr626161 apd-first-char-up" ng-hide="appcardcontent.isEditEnabled" >{{appcardcontent.moduleName}}</div>
+                
+                <div class="font_14 clr626161 apd-mrbtm10 apd-mrgntp apd-lineheight26 clr626161 apd-first-char-up" ng-show="appcardcontent.isEditEnabled" >
+					<input style="width: 160px;" maxlength="50" class="apd-first-char-up" type="text" ng-model="appcardcontent.moduleName">
+                </div>
+                
+				<span class="cdcccc font_14 apd-rbtrglfnfmly apd-mrbtm10">Added by {{appcardcontent.created_by}} on {{appcardcontent.created_on | date:'dd-MMM-yyyy HH:mm:ss'}}</span>
+            </div>
+
+			<div class="col-lg-6 col-md-6 col-sm-9 col-xs-9">
+	            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 apdbgdcolor" ng-hide="appcardcontent.isEditEnabled" ng-click="goModuleDetailGrpahs()" style="cursor: pointer;">
+	                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Visitors Count</div>
+
+	                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161" ng-show="selectedRUMRadioValue == 'RUM'">{{appcardcontent.visitor_count}}</div>
+	                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161" ng-show="selectedRUMRadioValue == 'EVENTS'">{{appcardcontent.eventsVisitorsCount}}</div>
+	            </div>
+	
+	            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 apdbgdcolor" ng-hide="appcardcontent.isEditEnabled" ng-click="goModuleDetailGrpahs()"  style="cursor: pointer;">
+	                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Max Resp(ms)</div>
+	
+	                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161">{{appcardcontent.max_resp}}</div>
+	            </div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apdbgdcolor apd-center01" ng-show="appcardcontent.isEditEnabled" >
+					<div class="font_22 clr626161 apd-mrbtm10 apd-lineheight26 clr626161 apd-mrgntp">
+						<textarea style="width: 300px; height: 50px; resize: none" class="apd-first-char-up font_14" type="text" maxlength="500" ng-model="appcardcontent.description"></textarea>
+						<img src="assets/images/tickmark.png"  ng-click="updateApmModule()" style="padding-bottom:70px; padding-left: 35px;" tooltip="Update" tooltip-placement="right" />
+						<img src="assets/images/cancel.png" ng-click="doNotUpdate()" style="padding-bottom:70px; padding-left: 5px;" tooltip="Cancel" tooltip-placement="right" />
+					</div>
+				
+					<div ng-click="goModuleDetailGrpahs()"  style="cursor: pointer;"></div>
+				</div>
+			</div>
+            
+            
+            <!-- apdcrd-leftwrprmrg from apdcrd-leftwrpr -->
+			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 apdbgdcolor" style="padding-top:2px;">
+                <div class="apd-crddnldicn apd-center" dropdown>
+                    <div class="apdcrd-leftwrpr apdo-crdiconpadd apd-curpnt" dropdown-toggle >
+                        <div class="apdcrd-left-icn">
+                            <i class="icon-monitor1"></i>
+<!--                             <div class="apd-mntor-redwrper"> -->
+<!--                                 <i class="icon-red apd-redicon" ng-class="{true: 'apd-greenicon', false: 'apd-redicon'}[appcardcontent.monitor_active]"></i> -->
+<!--                             </div> -->
+								<div class="apd-mntor-dwnicon" style="top: -18px;">
+	                                <i class="fa fa-cloud-download apd-mntor-dwnicon_color"></i>
+	                            </div>
+                        </div>
+                        <div class="apdcrd-leftcnt font_20 clr626161">Download</div>
+     				</div>
+     				<ul class="dropdown-menu" role="menu" style="margin-left: -30px; margin-top: -55px;">
+						<li>
+							<a href="" ng-href="./apm/downloadAgent?type=RUM&guid={{appcardcontent.guid}}&modulename={{appcardcontent.moduleName}}">
+								<i class="icon-red apd-redicon" ng-class="{true: 'apd-greenicon', false: 'apd-redicon'}[appcardcontent.rum_status]"></i>RUM
+							</a>
+						</li>
+						<li>
+							<div style="width:100%; text-align: center;">--- CI ---</div>
+						</li>
+						<li>
+							<a href="" ng-href="./apm/downloadAgent?type=CI_ANDROID&guid={{appcardcontent.guid}}">
+								<i class="icon-red apd-redicon" ng-class="{true: 'apd-greenicon', false: 'apd-redicon'}[appcardcontent.python_active]"></i>Android
+							</a>
+						</li>
+						<li>
+							<a href="" ng-href="./apm/downloadAgent?type=CI_CSHARP&guid={{appcardcontent.guid}}">
+								<i class="icon-red apd-redicon" ng-class="{true: 'apd-greenicon', false: 'apd-redicon'}[appcardcontent.cs_active]"></i>C#
+							</a>
+						</li>
+						<li>
+							<a href="" ng-href="./apm/downloadAgent?type=CI_JAVA&guid={{appcardcontent.guid}}">
+								<i class="icon-red apd-redicon" ng-class="{true: 'apd-greenicon', false: 'apd-redicon'}[appcardcontent.java_active]"></i>JAVA
+							</a>
+						</li>
+						<li>
+							<a href="" ng-href="./apm/downloadAgent?type=CI_JS&guid={{appcardcontent.guid}}&modulename={{appcardcontent.moduleName}}">
+								<i class="icon-red apd-redicon" ng-class="{true: 'apd-greenicon', false: 'apd-redicon'}[appcardcontent.js_active]"></i>JS
+							</a>
+						</li>
+						<li>
+							<a href="" ng-href="./apm/downloadAgent?type=CI_PHP&guid={{appcardcontent.guid}}">
+								<i class="icon-red apd-redicon" ng-class="{true: 'apd-greenicon', false: 'apd-redicon'}[appcardcontent.php_active]"></i>PHP
+							</a>
+						</li>
+					</ul>
+                 	<div class="pull-right apdosmopt dropdown" dropdown >
+						<div class="apd-apm-dropdown dropdown-toggle" dropdown-toggle>
+							<i class="icon-svg8" style="padding-top: 10px;"></i>
+						</div>
+						<ul class="dropdown-menu" role="menu">
+							<li><a ng-click="moduleCardEdit($index)">Edit</a></li>
+							<li><a ng-click="deleteSelectedRow($index)">Delete</a></li>
+						</ul>
+					</div>
+				</div>
+                <!--icons-->
+               <!--  <div class="apd-crdoptn apd-dbricon">
+                    <i class="icon-svg8"></i>
+                </div> -->
+			</div>
+			
+			
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apdbgdcolor">
+				<div class="cdcccc font_14 apdcrd-mrtp05 apd-rbtrglfnfmly">
+					<span class="apd-rbtrgfnfmly">GUID:</span><span class="apd-rbtrgfnfmly"> {{appcardcontent.guid}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

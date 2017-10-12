@@ -1,0 +1,71 @@
+[
+  {
+    "selection": "APM",
+    "module_name": "Application",
+    "desc_middle": "You can add various applications to monitor the performance",
+    "desc_end": "Mobile Apps, Web Apps, Enterprise Apps and more",
+    "icon_name": "icon-application"
+  },
+  {
+    "selection": "APM",
+    "module_name": "Server",
+    "desc_middle": "You can add various server to monitor the performance",
+    "desc_end": "Mobile Servers, Web Servers, Enterprise Servers and more",
+    "icon_name": "icon-servers"  
+  },
+  {
+    "selection": "APM",
+    "module_name": "Database",
+    "desc_middle": "You can add various Database to monitor the performance",
+    "desc_end": "MYSQL, MSSQL and more",
+    "icon_name": "icon-database"
+  },
+  {
+    "selection": "SUM",
+    "module_name": "Synthetic User Monitor",
+    "desc_middle": "You can add various test to monitor the synthetic performance",
+    "desc_end": "From around 45 Locations around the World",
+    "icon_name": "icon-application"
+  },
+  {
+    "selection": "RUM",
+    "module_name": "Real User Monitor",
+    "desc_middle": "You can add various test to monitor the Real performance",
+    "desc_end": "Analysing Actual User's Performance",
+    "icon_name": "icon-application"
+  },
+  {
+    "selection": "LT",
+    "module_name": "Load Testing",
+    "desc_middle": "You can test the performance with virtual users",
+    "desc_end": "Load Test, Reliability test, scalability test and more",
+    "icon_name": "icon-servers"
+  },
+  {
+    "selection": "SLA",
+    "module_name": "Manage Setting",
+    "desc_middle": "Setting of the SLA",
+    "desc_end": "Set, measure, capture breach, alert, AUTO HEAL",
+    "icon_name": "icon-servers"
+  },
+  {
+    "selection": "SLA",
+    "module_name": "Manage Actions",
+    "desc_middle": "Manage your actions to perform the heal on breach",
+    "desc_end": "Set, measure, capture breach, alert, AUTO HEAL",
+    "icon_name": "icon-servers"
+  },
+  {
+    "selection": "SLA",
+    "module_name": "Manage Rule",
+    "desc_middle": "Group your action and created Rule to heal on breach",
+    "desc_end": "Set, measure, capture, alert, AUTO HEAL",
+    "icon_name": "icon-servers"
+  },
+  {
+    "selection": "SLA",
+    "module_name": "Manage SLA",
+    "desc_middle": "Configure your servers and measurements to Heal",
+    "desc_end": "Set, measure, capture, alert and AUTO HEAL",
+    "icon_name": "icon-servers"
+  }]

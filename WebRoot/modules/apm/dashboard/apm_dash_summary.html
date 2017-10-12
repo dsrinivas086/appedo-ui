@@ -1,0 +1,44 @@
+<div class="apd-subpnl apdmrgtp25" data-ng-controller="dashSummaryController">
+    <!--appedo mainright sub sections-->
+
+    <div class="apd-subpnlcntnt apd-subpnlcntnttp">
+        <!--title-->
+        <div class="row apd-smrytpbar">
+            <div class="pull-left apd-smrytitle font_18 clr1b639e">
+                APM Summary
+            </div>
+            <!-- The below drop down menu and vertical 3 dots are commented 06-apr-2015 by Sriraman -->
+            <!--div class="pull-right apdosmopt dropdown" dropdown>
+                <i class="icon-svg8 apd-dbricon dropdown-toggle" dropdown-toggle></i>
+                <ul class="dropdown-menu" role="menu">
+					<li><a>Edit</a></li>
+					<li><a>Delete</a></li>
+					<li class="list-parent">Sort by
+						<ul>
+							<li><a>Name &dash; Ascending</a></li>
+							<li><a>Name &dash; Descending</a></li>
+							<li><a>Type &dash; Ascending</a></li>
+							<li><a>Type &dash; Descending</a></li>
+						</ul>
+					</li>
+				</ul>
+            </div-->
+        </div>
+        <!--title end-->
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="summary01" style="text-align: center;">
+            	<label class="apd-rbtrglfnfmly font_16 clr424242"> Application </label>
+ 			    <appedo-donut-chart-directive  id="d3Donut01" modulecode="APPLICATION" acctype="App" chartdata="appDonutData" paneltype="apm" parrentnodeid="summary01" parentid="d3Donut01"></appedo-donut-chart-directive>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="summary02" style="text-align: center;" >
+				<label class="apd-rbtrglfnfmly font_16 clr424242"> Server </label>
+				<appedo-donut-chart-directive  id="d3Donut02" modulecode="SERVER" acctype="Svr" chartdata="svrDonutData" paneltype="apm" parrentnodeid="summary02" parentid="d3Donut02"></appedo-donut-chart-directive>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="summary03" style="text-align: center;" >
+			   <label class="apd-rbtrglfnfmly font_16 clr424242"> Database </label>
+			   <appedo-donut-chart-directive  id="d3Donut03" modulecode="DATABASE" acctype="DB" chartdata="dbDonutData" paneltype="apm" parrentnodeid="summary03" parentid="d3Donut03"></appedo-donut-chart-directive>
+		   </div>
+		   <apm-dash-smr-details  id="apm_summary" modtype="apm" acctype="summary_details" paneltype="general" parentid="apm_summary"></apm-dash-smr-details>
+        </div>
+    </div>
+</div>

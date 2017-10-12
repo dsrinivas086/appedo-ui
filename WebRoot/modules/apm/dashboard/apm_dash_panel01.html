@@ -1,0 +1,75 @@
+<div class="apd-subpnl" data-ng-controller="apmDashPanel01">
+    <div class="apd-subpnlcntnt">
+        <div class="row apd-custmtitle">
+	        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	            <div class="pull-left font_18 clr1b639e apd-dsbslct"> <!--apd-adchsf-->
+	                <select name="applicationModules" id="applicationModules" ng-model="sectionSelectApp" ng-change="getModuleCountersData()" 
+							ng-options="module as module.moduleName for module in userApplicationCounterModules"  >
+	                </select>
+	            </div>
+	        </div>
+	        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	            <div class="pull-right font_18 clr1b639e">Application</div>
+	        </div>
+        </div>
+        <div data-ng-include="'modules/apm/dashboard/apmDashApp.html'"></div>
+    </div>
+</div>
+
+<!-- tried using single controller for DashPanels 
+<div class="apd-subpnl" data-ng-controller="apmDashPanel" >
+    <div class="apd-subpnlcntnt" ng-init="moduleName = 'APPLICATION'">
+        <div class="row apd-custmtitle">
+	        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	            <div class="pull-left font_18 clr1b639e apd-dsbslct">
+	                <select name="applicationModules" id="applicationModules" ng-model="sectionSelectApp" ng-change="getModuleCountersData()" 
+							ng-options="module as module.moduleName for module in userApplicationCounterModules"  >
+	                </select>
+	            </div>
+	        </div>
+	        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	            <div class="pull-right font_18 clr1b639e">Application</div>
+	        </div>
+        </div>
+        <div data-ng-include="'modules/apm/dashboard/apmDashApp.html'"></div>
+    </div>
+</div>
+
+
+<div class="apd-subpnl" data-ng-controller="apmDashPanel" >
+    <div class="apd-subpnlcntnt" ng-init="moduleName = 'SERVER'">
+        <div class="row apd-custmtitle">
+	        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	            <div class="pull-left font_18 clr1b639e apd-dsbslct">
+	                <select name="applicationModules" id="applicationModules" ng-model="sectionSelectApp" ng-change="getModuleCountersData()" 
+							ng-options="module as module.moduleName for module in userApplicationCounterModules"  >
+	                </select>
+	            </div>
+	        </div>
+	        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	            <div class="pull-right font_18 clr1b639e">Server</div>
+	        </div>
+        </div>
+        <div data-ng-include="'modules/apm/dashboard/apmDashApp.html'"></div>
+    </div>
+</div>
+
+
+<div class="apd-subpnl" data-ng-controller="apmDashPanel" >
+    <div class="apd-subpnlcntnt" ng-init="moduleName = 'DATABASE'">
+        <div class="row apd-custmtitle">
+	        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	            <div class="pull-left font_18 clr1b639e apd-dsbslct">
+	                <select name="applicationModules" id="applicationModules" ng-model="sectionSelectApp" ng-change="getModuleCountersData()" 
+							ng-options="module as module.moduleName for module in userApplicationCounterModules"  >
+	                </select>
+	            </div>
+	        </div>
+	        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	            <div class="pull-right font_18 clr1b639e">Database</div>
+	        </div>
+        </div>
+        <div data-ng-include="'modules/apm/dashboard/apmDashApp.html'"></div>
+    </div>
+</div>
+ -->

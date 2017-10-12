@@ -1,0 +1,93 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 clr626161 apdo-addheader apd-rbtmdmfnfmly">
+            Configure Counters
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr clr626161">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm01">
+            <form class="apd-rbtrgfnfmly font_12" name="configureCounters">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <!--  first column  -->
+                    
+                        <div class="apd-fldwdt01">
+                            <label class="font_14">Category<font size="3px" color="red"><sup>*</sup></font></label>
+                            <select class="clr1b639e font_16" data-ng-model="configCounter.Categories" data-ng-options="categories as categories.category for categories in configuredCategories">
+                                <option value="">Select one</option>
+                            </select>
+                        </div>
+                         <br/>
+                  		<div class="apd-fldwdt01" >
+						<label class="font_14">Counters<font size="3px" color="red"><sup>*</sup></font></label>
+							<div class="" style="border:1px solid #B0ABAB; height: 250px; overflow: auto;">
+								<div class="" ng-repeat="counter in counters" align="left" style="">
+									<div class="chekbx" style="margin-left: 10px;">
+										<label>
+											<input class="font_12" type="checkbox" ng-disabled="counter.isSelected == true && 
+		 								(counter.show_in_primary == true || counter.show_in_secondary == true || counter.minichart == true)" 
+		 								class="col-md-1" name="counters" id="" value="{{counter.counter_id}}" style="" 
+												ng-model="counter.isSelected" ng-change="checkMaxCounter()"/>
+											<span class="font_12" style="">{{counter.name}}</span>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                 <div class="apd-fldwdt01" >
+					<label class="font_14">Selected Counters<font size="3px" color="red"><sup>*</sup></font></label>
+						
+						<div class="">
+							<div class="" style="border:1px solid #B0ABAB; height: 329px; overflow: auto;">
+								<div  class="" ng-repeat="category in configuredCategories" align="left" style="">
+								<div  ng-repeat="counter in category.counters">
+									<div class="chekbx" ng-show="counter.isSelected" style="margin-left: 10px;">
+										<label for="counter_{{counter.category}}_{{counter.name}}">
+											<input class="font_12 clr1b639e"  ng-disabled="counter.isSelected == true && 
+		 								(counter.show_in_primary == true || counter.show_in_secondary == true || counter.minichart == true)" 
+		 								type="checkbox" class="col-md-1" name="counters" id="counter_{{counter.category}}_{{counter.counter_id}}" 
+		 								value="{{counter.counter_id}}" style="" ng-model="counter.isSelected" ng-change="checkMaxCounter()"/>
+											<span class="font_12" style="">{{category.category}} - {{counter.name}}</span>
+										</label>
+									</div>
+								</div>
+								</div>
+								
+							</div>
+						</div>
+				</div>
+                </div>
+                <label class="alert alert-danger apd-frmfld control-label font_14"
+					ng-show="showConfigCountersErrorMsg"> {{ConfigCountersErrorMsg}} </label>
+                <div class="pull-right" data-ng-controller="form_controller">
+                    <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="saveConfigureCounters()">SAVE</button>
+                </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</div>

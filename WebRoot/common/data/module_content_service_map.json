@@ -1,0 +1,11 @@
+[
+  {
+    "selection": "ServiceMap",
+    "module_name": "Service Map",
+    "desc_middle": "You can add various Service Maps",
+    "desc_end": "Service Map and more...",
+    "icon_name": "icon-rum",
+    "icon_color": "#CD8527",
+    "class": "apd-rum"
+  }
+]

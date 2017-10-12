@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="appedoApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable="no">
+    <title>Appedo</title>
+    <!--script src="http://code.jquery.com/jquery-2.1.3.min.js"></script-->
+    <!-- csslinks -->
+
+	<link href="vendor/bootstrap/version-3.3.2/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="vendor/font-awesome-4.3.0/css/font-awesome.css">
+	<link rel="stylesheet" href="vendor/font-awesome-4.3.0/css/font-awesome.min.css">
+	<link href="vendor/angular/ng-slider/ng-slider.min.css" type="text/css" rel="stylesheet">
+	<link href="assets/css/appedo.css" rel="stylesheet ">
+    <link href="assets/css/custom-icons.css" type="text/css" rel="stylesheet">
+    <link href="modules/apm/dashboard/apm_dashboard.css" type="text/css" rel="stylesheet">
+    <link href="vendor/angular/angular-ui-tree/angular-ui-tree.min.css" type="text/css" rel="stylesheet">
+    <link href="vendor/angular/ng-toast/ngToast.min.css" type="text/css" rel="stylesheet">
+    <link href="vendor/angular/ng-toast/ngToast-animations.min.css" type="text/css" rel="stylesheet">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/appedo-16.ico">
+
+    <!--script for angular js and controllers-->
+    <script src="vendor/angular/jquery/jquery-2.1.3.min.js"></script>
+    <!-- script type="text/javascript" async="" src="vendor/d3charts/d3.min.js"></script-->
+    <script src="vendor/angular/angularjs-1.3.14/angular.js"></script>
+    <script src="vendor/angular/angularjs-1.3.14/angular-route.min.js"></script>
+    <script src="vendor/angular/angularjs-1.3.14/angular-animate.js"></script>
+    <script src="vendor/angular/angularjs-1.3.14/angular-sanitize.js"></script>
+    <script src="vendor/angular/angular-ui-router/angular-ui-router.min.js"></script>
+    <script src="vendor/angular/angular-ui-bootstrap/version-0.12.1/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    
+    <!-- <script src="vendor/angular/angular-ui-tree/angular-ui-tree.min.js"></script> -->
+    <script src="vendor/angular/angular-ui-tree/angular-ui-tree.js"></script>
+    
+    <script src="vendor/angular/Title.js"></script>
+    <script src="vendor/angular/ng-toast/ngToast.min.js" type="text/javascript"></script>
+    
+    <script src="vendor/angular/bootstrap_file_input.js"></script>
+
+	<!--script src="vendor/angular/scope.onready.js"></script-->
+
+	<script src="vendor/d3charts/d3.js"></script>
+	<script src="vendor/d3charts/map.js"></script>
+	<script src="vendor/angular/ng-slider/ng-slider.min.js"></script>
+    <script src="appedo_config.js"></script>
+    <script src="common/controllers/controllers.js"></script>
+    <script src="common/services/services.js"></script>
+    <script src="common/directives/directives.js"></script>
+    <!--script src="modules/sum/dashboard/sum_controller.js"></script-->
+
+    <script src="modules/load_test/dashboard/loadtest_controller.js"></script>
+
+    <!--script src="common/controllers/form_controller.js"></script-->
+    
+  	<script src="modules/apm/dashboard/apm_directives.js"></script>
+	<script src="modules/apm/dashboard/apm_controllers.js"></script>
+	<script src="modules/apm/dashboard/apm_services.js"></script>
+	
+	<script src="modules/rum/rum_controller.js"></script>
+	<script src="modules/rum/rum_services.js"></script>
+
+	<script src="modules/sum/sumController.js"></script>
+  	<script src="modules/sum/sumServices.js"></script>
+
+
+	<script src="modules/load_test/loadtest_controller.js"></script>
+  	<script src="modules/load_test/loadtest_services.js"></script>
+
+	<script src="modules/sla/sla_controller.js"></script>
+  	<script src="modules/sla/sla_services.js"></script>
+  	
+  	<script src="modules/admin/admin_controller.js"></script>
+	<script src="modules/admin/admin_services.js"></script>
+	
+  	<script src="modules/services_map/service_map_controller.js"></script>
+  	<script src="modules/services_map/service_map_services.js"></script>
+	
+
+	<script>
+      function LoadHandler(event) 
+      {
+         new Title(event.getTarget().getOwnerDocument(), 12);
+      }
+   </script>
+	<style type="text/css">
+		div.apm-application:hover{
+			border-left: 4px solid #9EA8DD;
+		}
+		div.apm-servers:hover{
+			border-left: 4px solid #EFC450;
+		}
+		div.apm-database:hover{
+			border-left: 4px solid #6FBEE8;
+		}
+        div.sla-settings:hover {
+            border-left: 4px solid #795BC5;
+        }
+        div.sla-actions:hover {
+            border-left: 4px solid #B34FBC;
+        }
+        div.sla-rules:hover {
+            border-left: 4px solid #FA7126;
+        }
+        div.apd-sla:hover, div.sla-policy:hover {
+            border-left: 4px solid #46C1BA;
+        }
+        div.apd-sum:hover {
+            border-left: 4px solid #24A35D;
+        }
+        div.apd-rum:hover {
+            border-left: 4px solid #CD8527;
+        }
+        div.apd-lt:hover {
+            border-left: 4px solid #977E31;
+        }
+        
+		.lt-stop-circle {
+			border-radius: 50px;
+			width: 50px;
+			height: 50px;
+			background-color: #c64141;
+		}
+		
+		.sla-heal-log {
+			border-radius: 30px;
+			width: 30px;
+			height: 30px;
+			background-color: #388F3C;
+		}
+		
+		.sla-alert-log {
+			border-radius: 30px;
+			width: 30px;
+			height: 30px;
+			background-color: #FFFF00;
+		}
+		
+		.sla-slave-status_active {
+			border-radius: 30px;
+			width: 30px;
+			height: 30px;
+			background-color: #388F3C;
+		}
+		
+		.sla-slave-status_inactive {
+			border-radius: 30px;
+			width: 30px;
+			height: 30px;
+			background-color: #FF0000;
+		}
+		
+		.lt-status-scripts-border {
+			border-top: #626161 1px solid;
+			border-bottom: #626161 1px solid;
+		}
+		
+		.breakWord {
+			word-wrap: break-word; 
+		}
+		
+		.apm-radiobtn-no-margin {
+			margin: 0px;
+		}
+		
+		.apd-border-bottom {
+			border-bottom: #cdcccc 1px solid;
+			padding-bottom: 10px;
+		}
+		.apd-border-btm {
+			border-bottom: #cdcccc 2px solid;
+			padding-bottom: 10px;
+		}
+		.apd-no-margin {
+			margin: 0px;
+		}
+		
+		/* overwritting lib of tree */
+		.angular-ui-tree-handle {
+			font-weight: normal;
+			line-height: 25px;
+			color: #1b639e;
+		}
+		
+		.chartDashboardWidget{
+			float: right;
+			/*margin-right: 15px;*/
+			/*margin-top: -43px;*/
+		}
+		.dashboardTechoMeterSize {
+			font-size: 20px;
+		}
+		.dashboardSecondStacked{
+			text-align: right;
+			top: 5px;
+		}
+		
+		.treeToggle {
+			color: #36B397;
+			font-size: 14px;
+		}
+		
+		
+		.wordbreak {
+		    word-break: break-all;
+		}
+		
+		
+		.clr3166A7{
+			color: #3166A7;
+		}
+		.checkbox-label {
+			color: #444;
+			font-weight: normal;
+		}
+		
+		.color-success {
+			color: #398439;
+		}
+		.color-danger {
+			color: #d43f3a;
+		}
+		.color-warning {
+			color: #eea236;
+		}
+		
+		.apd-fldwdt_inline input {
+			display: inline-block;
+			padding: 0px;
+		}
+		/*
+		hr.vertical {
+			width: 0px;
+			height: 23px;
+		}*/
+		
+		.apd-divider {
+			display: inline-block;
+			width: 1px;
+			background-color: #6b6161;
+			height: 30px; /* Override in-line if you want specific height. */
+			position: relative;
+			top: 16px;
+    
+			/*float: left;*/ /* Causes the line to float to left of content. 
+							You can instead use position:absolute or display:inline-block
+							if this fits better with your design */
+		}
+		
+		.disp_inline {
+			display: inline-block;
+		}
+		.admin_angle_right {
+			position: relative;
+			top: 10px;
+		}
+		.clr444 {
+			color: #444;
+		}
+		
+		.apd-fldwdt input[type="checkbox"] {
+			display: inline-block;
+		}
+		
+		.admin_settings_label {
+			width: 280px;
+			display: inline-block;
+			font-weight: normal;
+			text-align: left;
+		}
+		.admin_settings_input input {
+			width: 50px;
+			text-align: right;
+			color: #1b639e;
+		}
+		
+		.apd-fldwdt01 .apd-custom-calendar label.admin_license_label {
+			margin-right: 6px;
+		}
+		.apd-fldwdt01 .apd-custom-calendar input.admin_license_dt {
+			text-align: center;
+			width: 100px;
+		}
+		.apd-fldwdt01 .apd-custom-calendar i.admin_license_dt_icon {
+			cursor: pointer;
+			color: #444;
+			font-size: 20px;
+			position: absolute;
+			top: 10px;
+		}
+	</style>
+
+</head> 
+
+<body>
+    <div class="container-fluid" data-ui-view></div>
+</body>
+</html>

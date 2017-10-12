@@ -1,0 +1,32 @@
+[
+  {
+    "selection": "APM",
+    "module_name": "Application",
+    "desc_middle": "You can add various applications to monitor the performance",
+    "desc_end": "Mobile Apps, Web Apps, Enterprise Apps and more",
+    "icon_name": "icon-application",
+    "moduleNavIcon": "apd-naapicon",
+    "class": "apm-application",
+    "icon_color": "#9ea8dd"
+  },
+  {
+    "selection": "APM",
+    "module_name": "Server",
+    "desc_middle": "You can add various servers to monitor the performance",
+    "desc_end": "Mobile Servers, Web Servers, Enterprise Servers and more",
+    "icon_name": "icon-servers",
+    "moduleNavIcon": "apd-naapicon-ser",
+    "class": "apm-servers",
+    "icon_color": "#efc450"
+  },
+  {
+    "selection": "APM",
+    "module_name": "Database",
+    "desc_middle": "You can add various databases to monitor the performance",
+    "desc_end": "MYSQL, MSSQL and more",
+    "icon_name": "icon-database",
+    "moduleNavIcon": "apd-naapicon-db",
+    "class": "apm-database",
+    "icon_color": "#6fbee8"
+  }
+]

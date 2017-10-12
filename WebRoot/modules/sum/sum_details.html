@@ -1,0 +1,59 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer apdmrgtp25" data-ng-controller="sumDetailsController">
+	<div class="row">
+		<div class="apdo-crdtlte col-lg-3 col-md-3 col-sm-3 col-xs-3 font_18 clr1b639e">
+		<span class="apd-curpnt" style="position: absolute; top: 16px; left: 30px;" data-ng-click="backToSlaCardPage()"><img src="assets/images/back.png">
+    	</span><span class="ad-pdlt">SUM Result</span></div>
+		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 col-xs-pull-2 font_18 clr1b639e pull-left">
+			<div class='apdo-slider01' >
+				<input ng-model="sliderValue" type="text" id="mySlider1" slider options="sliderOptions" />
+			</div>
+		</div>
+	</div>
+	
+	<div class="apd-subpnl">
+	    <div class="apd-subpnlcntnt">
+	        <div class="row apd-custmtitle">
+	            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 pull-left font_18 clr1b639e apd-dsbslct"> <!--apd-adchsf-->
+                	<select name="webSiteModules" id="webSiteModules" ng-model="selectedWebSite" ng-options="module as module.testName+' ('+module.testurl+') - '+module.status for module in userWebsiteCounterModules"  ng-change = "getSUMChartData()">
+	                </select>
+	            </div>
+	            
+	           <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 pull-left font_18 clr1b639e apd-dsbslct"> 
+	                <select name="scannedPages" id="scannedPages" ng-model="scannedPage" ng-options="module as module.page_id+' - '+module.page_name for module in scannedPages"  ng-change = "getSUMSearchPageChangeChartData()" ng-if="showScannedPageDropdown">
+	                </select>
+	            </div>
+	           <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 pull-left font_18 clr1b639e apd-dsbslct"> 
+	                <select name="location" id="location" ng-model="selectedLocation" ng-change="getSelectedLocation(selectedLocation)">
+	                	<option value="All Locations">All Locations</option>
+	                	<option ng-repeat="location in sumLocations track by $index" value="{{location.City}}">{{location.City}}</option>
+	                </select>
+	            </div>
+	        </div>
+	        
+	       	<div class="row apdeo-adForm apd-marg-left ">
+			    <div class="row">
+				    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry" id="dashSUM_Multi">
+				        <div class="apd-grpcntlg3">
+				            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Response Time</div>
+				        </div>
+				        <div>
+							<appedo-multi-line-chart-directive  id="d3Multi_SUM" modtype="sum" acctype="Response Time" chartdata="responseTimeChartData" paneltype="sum" parrentnodeid="dashSUM_Multi" xaxisformat="{{d3XaixsFormat}}" loadevent="populateHarFile" linkstatus="true"></appedo-multi-line-chart-directive>
+				        </div>
+				        <div class="apdobtmbar01">
+				        </div>
+				    </div>
+			    </div>
+			</div>
+
+	       	<div class="row apdeo-adForm apd-marg-left" ng-if="showHAR">
+			    <div class="row">
+				    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry" id="detailSUM_HAR">
+				        <iframe ng-src="{{harFilePath | sumHarFileIframeURL}}" height="600" style="border: 0px none; width: 100%;"> </iframe>
+				    </div>
+			    </div>
+			</div>
+
+	    </div>
+	</div>
+</div>

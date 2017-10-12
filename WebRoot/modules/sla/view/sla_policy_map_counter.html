@@ -1,0 +1,166 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 apdo-adttl apd-rbtmdmfnfmly ">
+            Add/Edit
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds form_controller -->
+    <div class="apdad-mbdy">
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm">
+	            <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="{{moduleCardContent.icon_name}} aped-apiconttle" style="color: rgb(70, 193, 186);"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">{{moduleCardContent.module_name}}</span>
+	                </div>
+	            </div>
+                <form class="apd-rbtrgfnfmly font_18" name="policyMapCounterForm" novalidate>
+<!--                 	<div class ="col-lg-6 col-md-6 col-sm-6 col-xs-12"> -->
+<!--                         <div class="apd-fldwdt01" ng-class="{'has-error': policyMapCounterForm.moduleType.$invalid && submitted }"> -->
+<!--                         	<label class="font_14">Module <font size="3px" color="red"><sup>*</sup></font></label> -->
+<!-- 							<select ng-hide="isEditEnabled" name="moduleType" ng-model="slaPolicyMapCounterForm.moduleType" ng-change="getModules()" required> -->
+<!-- 								<option value="" selected style="display:none">Select type</option> -->
+<!--                         		<option value="APPLICATION" >Application</option> -->
+<!-- 								<option value="DATABASE" >Database</option> -->
+<!-- 								<option value="SERVER" >Server</option> -->
+<!--                         	</select> -->
+<!--                         	<input ng-show="isEditEnabled" ng-disabled="true" type="text" class="clr444444 apd-first-char-up" ng-model="slaPolicyMapCounterForm.moduleType"/> -->
+<!--                         	<p ng-show="policyMapCounterForm.moduleType.$invalid && submitted" class="help-block">Module type is mandatory</p> -->
+<!-- 	                    </div> -->
+<!-- 					</div> -->
+					<div class ="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="apd-fldwdt01">
+                        	<label class="font_14">Module <font size="3px" color="red"><sup>*</sup></font></label>
+							<select ng-hide="isEditEnabled" name="moduleType" ng-model="slaPolicyMapCounterForm.moduleType" ng-change="getModules()" required>
+								<option value="" selected style="display:none">Select type</option>
+                        		<option value="APPLICATION" >Application</option>
+								<option value="DATABASE" >Database</option>
+								<option value="SERVER" >Server</option>
+                        	</select>
+                        	<input ng-show="isEditEnabled" ng-disabled="true" type="text" class="clr444444 apd-first-char-up" ng-model="slaPolicyMapCounterForm.moduleType"/>
+	                    </div>
+					</div>
+<!--                 	<div class ="col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-show="showmodules"> -->
+<!--                         <div class="apd-fldwdt01" ng-class="{'has-error': policyMapCounterForm.moduleValue.$invalid && submitted }"> -->
+<!-- 	                        <label class="font_14">App/Svr/Db Name<font size="3px" color="red"><sup>*</sup></font></label> -->
+<!-- 							<select ng-hide="isEditEnabled" ng-model="slaPolicyMapCounterForm.agentName" name="moduleValue" data-ng-options="module as module.moduleName for module in modules" ng-change="getCounters()" required> -->
+<!--                         		<option value="" selected style="display:none">Choose one</option> -->
+<!--                         	</select> -->
+<!--                         	<input  ng-show="isEditEnabled" ng-disabled="true" type="text" class="clr444444 apd-first-char-up" ng-model="slaPolicyMapCounterForm.agentName"/> -->
+<!--                         	<p ng-show="policyMapCounterForm.moduleValue.$invalid && submitted" class="help-block">Module value is mandatory</p> -->
+<!-- 	                    </div> -->
+<!-- 					</div> -->
+					<div class ="col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-show="showmodules">
+                        <div class="apd-fldwdt01">
+	                        <label class="font_14">App/Svr/Db Name<font size="3px" color="red"><sup>*</sup></font></label>
+							<select ng-hide="isEditEnabled" ng-model="slaPolicyMapCounterForm.agentName" name="moduleValue" data-ng-options="module as module.moduleName for module in modules" ng-change="getCounters()" required>
+                        		<option value="" selected style="display:none">Choose one</option>
+                        	</select>
+                        	<input  ng-show="isEditEnabled" ng-disabled="true" type="text" class="clr444444 apd-first-char-up" ng-model="slaPolicyMapCounterForm.agentName"/>
+	                    </div>
+					</div>
+<!--                 	<div class ="col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-show="showcounters"> -->
+<!--                         <div class="apd-fldwdt01" ng-class="{'has-error': policyMapCounterForm.counterName.$invalid && submitted }"> -->
+<!-- 	                        <label class="font_14">Cat & Counter Name<font size="3px" color="red"><sup>*</sup></font></label> -->
+<!-- 	                        <select ng-hide="isEditEnabled" ng-model="slaPolicyMapCounterForm.counterName" name="counterName" data-ng-options="counter as counter.category+' - '+counter.name for counter in counters" ng-change="getCounterValues()" required> -->
+<!--                         		<option value="" selected style="display:none">Choose one</option> -->
+<!--                         	</select> -->
+<!--                         	<input ng-show="isEditEnabled" ng-disabled="true" type="text" class="clr444444 apd-first-char-up" ng-model="slaPolicyMapCounterForm.counterName"/> -->
+<!--                         	<p ng-show="policyMapCounterForm.counterName.$invalid && submitted" class="help-block">Cat & Counter Name is mandatory</p> -->
+<!-- 	                    </div> -->
+<!-- 					</div> -->
+					<div class ="col-lg-6 col-md-6 col-sm-6 col-xs-12" ng-show="showcounters">
+                        <div class="apd-fldwdt01">
+	                        <label class="font_14">Cat & Counter Name<font size="3px" color="red"><sup>*</sup></font></label>
+	                        <select ng-hide="isEditEnabled" ng-model="slaPolicyMapCounterForm.counterName" name="counterName" data-ng-options="counter as counter.category+' - '+counter.name for counter in counters" ng-change="getCounterValues()" required>
+                        		<option value="" selected style="display:none">Choose one</option>
+                        	</select>
+                        	<input ng-show="isEditEnabled" ng-disabled="true" type="text" class="clr444444 apd-first-char-up" ng-model="slaPolicyMapCounterForm.counterName"/>
+	                    </div>
+					</div>
+<!--                 	<div class ="col-lg-6 col-md-6 col-sm-6 col-xs-12"> -->
+<!--                         <div class="apd-fldwdt01" ng-class="{'has-error': policyMapCounterForm.breachType.$invalid && submitted }"> -->
+<!-- 	                        <label class="font_14">Breach Type<font size="3px" color="red"><sup>*</sup></font></label> -->
+<!-- 	                        <select ng-hide="isEditEnabled" ng-model="slaPolicyMapCounterForm.breachType" name="breachType" data-ng-options="breach as breach.breachType for breach in breachTypes" required> -->
+<!--                         		<option value="" selected style="display:none">Choose one</option> -->
+<!--                         	</select> -->
+<!-- 							<input ng-show="isEditEnabled" ng-disabled="true" type="text" class="clr444444 apd-first-char-up" ng-model="slaPolicyMapCounterForm.breachType"/> -->
+<!--                         	<p ng-show="policyMapCounterForm.breachType.$invalid && submitted" class="help-block">Breach Type is mandatory</p> -->
+<!-- 	                    </div> -->
+<!-- 					</div> -->
+					<div class ="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="apd-fldwdt01">
+	                        <label class="font_14">Breach Type<font size="3px" color="red"><sup>*</sup></font></label>
+	                        <select ng-hide="isEditEnabled" ng-model="slaPolicyMapCounterForm.breachType" name="breachType" data-ng-options="breach as breach.breachType for breach in breachTypes" required>
+                        		<option value="" selected style="display:none">Choose one</option>
+                        	</select>
+							<input ng-show="isEditEnabled" ng-disabled="true" type="text" class="clr444444 apd-first-char-up" ng-model="slaPolicyMapCounterForm.breachType"/>
+	                    </div>
+					</div>
+<!--                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> -->
+<!-- 	                    <div class="apd-fldwdt01" ng-class="{'has-error': policyMapCounterForm.thresholdvalue.$invalid && submitted }"> -->
+<!-- 	                        <label class="font_14">Threshold Value <font size="3px" color="red"><sup>*</sup></font></label> -->
+<!-- 	                        <input type="text" placeholder="Threshold Value" name="thresholdvalue" class="clr444444 apd-first-char-up" ng-model="slaPolicyMapCounterForm.thresholdValue" required/> -->
+<!-- 	                        <p ng-show="policyMapCounterForm.thresholdvalue.$invalid && submitted" class="help-block">Threshold Value is mandatory</p> -->
+<!--                         </div> -->
+<!-- 					</div> -->
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	                    <div class="apd-fldwdt01">
+	                        <label class="font_14">Threshold Value <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <input type="text" placeholder="Threshold Value" name="thresholdvalue" class="clr444444 apd-first-char-up" ng-model="slaPolicyMapCounterForm.thresholdValue" required/>
+                        </div>
+					</div>
+<!--                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> -->
+<!-- 	                    <div class="apd-fldwdt01" ng-class="{'has-error': policyMapCounterForm.minbrchcount.$invalid && submitted }"> -->
+<!-- 	                        <label class="font_14">Minimum Breach Count <font size="3px" color="red"><sup>*</sup></font></label> -->
+<!-- 	                        <input type="text" placeholder="Min Breach count" name="minbrchcount" class="clr444444 apd-first-char-up" ng-model="slaPolicyMapCounterForm.minBreachCount" required /> -->
+<!-- 	                        <p ng-show="policyMapCounterForm.minbrchcount.$invalid && submitted" class="help-block">Minimum Breach Count is mandatory</p> -->
+<!--                         </div> -->
+<!--                     </div> -->
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	                    <div class="apd-fldwdt01">
+	                        <label class="font_14">Minimum Breach Count <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <input type="text" placeholder="Min Breach count" name="minbrchcount" class="clr444444 apd-first-char-up" ng-model="slaPolicyMapCounterForm.minBreachCount" required />
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                    <div class="apd-fldwdt01">
+		                    <div class="apm-radiobtn apm-radiobtn-ltest">
+	                    		<div class="apd-rdbtn">
+									<input type="radio" name="radiog_lite4" id="radio7"  ng-model="slaPolicyMapCounterForm.thresholdabv" value="gt" class="css-checkbox"   />
+	                        		<label for="radio7" class="css-label radGroup1 font_14 ">&gt= Threshold</label>
+	                    		</div>
+	                    		<div class="apd-rdbtn">
+									<input type="radio" name="radiog_lite4" id="radio8" class="css-checkbox" ng-model="slaPolicyMapCounterForm.thresholdabv" value="lt" checked="checked"  />
+	                        		<label for="radio8" class="css-label radGroup1 font_14">&lt= Threshold</label>
+	                    		</div>
+		                    </div>
+                        </div>
+                    </div>
+	                <div ng-hide="isEditEnabled" class="pull-right" data-ng-controller="form_controller">
+	                    <button type="submit" class="apdo-adbtn btn btn-success" ng-disabled="policyMapCounterForm.$invalid" data-ng-click="saveAndAddCounter()">Save & Add</button>
+	                </div>
+	                <div ng-hide="isEditEnabled" class="pull-right" data-ng-controller="form_controller">
+	                    <button type="submit" class="apdo-adbtn btn btn-success" ng-disabled="policyMapCounterForm.$invalid" data-ng-click="saveAndFinish()">Save & Finish</button>
+	                </div>
+	                <div ng-show="isEditEnabled" class="pull-right" data-ng-controller="form_controller">
+	                    <button type="submit" class="apdo-adbtn btn btn-success" ng-disabled="policyMapCounterForm.$invalid" data-ng-click="updateCounter()">Update</button>
+	                </div>
+				</form>
+            </div>
+        </div>
+    </div>
+</div>

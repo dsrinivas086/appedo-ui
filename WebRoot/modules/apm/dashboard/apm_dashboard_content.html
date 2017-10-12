@@ -1,0 +1,111 @@
+<!--appedo subcontent area-->
+
+<div class="apd-subpnl apdmrgtp25">
+    <!--appedo mainright sub sections-->
+
+    <div class="apd-subpnlcntnt apd-subpnlcntnttp">
+        <!--title-->
+        <div class="row apd-smrytpbar">
+            <div class="pull-left apd-smrytitle font_18 clr1b639e">
+                App Summary
+            </div>
+            <div class="pull-right apdosmopt">
+                <i class="icon-svg8 apd-dbricon"></i>
+            </div>
+        </div>
+        <!--title end-->
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="summary01"  >
+			   <appedo-donut-chart-directive  id="d3Donut01" modtype="apm" acctype="Apps" paneltype="application" parrentnodeid="summary01" parentid="d3Donut01"></appedo-donut-chart-directive>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="summary02" >
+				<appedo-donut-chart-directive  id="d3Donut02" modtype="apm" acctype="Servers" paneltype="server" parrentnodeid="summary02" parentid="d3Donut02"></appedo-donut-chart-directive>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="summary03" >
+			   <appedo-donut-chart-directive  id="d3Donut03" modtype="apm" acctype="DBs" paneltype="db" parrentnodeid="summary03" parentid="d3Donut03" ></appedo-donut-chart-directive>
+		   </div>
+		   <apm-dash-smr-details  id="apm_summary" modtype="apm" acctype="summary_details" paneltype="general" parentid="apm_summary"></apm-dash-smr-details>
+        </div>
+    </div>
+</div>
+<!--summary end-->
+<!--panel2-->
+
+<div class="apd-subpnl">
+    <div class="apd-subpnlcntnt">
+        <!--title-->
+        <div class="row apd-custmtitle">
+            <div class="pull-left font_18 clr1b639e">
+                Demo_App_DotNet<i class="icon-dropdown apd-drpdn"></i>
+            </div>
+
+			<!--
+			<div class="pull-left font_18 clr1b639e" ng-controller="apmApplicationCounterController" modtype="apm" acctype="apm_application_counters" paneltype="application" >
+                Demo_App_DotNet<i class="icon-dropdown apd-drpdn"></i>
+				<select id="apm_application_counter"  ng-model="apmapplicationcounterlist" ng-options="counter.value for counter in apmapplicationcounterlists">    
+				</select>
+            </div>
+			-->
+            <div class="pull-right apdosmopt">
+                <i class="icon-svg8 apd-dbricon"></i>
+            </div>
+            <div class="pull-right apd-fscreen">
+                <i class="icon-expand apd-dbricon"></i>
+            </div>
+
+        </div>
+		<!--title end-->
+		<apm-dash-application  id="Demo_App_DotNet" ></apm-dash-application>
+		<!-- apm dash application-->
+    </div>
+</div>
+
+<!--panel2 end-->
+<!--panel3-->
+<div class="apd-subpnl">
+    <div class="apd-subpnlcntnt">
+        <!--title-->
+        <div class="row apd-custmtitle">
+            <div class="pull-left font_18 clr1b639e">
+                Demo_App_Server_Window<i class="icon-dropdown apd-drpdn"></i>
+            </div>
+
+
+            <div class="pull-right apdosmopt">
+                <i class="icon-svg8 apd-dbricon"></i>
+            </div>
+            <div class="pull-right apd-fscreen">
+                <i class="icon-expand apd-dbricon"></i>
+            </div>
+
+        </div>
+		<!--title end-->
+		<apm-dash-server  id="Demo_App_Server_Window" ></apm-dash-server>
+		<!-- apm dash server-->
+    </div>
+
+</div>
+<!--panel3 end-->
+<!--panel3-->
+<div class="apd-subpnl">
+    <div class="apd-subpnlcntnt">
+        <!--title-->
+        <div class="row apd-custmtitle">
+            <div class="pull-left font_18 clr1b639e">
+               Database_Demo_App_MySQL<i class="icon-dropdown apd-drpdn"></i>
+            </div>
+
+
+            <div class="pull-right apdosmopt">
+                <i class="icon-svg8 apd-dbricon"></i>
+            </div>
+            <div class="pull-right apd-fscreen">
+                <i class="icon-expand apd-dbricon"></i>
+            </div>
+        </div>
+        <!--title end-->
+		<apm-dash-dbs  id="Database_Demo_App_MySQL" ></apm-dash-dbs>
+		<!-- apm dash dbs-->
+    </div>
+</div>
+<!--panel3 end-->

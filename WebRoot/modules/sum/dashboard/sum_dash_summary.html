@@ -1,0 +1,52 @@
+<div class="apd-subpnl apdmrgtp25" data-ng-controller="sumSummaryController">
+    <!--appedo mainright sub sections-->
+    <div class="apd-subpnlcntnt apd-subpnlcntnttp">
+        <!--title-->
+        <div class="row apd-smrytpbar">
+            <div class="pull-left apd-smrytitle font_18 clr1b639e">
+                SUM Summary
+            </div>
+        </div>
+        <!--title end-->
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="d3SUMsummary01" style="text-align: center;" >
+            	<label class="apd-rbtrglfnfmly font_16 clr424242"> Test Status </label>
+				<appedo-donut-chart-directive  id="d3SUMDonut01" modulecode="TestStatus" acctype="STAT" chartdata="completedDonutData" paneltype="sum" parrentnodeid="d3SUMsummary01" parentid="d3SUMDonut01" ctext="{{cTextCompletedDonutData}}"></appedo-donut-chart-directive>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="d3SUMsummary02" style="text-align: center;" >
+            	<label class="apd-rbtrglfnfmly font_16 clr424242"> Measurement </label>
+				<appedo-donut-chart-directive  id="d3SUMDonut02" modulecode="Mst" acctype="MST" chartdata="availableDonutData" paneltype="sum" parrentnodeid="d3SUMsummary02" parentid="d3SUMDonut02" ctext="{{cTextAvailableDonutData}}"></appedo-donut-chart-directive>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="d3SUMsummary03" style="text-align: center;">
+            	<label class="apd-rbtrglfnfmly font_16 clr424242"> Test Type </label>
+			   <appedo-donut-chart-directive  id="d3SUMDonut03" modulecode="TestType" acctype="TYP" chartdata="urlDonutData" paneltype="sum" parrentnodeid="d3SUMsummary03" parentid="d3SUMDonut03" ctext="{{cTextUrlDonutData}}"></appedo-donut-chart-directive>
+		   </div>
+		   <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 apdmainright-ctgry" ng-repeat="summary in summarydata">
+				<div ng-show="$index == 0">
+					<div class="row">
+						<div class="apd-slplt col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							<div class="font_20 apd-slpltbmr clr1b639e">{{summary.lic_value}}</div>
+							<div class="font_16 clr424242">{{summary.lic_label}}</div>
+						</div>
+						<div class="apd-slplt col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							<div class="font_20 apd-slpltbmr clr1b639e">{{summary.smr_value}}</div>
+							<div class="font_16 clr424242">{{summary.smr_label}}</div>
+						</div>
+					</div>
+				</div>
+				<div ng-show="$index > 0">
+					<div class="row">
+						<div class="apd-slpltb col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							<div class="font_20 apd-slpltbmr clr1b639e">{{summary.lic_value}}</div>
+							<div class="font_16 clr424242">{{summary.lic_label}}</div>
+						</div>
+						<div class="apd-slpltb  col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							<div class="font_20 apd-slpltbmr clr1b639e">{{summary.smr_value}}</div>
+							<div class="font_16 clr424242">{{summary.smr_label}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+</div>

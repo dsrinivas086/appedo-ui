@@ -1,0 +1,89 @@
+<div class="apdcrdcatgrywrpr" >
+	<div class="row apdcrdcatgry apd-rbtrgfnfmly">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apd-mrbtm10	apd-border-bottom ">
+			<div class="font_18 clr1b639e">Error</div>
+		</div>
+		
+				
+		<div class="row ">
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 apdbgdcolor">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Log Time</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 apdbgdcolor apdcrdchd01">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Load Generator</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 apdbgdcolor ">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Script Name</div>
+			</div>
+			
+			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 apdbgdcolor apdcrdchd01">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Status code</div>
+			</div>
+			
+			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 apdbgdcolor apdcrdchd01">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Vuser Id</div>
+			</div>
+			
+			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 apdbgdcolor apdcrdchd01">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Iteration</div>
+			</div>
+			<!-- 
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 apdbgdcolor apdcrdchd01">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Request Id</div>
+			</div>
+			 -->
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdbgdcolor ">
+				<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Error Details</div>
+			</div>
+			<!-- 
+			<div class="col-lg-4 col-md-4 col-sm-8 col-xs-8 apdbgdcolor apdcrdchd01">
+				<div class="font_16 clr626161 ">Request URI</div>
+			</div>
+			 -->
+		</div>
+		
+		
+		<div class="row " ng-repeat="error in errorReports">
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 apdbgdcolor">
+				<div class="font_12 clr626161 ">{{error.log_time | date:'dd-MMM-yyyy HH:mm:ss '}}</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 apdbgdcolor apdcrdchd01">
+				<div class="font_12 clr626161 ">{{error.loadgen}}</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 apdbgdcolor ">
+				<div class="font_12 clr626161  ">{{error.scriptname}}</div>
+			</div>
+			
+			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 apdbgdcolor apdcrdchd01">
+				<div class="font_12 clr626161 ">{{error.errorcode}}</div>
+			</div>
+			
+			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 apdbgdcolor apdcrdchd01">
+				<div class="font_12 clr626161 ">{{error.user_id}}</div>
+			</div>
+			
+			<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 apdbgdcolor apdcrdchd01">
+				<div class="font_12 clr626161 ">{{error.iteration_id}}</div>
+			</div>
+			<!-- 
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 apdbgdcolor apdcrdchd01">
+				<div class="font_12 clr626161 ">{{log.requestId}}</div>
+			</div>
+			 -->
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdbgdcolor ">
+				<div class="font_12 clr626161 ">{{error.message}}</div>
+			</div>
+			<!-- 
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-3 apdbgdcolor apdcrdchd01">
+				<div class="font_12 clr626161 ">{{log.requestURI}}</div>
+			</div>
+			 -->
+		</div>
+		
+		
+	</div>
+</div>

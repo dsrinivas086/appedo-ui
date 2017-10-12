@@ -1,0 +1,273 @@
+<!--appedo subcontent area-->
+
+<div class="apd-subpnl apdmrgtp25">
+    <!--appedo mainright sub sections-->
+
+    <div class="apd-subpnlcntnt apd-subpnlcntnttp">
+        <!--title-->
+        <div class="row apd-smrytpbar">
+            <div class="pull-left apd-smrytitle font_18 clr1b639e">
+                APM Summary
+            </div>
+            <div class="pull-right apdosmopt">
+                <i class="icon-svg8 apd-dbricon"></i>
+            </div>
+        </div>
+        <!--title end-->
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="summary01"  >
+			   <appedo-donut-chart-directive  id="d3Donut01" modtype="apm" acctype="Apps" parrentnodeid="summary01" ></appedo-donut-chart-directive>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="summary02" >
+				<appedo-donut-chart-directive  id="d3Donut02" modtype="apm" acctype="Servers"  parrentnodeid="summary02" ></appedo-donut-chart-directive>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="summary03" >
+			   <appedo-donut-chart-directive  id="d3Donut03" modtype="apm" acctype="DBs" parrentnodeid="summary03" ></appedo-donut-chart-directive>
+		   </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 apdmainright-ctgry">
+                <div class="row">
+                    <div class="apd-slplt col-sm-6 col-md-6 col-lg-6">
+                        <div class="font_20 apd-slpltbmr clr1b639e" ng-show="apmlicence">Paid</div>
+                        <div class="font_16 clr424242">APM License</div>
+                    </div>
+                    <div class="apd-slplt col-sm-6 col-md-6 col-lg-6">
+                        <div class="font_20 apd-slpltbmr clr1b639e">{{monitors}}</div>
+                        <div class="font_16 clr424242">monitors</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="apd-slpltb col-sm-6 col-md-6 col-lg-6">
+                        <div class="font_20 apd-slpltbmr clr1b639e" ng-show="ddlicence">Paid</div>
+                        <div class="font_16 clr424242">DD License</div>
+                    </div>
+                    <div class="apd-slpltb col-sm-6 col-md-6 col-lg-6">
+                        <div class="font_20 apd-slpltbmr clr1b639e">{{maxprofilers}}</div>
+                        <div class="font_16 clr424242">Max Profilers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--summary end-->
+<!--panel2-->
+<div class="apd-subpnl">
+    <div class="apd-subpnlcntnt">
+        <!--title-->
+        <div class="row apd-custmtitle">
+            <div class="pull-left font_18 clr1b639e">
+                Demo_App_DotNet<i class="icon-dropdown apd-drpdn"></i>
+            </div>
+
+            <div class="pull-right apdosmopt">
+                <i class="icon-svg8 apd-dbricon"></i>
+            </div>
+            <div class="pull-right apd-fscreen">
+                <i class="icon-expand apd-dbricon"></i>
+            </div>
+
+        </div>
+        <!--title end-->
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4  apdmainright-ctgry">
+                <div class="apd-grpcntlg3">
+                    <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Response Time</div>
+                    <div class="font_50 apdgrplnht apd-rbtrgfnfmly clr626161">{{responsetime}}<span class="font_16 clr424242 apd-rbtrglfnfmly apd-mrgnlft">ms avg</span>
+                    </div>
+                </div>
+                <div>
+					<appedo-area-chart-directive  id="d3Area01" modtype="apm" acctype="Response Time"></appedo-area-chart-directive>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 apdmainright-ctgry">
+                <div class="apd-grpcntlg3">
+                    <div class="font_16 apd-rbtmdm apd-rbtmdmfnfmly apd-grpcntlg3tl">Load</div>
+                    <div class="font_50 apdgrplnht apd-rbtrgfnfmly clr626161">{{load}}<span class="font_16 clr424242 apd-rbtrglfnfmly apd-mrgnlft">calls</span>
+                    </div>
+                </div>
+                <div>
+					<appedo-area-chart-directive  id="d3Area02" modtype="apm" acctype="Load"></appedo-area-chart-directive>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 apdmainright-ctgry">
+                <div class="apd-grpcntlg3">
+                    <div class="font_16 apd-rbtmdm apd-rbtmdmfnfmly apd-grpcntlg3tl">Errors</div>
+                    <div class="font_50 apdgrplnht apd-rbtrgfnfmly clr626161">{{errors}}<span class="font_16 clr424242 apd-rbtrglfnfmly apd-mrgnlft">&nbsp;</span></div>
+                </div>
+                <div>
+					<appedo-area-chart-directive  id="d3Area03" modtype="apm" acctype="Error"></appedo-area-chart-directive>
+                </div>
+            </div>
+        </div>
+        <div class="row apd-brdbtm">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 apd-lhthdvder">
+                <div class="row">
+                    <div class="apd-lhth col-lg-9 col-md-9 col-sm-9 col-xs-3 pdb"><img src="assets/images/low_health.png" class="img-responsive" />
+                    </div><i class="icon-chat apd-lcht clr36b397 col-lg-3 col-md-3 col-sm-3 col-xs-3"></i>
+                </div>
+
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9  col-xs-9">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 apd-sprmpadtp apd-pdngrt">
+                        <div class="clr9ea7be font_32 apd-rbtmdmfnfmly apd-lineheight26">{{responsecount}}</div>
+                        <div class="clr1b639e font_14">Response Count</div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 apd-sprmpadtp apd-pdngrt">
+                        <div class="clr9ea7be font_32 apd-rbtmdmfnfmly apd-lineheight26">{{bytessent}}KB</div>
+                        <div class="clr1b639e font_14">Bytes Sent
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 apd-sprmpadtp apd-pdngrt">
+                        <div class="clr9ea7be font_32 apd-rbtmdmfnfmly apd-lineheight26">{{hits}}</div>
+                        <div class="clr1b639e font_14">Hits</div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 apd-sprmpadtp apd-pdngrt apd-pdngrt">
+                        <div class="clr9ea7be font_32 apd-rbtmdmfnfmly apd-lineheight26">{{cachesize}}</div>
+                        <div class="clr1b639e font_14">Cache Size</div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 apd-sprmpadtp apd-pdngrt">
+                        <div class="clr9ea7be font_32 apd-rbtmdmfnfmly apd-lineheight26">{{accesscount}}</div>
+                        <div class="clr1b639e font_14">Access Count
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 apd-pdngrt"><i class="icon-reports apd-chrticn pull-right"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!--panel2 end-->
+<!--panel3-->
+<div class="apd-subpnl">
+    <div class="apd-subpnlcntnt">
+        <!--title-->
+        <div class="row apd-custmtitle">
+            <div class="pull-left font_18 clr1b639e">
+                Demo_App_Server_Window<i class="icon-dropdown apd-drpdn"></i>
+            </div>
+
+
+            <div class="pull-right apdosmopt">
+                <i class="icon-svg8 apd-dbricon"></i>
+            </div>
+            <div class="pull-right apd-fscreen">
+                <i class="icon-expand apd-dbricon"></i>
+            </div>
+
+        </div>
+        <!--title end-->
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 apdmainright-ctgry">
+                <div class="apd-grpcntlg3">
+                    <div class="font_16 apd-rbtmdm apd-rbtmdmfnfmly apd-grpcntlg3tl">CPU Usage</div>
+                    <div class="font_50 apdgrplnht apd-rbtrgfnfmly clr626161  ">{{cpuusage}}<span class="font_30 apd-rbtrglfnfmly">%</span>
+                    </div>
+                </div>
+                <div><img src="assets/images/donNet_graph_1.png" class="img-responsive" />
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 apdmainright-ctgry">
+                <div class="apd-grpcntlg3">
+                    <div class="font_16 apd-rbtmdm apd-rbtmdmfnfmly apd-grpcntlg3tl">Load</div>
+                    <div class="font_50 apdgrplnht apd-rbtrgfnfmly clr626161 ">{{sload}}<span class="font_16 apd-rbtrglfnfmly apd-mrgnlft">GB</span>
+                    </div>
+                </div>
+                <div><img src="assets/images/donNet_graph_2.png" class="img-responsive" />
+                </div>
+            </div>
+
+        </div>
+        <div class="row apd-brdbtm">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <img src="assets/images/good_health.png" class="img-responsive" />
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9  col-xs-9 apd-sprmpadtp">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 apd-pdngrt">
+                        <div class="clr9ea7be font_32 apd-rbtmdmfnfmly apd-lineheight26">{{cachebytespeak}}<span>KB</span>
+                        </div>
+                        <div class="clr1b639e">Cache Bytes Peak
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 apd-pdngrt">
+                        <div class="clr9ea7be font_32 apd-rbtmdmfnfmly apd-lineheight26">{{cachebytes}}<span>KB</span>
+                        </div>
+                        <div class="clr1b639e">Cache Bytes</div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 apd-pdngrt">
+                        <div class="clr9ea7be font_32 apd-rbtmdmfnfmly apd-lineheight26">{{abytes}}<span>MB</span>
+                        </div>
+                        <div class="clr1b639e">Available Bytes</div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        <br/>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        <br/>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 apd-pdngrt"><i class="icon-reports apd-chrticn pull-right"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!--panel3 end-->
+<!--panel3-->
+<div class="apd-subpnl">
+    <div class="apd-subpnlcntnt">
+        <!--title-->
+        <div class="row apd-custmtitle">
+            <div class="pull-left font_18 clr1b639e">
+               Database_Demo_App_MySQL<i class="icon-dropdown apd-drpdn"></i>
+            </div>
+
+
+            <div class="pull-right apdosmopt">
+                <i class="icon-svg8 apd-dbricon"></i>
+            </div>
+            <div class="pull-right apd-fscreen">
+                <i class="icon-expand apd-dbricon"></i>
+            </div>
+        </div>
+        <!--title end-->
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 apdmainright-ctgry">
+                <div class="apd-grpcntlg3">
+                    <div class="font_16 apd-rbtmdm apd-rbtmdmfnfmly apd-grpcntlg3tl">Throughtput</div>
+                    <div class="font_50 apdgrplnht apd-rbtrgfnfmly clr626161">{{dthrought}}<span class="font_16 apd-rbtrglfnfmly apd-mrgnlft">Hours</span>
+                    </div>
+                </div>
+                <div><img src="assets/images/donNet_graph_1.png" class="img-responsive" />
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 apdmainright-ctgry">
+                <div class="apd-grpcntlg3">
+                    <div class="font_16 apd-rbtmdm apd-rbtmdmfnfmly apd-grpcntlg3tl">Responses</div>
+                    <div class="font_50 apdgrplnht apd-rbtrgfnfmly clr626161">{{drespons}}<span class="font_16 apd-rbtrglfnfmly apd-mrgnlft">Hours</span>
+                    </div>
+                </div>
+                <div><img src="assets/images/donNet_graph_2.png" class="img-responsive" />
+                </div>
+            </div>
+
+        </div>
+        <div class="row apd-brdbtm">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <img src="assets/images/moderate-health.png" class="img-responsive" />
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9  col-xs-9">
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!--panel3 end-->

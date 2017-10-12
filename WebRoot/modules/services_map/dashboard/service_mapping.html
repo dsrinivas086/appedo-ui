@@ -1,0 +1,85 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 apdo-addheader apd-rbtmdmfnfmly">
+            Select Services
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm01">
+                <form class="apd-rbtrgfnfmly font_12" name="serviceMap">
+                <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="icon-rum aped-apiconttle" style="color:#CD8527"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">Service Map</span>
+	                </div>
+	            </div>
+	            <br/>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <!--  first column  -->
+
+						<div class="apd-fldwdt01">
+							<label class="font_14">Services<font size="3px" color="red"><sup>*</sup></font></label>
+							<select class="clr1b639e font_16" data-ng-model="serviceMapData.services" ng-options="services as services.serviceType for services in servicesMap">
+								<option value="">Select one</option>
+							</select>
+						</div>
+                        <br/>
+                        <div class="apd-fldwdt01">{{serviceMapData.services.serviceType}}
+                            <label class="font_14">Choose Application<font size="3px" color="red"><sup>*</sup></font></label>
+                            <div class="" style="border:1px solid #B0ABAB; height: 250px; overflow: auto;">
+                                <div class="" ng-repeat="application in applicationData"  align="left">
+                                    <div class="chekbx" style="margin-left: 10px;">
+                                        <label>
+											<input class="font_12" type="checkbox" class="col-md-1" name="application" id="" value="{{application.uid?application.uid : application.test_id}}" ng-model="application.isSelected"/>
+											<span class="font_12">{{application.module_name?application.module_name:application.testname}}</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                         <div class="apd-fldwdt01">
+                            <label class="font_14">Mapped Services<font size="3px" color="red"><sup>*</sup></font></label>
+                            <div class="">
+                                <div class="" style="border:1px solid #B0ABAB; height: 329px; overflow: auto;">
+	                                <div class="" ng-repeat="services in servicesMap" align="left" style="">
+										<div ng-repeat="application in services.modules">
+											<div class="chekbx" ng-show="application.isSelected" style="margin-left: 10px;">
+												<label>
+													<input class="font_12 clr1b639e" type="checkbox" class="col-md-1" name="services" id="application_{{services.serviceType}}_{{application.uid?application.uid:application.test_id}}" 
+				 										value="{{application.uid?application.uid : application.test_id}}" ng-model="application.isSelected" />
+													<span class="font_12" style="">{{services.serviceType}}-{{application.module_name? application.module_name: application.testname}}</span>
+												</label>
+											</div>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pull-right" data-ng-controller="form_controller">
+                        <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="saveServiceMap()">{{saveBtn}}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

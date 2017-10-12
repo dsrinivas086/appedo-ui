@@ -1,0 +1,95 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer" data-ng-controller="apmCardController">
+    <div class="row">
+    	<div class="apdo-crdtlte col-lg-12 col-md-12 col-sm-12 col-xs-12 font_18 clr1b639e" ng-show="showCardEmptyMsg">
+    	Please click on <span class="apdo-ntfctn-add" style="margin-right: 4px;" data-ng-click="openAddModuleType()"><i class="icon-svg9"></i></span>to create new <span class="text-lowercase">{{currentModule}} to be monitored.</span> </div>
+        <div class="apdo-crdtlte col-lg-12 col-md-12 col-sm-12 col-xs-12 font_18 clr1b639e" ng-show="showCard">{{currentModule}}</div>
+    </div>
+    <!--cardlist start-- apd-lineheight26 apd-lineheight30 apdo-cnterver-->
+    <div class="apdcrdcatgrywrpr" data-ng-repeat="appcardcontent in appcardscontent">
+
+        <div class="row apdcrdcatgry apd-rbtrgfnfmly">
+           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 apdbgdcolor">
+                <div ng-hide="appcardcontent.isEditEnabled" class="font_22 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 clr626161 apd-first-char-up">{{appcardcontent.moduleName}}</div>
+                <div ng-show="appcardcontent.isEditEnabled" class="font_14 clr626161 apd-mrbtm10 apd-mrgntp apd-lineheight26 clr626161 apd-first-char-up">
+                	<input style="width: 160px;" class="apd-first-char-up" type="text" maxlength="50" ng-model="appcardcontent.moduleName">
+                </div>
+                <span class="cdcccc font_14 apd-rbtrglfnfmly apd-mrbtm10">Added by {{appcardcontent.created_by}} on {{appcardcontent.created_on | date:'dd-MMM-yyyy HH:mm:ss'}}</span>
+                <div class="font_14 apdcrd-mrtp05 apd-rbtrglfnfmly apd-curpnt" ng-click="openModuleDetailGrpahs()">
+	                <span class="apd-rbtrgfnfmly clr626161">Type:</span><span class="apd-rbtrgfnfmly"> {{appcardcontent.type}} | {{appcardcontent.version}}</span>
+                </div>
+            </div>
+
+            <div ng-hide="appcardcontent.isEditEnabled" class="col-lg-3 col-md-3 col-sm-6 col-xs-12 apdbgdcolor apd-curpnt" ng-click="openModuleDetailGrpahs()">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">{{appcardcontent.label_1}}</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161">{{appcardcontent.value_1}}</div>
+            </div>
+            <div ng-hide="appcardcontent.isEditEnabled" class="col-lg-3 col-md-3 col-sm-6 col-xs-12 apdbgdcolor apd-curpnt" ng-click="openModuleDetailGrpahs()">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">{{appcardcontent.label_2}}</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161">{{appcardcontent.value_2}}</div>
+            </div>
+            <div ng-show="appcardcontent.isEditEnabled" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 apdbgdcolor">
+	            <div class="font_22 clr626161 apd-mrbtm10 apd-lineheight26 clr626161 apd-mrgntp">
+	                	<textarea style="width: 300px; height: 50px; resize: none" class="apd-first-char-up font_14" type="text" maxlength="500" ng-model="appcardcontent.description"></textarea>
+						<img src="assets/images/tickmark.png"  ng-click="updateApmModule()" style="padding-bottom:70px; padding-left: 35px;" tooltip="Update" tooltip-placement="right" />
+						<img src="assets/images/cancel.png" ng-click="doNotUpdate()" style="padding-bottom:70px; padding-left: 5px;" tooltip="Cancel" tooltip-placement="right" />
+	            </div>
+            </div>
+            <!-- apdcrd-leftwrprmrg from apdcrd-leftwrpr -->
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 apdbgdcolor" style="padding-top:2px;">
+                <div class="apd-crddnldicn " ng-class="{'apd-center': currentModule != 'Applications'}">
+                	<a href="" ng-href="./apm/downloadAgent?type={{appcardcontent.type}}&guid={{appcardcontent.guid}}&modulename={{appcardcontent.moduleName}}">
+	                    <div class="apdcrd-leftwrpr apdo-crdiconpadd">
+	                        <div class="apdcrd-left-icn">
+	                            <i class="icon-monitor1"></i>
+	                            <div class="apd-mntor-redwrper">
+	                                <i class="icon-red apd-redicon" ng-class="{true: 'apd-greenicon', false: 'apd-redicon'}[appcardcontent.monitor_active]"></i>
+	                            </div>
+	                            <div class="apd-mntor-dwnicon">
+	                                <i class="fa fa-cloud-download apd-mntor-dwnicon_color"></i>
+	                            </div>
+	                        </div>
+	                        <div class="apdcrd-leftcnt font_20 clr626161">Monitor</div>
+	                    </div>
+					</a>
+                    <div class="apdcrd-leftwrpr apdo-crdiconpadd" ng-if="currentModule=='Applications'" ><!-- ng-show="appcardcontent.enableProfiler" -->
+						<a href=""  ng-click="downloaProfiler()" ><!-- ng-href="./apm/downloadAgent?downloadtype=profiler&type={{appcardcontent.type}}&guid={{appcardcontent.guid}}&modulename={{appcardcontent.moduleName}}{{appcardcontent.type === 'MSIIS'?'&clrVersion='+appcardcontent.clrVersion:''}}"  -->
+	                        <div class="apdcrd-left-icn">
+	                            <i class="icon-profiler1 apd-prclr"></i>
+	                            <div class="apd-mntor-redwrper">
+	                                <i class="icon-red apd-redicon" ng-class="{true: 'apd-greenicon', false: 'apd-redicon'}[appcardcontent.profiler_active]"></i>
+	                            </div>
+	                            <div class="apd-mntor-dwnicon">
+	                                <i class="fa fa-cloud-download apd-mntor-dwnicon_color"></i>
+	                            </div>
+	                        </div>
+	                        <div class="apdcrd-leftcnt font_20 clr626161">Profiler</div>
+	                    </a>
+                    </div>
+	                <div class="pull-right apdosmopt dropdown" dropdown >
+                        <div class="apd-apm-dropdown dropdown-toggle" dropdown-toggle>
+                            <i class="icon-svg8" style="padding-top: 10px;"></i>
+                        </div>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a ng-click="getConfiguredCounters()">Configure Counters</a></li>
+                            <li><a ng-click="moduleCardEdit($index)">Edit</a></li>
+                            <li><a ng-click="deleteSelectedRow($index)">Delete</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--icons-->
+               <!--  <div class="apd-crdoptn apd-dbricon">
+                    <i class="icon-svg8"></i>
+                </div> -->
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apdbgdcolor">
+                <div class="cdcccc font_14 apdcrd-mrtp05 apd-rbtrglfnfmly">
+	                <span class="apd-rbtrgfnfmly">GUID:</span><span class="apd-rbtrgfnfmly"> {{appcardcontent.guid}}</span>
+                </div>
+             </div>
+            <!--cardlist end-->
+        </div>
+    </div>
+</div>

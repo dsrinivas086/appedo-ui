@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4  apdmainright-ctgry" id="dashDb_{{$index+1}}" ng-repeat="counterData in databasePrimaryCountersChartdata" >
+        <div class="apd-grpcntlg3">
+            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">{{counterData.label}}</div>
+            <div class="font_40 apdgrplnht apd-rbtrgfnfmly clr626161">{{counterData.counterLastValue | number}}
+            	<span class="font_16 clr424242 apd-rbtrglfnfmly apd-mrgnlft">{{counterData.unit}}</span>
+            </div>
+        </div>
+        <div>
+            <!-- <appedo-area-chart-directive  id="d3Area_db_{{$index+1}}" modtype="apm" acctype="{{counterData.label}}" chartdata="counterData.counterData" pushdata="" paneltype="db" parrentnodeid="dashDb_{{$index+1}}" xaxisformat="{{d3XaixsFormat}}"></appedo-area-chart-directive> -->
+            
+            <appedo-multi-area-chart-directive  id="d3Area_db_{{$index+1}}" parrentnodeid="dashDb_{{$index+1}}"  
+            	modtype="apm" chartdata="counterData.counterData" tooltip-label="{{counterData.label}}" 
+            	paneltype="db" xaxisformat="{{d3XaixsFormat}}" >
+            </appedo-multi-area-chart-directive>
+        </div>
+    </div>
+</div>    
+<div class="row apd-brdbtm">
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 apd-lhthdvder">
+        <div class="row">
+            <div class="apd-lhth col-lg-9 col-md-9 col-sm-9 col-xs-3 pdb">
+                    <!--health barstatus-->
+                    <div ng-switch="app_health">
+                        <div ng-switch-when="low">
+                            <div
+                                data-ng-include="'modules/apm/dashboard/low_health.html'">
+                            </div>
+                        </div>
+                        <div ng-switch-when="medium">
+                            <div
+                                data-ng-include="'modules/apm/dashboard/medium_health.html'">
+                            </div>
+                        </div>
+                        <div ng-switch-when="good">
+                            <div
+                                data-ng-include="'modules/apm/dashboard/good_health.html'">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <i class="icon-chat apd-lcht clr36b397 col-lg-3 col-md-3 col-sm-3 col-xs-3"></i>
+        </div>        
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-12  col-xs-12">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 apd-sprmpadtp apd-pdngrt" ng-repeat="summary in apmDbSecSumData">
+                <div class="clr9ea7be font_24 apd-rbtmdmfnfmly apd-lineheight26">{{summary.value+""+summary.unit}}</div>
+                <div class="clr1b639e font_14">{{summary.label}}</div>
+            </div>
+			<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 apd-pdngrt" ng-show="dbtype != 'servicesmap'">
+				<i class="icon-report_icon apd-chrticn pull-right" ng-click="openApmAllDetailGrpahs()" style="cursor:pointer;" title="Detailed Graphs"></i>
+			</div>
+        </div>
+    </div>
+</div>
+

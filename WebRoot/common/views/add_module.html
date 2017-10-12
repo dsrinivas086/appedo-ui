@@ -1,0 +1,80 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close(); openAddModuleType();"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 clr626161 apdo-adttl apd-rbtmdmfnfmly">
+            Add
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr clr626161">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close();" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm">
+	            <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="{{moduleCardContent.icon_name}} aped-apiconttle" style="color:{{moduleCardContent.icon_color}} ;"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">{{moduleCardContent.module_name}}</span>
+	                </div>
+	            </div>
+                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                    <form class="apd-rbtrgfnfmly font_18" name="moduleAddForm">
+                        <div class="apd-fldwdt">
+                            <label class="font_14">{{moduleCardContent.module_name}} Name <font size="3px" color="red"><sup>*</sup></font></label>
+                            <input type="text" name="moduleName" ng-model="moduledata.moduleName" maxlength="50" placeholder="{{moduleCardContent.module_name}} Name" class="clr444444 apd-first-char-up" required="required">
+                        </div>
+                        <div class="apd-fldwdt">
+                            <label class="font_14">Description <font size="3px" color="red"><sup>*</sup></font></label>
+                            <input type="text" name="description" ng-model="moduledata.moduleDescription" maxlength="500" placeholder="{{moduleCardContent.module_name}} Description" class="clr444444 apd-first-char-up" required>
+                        </div>
+                        <div class="apd-fldwdt">
+                            <label class="font_14">Select {{moduleCardContent.module_name}} type<font size="3px" color="red"><sup>*</sup></font></label>
+							<select 
+                        		data-ng-model="moduledata.selectModuleType" 
+                        		data-ng-options="moduleType as moduleType.display_name for moduleType in moduleTypes" required>
+                        		<option value="">Select one</option>
+                        	</select>
+                        </div>
+						<div class="apd-fldwdt">
+                            <label class="font_14">Version<font size="3px" color="red"><sup>*</sup></font></label>
+							<select 
+                        		ng-model="moduledata.versionType" 
+                        		data-ng-options="versionType as versionType.version for versionType in versions" required>
+                        		<option value="">Select one</option>
+                        	</select>
+                        </div>
+                        
+						<div class="apd-fldwdt" ng-if="moduledata.selectModuleType.module_type=='MSIIS'">
+                            <label class="font_14">CLR Version<font size="3px" color="red"><sup>*</sup></font></label>
+                            <select ng-model="moduledata.clrVersion"  
+								 data-ng-options="clrVersion as clrVersion.clrVersionType for clrVersion in clrVersions" required>
+								<option value="">Select one</option>
+							</select>
+                        </div>
+                        <!-- <label class="alert alert-danger apd-frmfld control-label font_14"
+						ng-show="showAddModuleErrorMsg"> {{AddModuleErrorMsg}} </label> -->
+                        <div class="pull-right"  data-ng-controller="form_controller">
+                            <button type="submit" class="apdo-adbtn btn btn-success" ng-disabled="moduleAddForm.$invalid" data-ng-click="openDownloadForm()">Save</button>
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

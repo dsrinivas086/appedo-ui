@@ -1,0 +1,82 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 apdo-adttl apd-rbtmdmfnfmly ">
+            Add/Edit Action
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds form_controller -->
+    <div class="apdad-mbdy">
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm ">
+	            <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="{{moduleCardContent.icon_name}} aped-apiconttle"  style="color: rgb(179, 79, 188);"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">{{moduleCardContent.module_name}}</span>
+	                </div>
+	            </div>
+                <form class="apd-rbtrgfnfmly font_18" name="actionForm" novalidate>
+                    <div class="apd-fldwdt01">
+<!-- 						<div class="chekbx" style="margin-top: 15px;"> -->
+<!-- 								<label> -->
+<!-- 								<input class="font_12" type="checkbox" name="CopyPublicAction" ng-model="slaActionForm.getPublicAction" ng-change="getSlaPublicAction()"/> -->
+<!-- 								Copy Public Action</label> -->
+<!-- 						</div> -->
+                        <div class="apd-fldwdt01" ng-if="slaActionForm.getPublicAction===true">
+	                        <label class="font_14">Public Action<font size="3px" color="red"><sup>*</sup></font></label>
+							<select ng-model="">
+                        		<option value="1" >Public Action One</option>
+								<option value="2" >Public Action Two</option>
+								<option value="3" >Public Action Three</option>
+								<option value="4" selected>Public Action Four</option>
+                        	</select>
+	                    </div>
+<!-- 	                    <div class="apd-fldwdt01" ng-hide="slaActionForm.getPublicAction===true" ng-class="{'has-error': actionForm.actionName.$invalid && submitted }"> -->
+<!-- 	                        <label class="font_14">Action Name <font size="3px" color="red"><sup>*</sup></font></label> -->
+<!-- 	                        <input type="text" placeholder="Action Name" name="actionName" class="clr444444 apd-first-char-up" ng-model="slaActionForm.actionName" required /> -->
+<!-- 	                        <p ng-show="actionForm.actionName.$invalid && submitted" class="help-block">Action name is mandatory</p> -->
+<!--                         </div> -->
+                        
+                        <div class="apd-fldwdt01" ng-hide="slaActionForm.getPublicAction===true">
+	                        <label class="font_14">Action Name <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <input type="text" placeholder="Action Name" name="actionName" class="clr444444 apd-first-char-up" ng-blur="validateActionName()" ng-model="slaActionForm.actionName" maxlength="200" required />
+							<img ng-hide="showProceed" href="" src="assets/images/tick.png"  style="margin-top: -20px;" align="right"/>
+							<img ng-show="showProceed" href="" src="assets/images/cancel.png"  style="margin-top: -20px;" align="right"/>
+                        </div>
+                        
+                        <div class="apd-fldwdt01" style="margin-top: 15px;">
+	                        <label class="font_14">Description <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <input type="text" placeholder="Description" name="actionDescription" class="clr444444 apd-first-char-up" ng-model="slaActionForm.actionDescription" required />
+                        </div>
+
+                   		<div class="apm-radiobtn apm-radiobtn apm-radiobtn-ltest">
+	                        <div class="apd-rdbtn ">
+								<input type="radio" name="radiog_lite" id="radio1"  class="css-checkbox" ng-model="slaActionForm.radioPublicORPrivate" value="public" checked="checked"  />
+	                       		<label for="radio1" class="css-label radGroup1 font_16 ">Public</label>
+                       		</div>
+	                        <div class="apd-rdbtn">
+								<input type="radio" name="radiog_lite" id="radio2"  class="css-checkbox" ng-model="slaActionForm.radioPublicORPrivate" value="pvt"   />
+	                       		<label for="radio5" class="css-label radGroup1 font_16 ">Private</label>
+                       		</div>
+                  		</div>
+                        <div class="pull-right"  data-ng-controller="form_controller">
+                            <button type="submit" class="apdo-adbtn btn btn-success" ng-disabled="actionForm.$invalid || showProceed" data-ng-click="addActionScript()">PROCEED</button>
+                        </div>
+                    </div>
+				</form>
+            </div>
+        </div>
+    </div>
+</div>

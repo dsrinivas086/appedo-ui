@@ -1,0 +1,86 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 apdo-adttl apd-rbtmdmfnfmly ">
+            Manage Email/Mobile Number
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds form_controller adForm01 class does not have left margin -->
+    <div class="apdad-mbdy">
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm01">
+	            <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="{{moduleCardContent.icon_name}} aped-apiconttle" style="color: rgb(121, 91, 197);"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">{{moduleCardContent.module_name}}</span>
+	                </div>
+	            </div>
+				<form class="apd-rbtrgfnfmly font_12" name="slaPolicyViewMappedCounter">
+	                <div>
+	                	<div class="col-lg-1 col-md-1 col-sm-2 col-xs-6" >
+	                		<div class="apd-fldwdt02">
+	                      		<label class="font_12">Del</label>
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" >
+	                		<div class="apd-fldwdt02">
+	                      		<label class="font_12">Status</label>
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+	                		<div class="apd-fldwdt02">
+			                    <label class="font_12">Alert Type</label>
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+	                		<div class="apd-fldwdt02">
+		                      <label class="font_12">Email/Mobile</label>
+	                      	</div>
+	                    </div>
+					</div>   
+					<div data-ng-repeat="alert in slaAlerts">
+	               		<div class="col-lg-1 col-md-1 col-sm-2 col-xs-6" >
+	                		<div class="apd-fldwdt02" ng-click="deleteAlert()">
+<!-- 	                			<a> -->
+<!-- 	                      			DELETE -->
+<!--                       			</a> -->
+                      			<img src="assets/images/cancel.png" style="cursor: pointer;" tooltip="Delete" tooltip-placement="right" />
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6" >
+	                		<div class="apd-fldwdt02">
+	                      		<label class="font_12">{{alert.status}}</label>
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+	                		<div class="apd-fldwdt02">
+			                    <label class="font_12">{{alert.alertType}}</label>
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+	                		<div class="apd-fldwdt02">
+		                      <label class="font_12">{{alert.emailOrMobile}}</label>
+	                      	</div>
+	                    </div>
+	               	</div>
+	                <div class="pull-right"  data-ng-controller="form_controller">
+	                    <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="cardLayout()">Add Alert</button>
+	                    <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="closeAlertTypeListPage()">Close</button>
+	                </div>
+				</form>
+            </div>
+        </div>
+    </div>
+</div>

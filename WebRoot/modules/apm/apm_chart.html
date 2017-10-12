@@ -1,0 +1,49 @@
+<div ng-if="inDashBoardStatus">
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4  apdmainright-ctgry" id="dash_{{counterData.counterId}}" ng-repeat="counterData in apmChartdata" >
+		<div class="apd-grpcntlg3">
+			<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">{{counterData.label}}</div>
+			<div class="font_40 apdgrplnht apd-rbtrgfnfmly clr626161">{{counterData.counterLastValue | number}}
+				<span class="font_16 clr424242 apd-rbtrglfnfmly apd-mrgnlft" ng-if="counterData.counterLastValue">{{counterData.unit}}</span>
+			</div>
+		</div>
+	    <div>
+	        <appedo-multi-area-chart-directive  id="d3Area_{{counterData.counterId}}" parrentnodeid="dash_{{counterData.counterId}}"  
+	        	modtype="apm" chartdata="counterData.counterData" tooltip-label="{{counterData.label}}" 
+	        	paneltype="server" xaxisformat="{{d3XaixsFormat}}" dotsize = "{{dotsize}}" linewith = "{{linewith}}" linkstatus="{{linkstatus}}"
+	        	slider-interval="{{sliderSelectedValue}}" server-current-time="{{counterData.serverCurrentTime}}"  >
+	        </appedo-multi-area-chart-directive>
+	    </div>
+	</div>
+</div>
+<div ng-if="!inDashBoardStatus">
+	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  apdmainright-ctgry" ng-repeat="counterData in apmChartdata" id="apmMonitorDet_{{counterData.counterId}}">
+        <div class="apd-grpcntlg3">
+            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">
+            	<span class="clr949494 font_12">{{counterData.category}}</span>
+				<span class="chartDashboardWidget apd-curpnt">
+					<a ng-click="addChartToDashboard()" title="Add to dashboard" ng-if="!counterData.show_in_dashboard">
+						<span class="fa-stack ">
+							<i class="apdonavtpicns icon-svg2" ></i>
+							<i class="fa fa-plus fa-stack-1x text-success dashboardSecondStacked"></i>
+						</span>
+					</a>
+					<a ng-click="removeChartToDashboard()" title="Remove from dashboard" ng-if="counterData.show_in_dashboard">
+						<span class="fa-stack ">
+							<i class="apdonavtpicns icon-svg2" ></i>
+							<i class="fa fa-times fa-stack-1x text-danger dashboardSecondStacked"></i>
+						</span>
+					</a>
+				</span><br>
+				<span>{{counterData.display_name}}</span>
+            </div>
+        </div>
+        <div>
+            <appedo-multi-area-chart-directive  id="d3Area_monitor_{{counterData.counterId}}" parrentnodeid="apmMonitorDet_{{counterData.counterId}}"  
+            	modtype="apm" chartdata="counterData.graphData" tooltip-label="{{counterData.display_name}}" 
+            	paneltype="apm" xaxisformat="{{d3XaixsFormat}}" dotsize = "{{dotsize}}" linewith = "{{linewith}}" linkstatus="{{linkstatus}}"
+            	slider-interval="{{sliderSelectedValue}}" server-current-time="{{counterData.serverCurrentTime}}" >
+            </appedo-multi-area-chart-directive>
+        </div>
+        <div class="apdobtmbar01"></div>
+	</div>
+</div>

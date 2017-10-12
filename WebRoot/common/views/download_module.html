@@ -1,0 +1,61 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+	<div class="row thadr-tp" data-ng-controller="form_controller">
+		<!--left heading-->
+
+		<div class="apd-ftplog">
+			<img src="assets/images/appedo.svg" />
+		</div>
+		<div class="font_22 clr626161 apdo-adttl apd-rbtmdmfnfmly">Add</div>
+		<!--right icons-->
+		<div class="apd-clsewr clr626161">
+			<div class="aped-apiconcls">
+				<i class="icon-help font_22" title="help"></i>
+			</div>
+			<!-- <div class="aped-apiconcls">
+				<i class="icon-close font_18 apd-curpnt" data-ng-click="close()"
+					title="close"></i>
+			</div> -->
+		</div>
+	</div>
+	<div class="apdad-mbdy">
+		<div class="apd-admcntwrpr">
+		  <div class="row apd-admcnt">
+			<div class="row apdeo-adForm">
+				<div class="aped-apiconttlewr">
+					<i class="{{moduleCardContent.icon_name}} aped-apiconttle" style="color:{{moduleCardContent.icon_color}};"></i> 
+                    <span class="font_20 clr378f3b aped-apiconttlewr">
+                    <span class="apd-rbtrbfnfmly apd-first-char-up">{{moduleAddData.moduleName}}</span>&nbsp;<span class="apd-rbtrglfnfmly">has been added successfully.</span></span>
+				</div>
+				<div>
+<!-- 					<div class="clr84A1C1 font_14 apd-mrgntp10 apd-rbtrglfnfmly">Add another?</div> -->
+					<p class="clr626161 font_14 apd-lineheight16 apd-mrgntp40 apd-rbtrglfnfmly">The <span class="text-lowercase">{{currentModule}}</span> will be monitored once you download and install the agents provided below.<br/>
+					You can close this window and proceed to download later.
+					</p>
+					<div class="clr84A1C1 font_18 apd-mrgntp36 apd-rbtrglfnfmly">Need help in installing agents?</div>
+				</div>
+				<div class="apd-dwnld-btns">
+				<a href="" ng-href="./apm/downloadAgent?type={{moduleDownloadData.type}}&guid={{moduleDownloadData.guid}}&modulename={{moduleDownloadData.moduleName}}">
+					<button class="apd-adbtnmrtp font_12 apd-dwnld-btn btn" type="button" ng-click="redirectCardLayout(moduleDownloadData.message)">
+						<span class="apd-mnt-icn"><i class="icon-monitor1 font_40"></i></span>
+                        <span class="font_18 apd-dwn-txt">Monitor</span>
+                        <span class="apd-dwn-icn"><i class="icon-Download font_36"></i></span>
+					</button>
+				</a>
+				<a href="" ng-if="currentModule=='Application'" ng-href="./apm/downloadAgent?downloadtype=profiler&type={{moduleDownloadData.type}}&guid={{moduleDownloadData.guid}}&modulename={{moduleDownloadData.moduleName}}{{moduleAddData.selectModuleType.module_type === 'MSIIS'?'&clrVersion='+moduleAddData.clrVersion.clrVersionType:''}}">
+					<button class="apd-adbtnmrtp font_12 apd-dwnld-btn btn" type="button">
+						<span class="apd-prf-icon"><i class="icon-profiler1 font_36"></i></span>
+                        <span class="font_18 apd-dwn-txt">Profiler</span>
+                        <span class="apd-dwn-icn"><i class="icon-Download font_36"></i></span>
+					</button>
+				</a>
+				</div>
+				<div class="pull-right"  data-ng-controller="form_controller">
+                    <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="close()">CLOSE</button>
+                </div>
+				<div></div>
+			 </div>
+			</div>
+		</div>
+	</div>
+</div>

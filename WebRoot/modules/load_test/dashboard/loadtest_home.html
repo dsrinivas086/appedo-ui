@@ -1,0 +1,218 @@
+<div class="row" data-ng-controller="DatepickerCtrl">
+    <div class="apdo-crdtlte row clr1b639e font_20">Synthetic User Monitoring <span class="font_14">(License: PAID MaxTest: -1 MaxLocation: -1)</span>
+    </div>
+    <div class="col-lg-2">
+        <div class="apd-sbnav">
+            <ul class="apd-rbtrgfnfmly font_18 clr1b639e">
+                <li class="active">Tests</li>
+                <li>Results</li>
+            </ul>
+        </div>
+        <!--progressbar here-->
+        <h4 class="progressbar-title">Horizontal bars</h4>
+        <div class="apdo-progressbar_wrapper" data-ng-controller="progressbarCtrl">
+            
+            <div class="apdo-progressbar_sub active">
+                <div class="apdo-progressbar_wrapper_cnt">Lorem Ipsum is simply </div>
+                <progressbar animate="true" value="dynamic" type="success"><b>{{dynamic}}%</b>
+                </progressbar>
+            </div>
+            <div class="apdo-progressbar_sub">
+                <div class="apdo-progressbar_wrapper_cnt">Lorem Ipsum is simply </div>
+                <progressbar animate="true" value="dc2" type="success"><b>{{dc2}}%</b>
+                </progressbar>
+            </div>
+        </div>
+        <!--progressbar here end -->
+    </div>
+    <div class="col-lg-10">
+        <div class="row apdeo-adForm apd-marg-left apdeo-adForm-intfm">
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                <form class="apd-rbtrgfnfmly font_18">
+                    <div class="apd-titl-loadfrmtst">Add New Test</div>
+                    <!--test name-->
+                    <div class="apd-fldwdt">
+                        <label class="font_14 apd-mrgntp-lable clr3569a">Test Name *</label>
+                        <input type="text" placeholder="Test Name" class="clr444444">
+                    </div>
+                    <!-- slider-->
+                    <div class="apd-fldwdt">
+                        
+                        <div class='apdo-slider' data-ng-controller="sliderCtrl">
+                            <label class="font_14 apd-mrgntp-lable clr3569a">Slider</label>
+                            <input ng-model="value" type="text" id="mySlider1" slider options="options" />
+                           
+                        </div>
+                    </div>
+
+                    <!--stepper-->
+                    <div class="apd-fldwdt">
+                        <div class="input-group spinner" data-ng-controller="metaphorCtrl">
+                            <label class="clr3569a">Stepper</label>
+                            <input type="text" data-ng-model="stepperVal" data-ng-readonly="true">
+                            <div class="input-group-btn-vertical">
+                                <button class="btn btn-default" data-ng-click="stepperInr()"><i class="glyphicon glyphicon-chevron-up"></i>
+                                </button>
+                                <button class="btn btn-default" data-ng-click="stepperDec()"><i class="glyphicon glyphicon-chevron-down"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--radio buttons-->
+                    <div class="chekbx col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="apm-radiobtn apm-radiobtn-ltest">
+                            <div class="chekbx-titl font_14 clr3569a">Mode</div>
+                            <div class="apd-rdbtn">
+
+                                <input type="radio" name="radiog_lite" id="radio1" class="css-checkbox" />
+                                <label for="radio1" class="css-label radGroup1 font_16 ">URL</label>
+                            </div>
+                            <div class="apd-rdbtn">
+                                <input type="radio" name="radiog_lite" id="radio2" class="css-checkbox" checked="checked" />
+                                <label for="radio2" class="css-label radGroup1 font_16">Transaction</label>
+                            </div>
+                        </div>
+                    </div>
+					<div class="apd-fldwdt apd-custom-calendar">
+						<label class="font_14 apd-mrgntp-lable clr3569a">Choose Date</label> 
+						<input type="text" class="form-control font_18"
+							datepicker-popup="{{format}}" 
+							ng-model="dt" is-open="opened"
+							close-on-date-selection="false" 
+							ng-click="open($event)"
+							min-date="minDate" 
+							datepicker-options="dateOptions"
+							date-disabled="disabled(date, mode)" 
+							close-text="OK"
+							data-ng-readonly="true" />
+							<i class="glyphicon glyphicon-calendar apd-custom-calendar-icon" ng-click="open($event)"></i>
+
+					</div>
+					<!--dropdown-->
+                    <div class="apd-fldwdt">
+                        <label class="font_14 clr3569a">URL *</label>
+                        <input type="text" placeholder="http://" class="clr444444">
+                    </div>
+                    <div class="apd-fldwdt">
+                        <label class="font_14 clr3569a">Run Every *</label>
+                        <select class="clr444444">
+                            <option value="selcect application type">1 Hrs</option>
+                            <option value="Application 1">15 Min</option>
+                            <option value="Application 2">30 Min</option>
+                            <option value="Application 3">45 Min</option>
+
+                        </select>
+                    </div>
+                    <!--cuntry-->
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pdb">
+                        <div class="apd-fldwdt">
+                            <label class="font_14 clr3569a">Country *</label>
+                            <select class="clr444444">
+                                <option value="selcect application type">Select a Country to view Cities</option>
+                                <option value="Application 1">India</option>
+                                <option value="Application 2">Japan</option>
+                                <option value="Application 3">USA</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <!--button-->
+                    <div class="col-lg-3 pdb apd-mrgntp30">
+                        <button type="button" class="apd-adbtnmrtp-seconder btn-success pull-left font_14">Clear</button>
+                    </div>
+                    <div class="col-lg-4 apd-mrgntp30">
+                        <button type="button" class="apd-adbtnmrtp btn btn-success pull-left">Add</button>
+                    </div>
+
+                </form>
+                
+            </div>
+            
+        </div>
+        
+
+    </div>
+    <div class="col-lg-10 pull-right">
+        <div class="apdcardcontainer" data-ng-controller="loadtest-controller">
+
+            <div class="apd-titl-loadtst clr1b639e">Tests</div>
+
+            <!--cardlist start-->
+            <div class="apdcrdcatgrywrpr" data-ng-repeat="appcardcontent in appcardscontent">
+
+                <div class="row apdcrdcatgry apdcrdcatgry-loadtest apd-rbtrgfnfmly">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <div class="font_22 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 clr626161">{{appcardcontent.appName}}</div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 apdo-cnterver">
+                        <div class="font_16 clr949494">Run Every (min)</div>
+
+                        <div class="apdcrd-mrtp10 apdcrd-vrscnt font_20 clr626161"> {{appcardcontent.Active_session_count}}
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 apdo-cnterver">
+                        <div class="font_16 clr949494">Status</div>
+
+                        <div class="apdcrd-mrtp10 font_20  clr626161">{{appcardcontent.Request_count}}
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <div class="font_16 clr949494">Location</div>
+
+                        <div class="apdcrd-mrtp10 font_16 clr626161">{{appcardcontent.Request_location}}</div>
+                        <div class="apd-crdoptn apd-crdoptn-loadtest">
+                            <i class="icon-svg8"></i>
+                        </div>
+                    </div>
+                    <!--icons-->
+
+                </div>
+                <!--cardlist end-->
+            </div>
+
+            <!-- health meter -->
+            <div class="row apdo-sumbottom-panel">
+                <h4>Health Meter</h4>
+                <div class="apd-lhth col-lg-8 col-md-8 col-sm-9 col-xs-3 pdb">
+                    <!--health barstatus-->
+                    <div ng-switch="app_health">
+                        <div ng-switch-when="low">
+                            <div
+                                data-ng-include="'modules/apm/dashboard/low_health.html'">
+                            </div>
+                        </div>
+                        <div ng-switch-when="medium">
+                            <div
+                                data-ng-include="'modules/apm/dashboard/medium_health.html'">
+                            </div>
+                        </div>
+                        <div ng-switch-when="good">
+                            <div
+                                data-ng-include="'modules/apm/dashboard/good_health.html'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- ./health meter ends -->
+
+            <!--pagination-->
+            <div class="row apdo-sumbottom-panel">
+                <h4>Pagination</h4>
+                <div data-ng-controller="PaginationCtrl">
+                    <pagination 
+                        class="pagination-sm" 
+                        boundary-links="true"
+                        total-items="totalItems" 
+                        ng-model="currentPage"
+                        previous-text="&lt;&lt;"
+                        next-text="&gt;&gt;" 
+                        first-text="&lt;"
+                        last-text="&gt;"></pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+[
+  {
+    "selection": "Load Testing",
+    "module_name": "Map Scenarios",
+    "desc_middle": "You can test the performance using virtual users",
+    "desc_end": "Analyse server capability before it collapses in real time",
+    "icon_name": "icon-load",
+    "icon_color": "#977E31",
+    "class": "apd-lt"
+  }
+]

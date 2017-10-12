@@ -1,0 +1,56 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 apdo-adttl apd-rbtmdmfnfmly">
+            SLA Setting
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm">
+	            <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="{{moduleCardContent.icon_name}} aped-apiconttle" style="color: rgb(121, 91, 197);"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">{{moduleCardContent.module_name}}</span>
+	                </div>
+	            </div>
+                    <form class="apd-rbtrgfnfmly font_18" name="settingForm">
+                        <div class="apd-fldwdt">
+                            <label class="font_16">Max Try Duration (min) <font size="3px" color="red"><sup>*</sup></font>
+                            <span class="apd-rbtrglfnfmly font_12 clr1b639e">&nbsp;&nbsp;(Maximum duration within which Max Try setting will try to heal the breach) </span></label>
+                            <input type="number" name="maxTryDuration" ng-model="slaSettingForm.maxTryDuration" min="5" placeholder="Max Try Duration" class="clr444444" required></input>
+                        </div>
+                        <div class="apd-fldwdt">
+                            <label class="font_16">Max Try <font size="3px" color="red"><sup>*</sup></font>
+                            <span class="apd-rbtrglfnfmly font_12 clr1b639e">&nbsp;&nbsp;(Maximum number of times healing process tries to heal breach within set Max Try Duration) </span></label>
+                            <input type="number" name="maxTry" ng-model="slaSettingForm.maxTry" min="1" placeholder="Max Try" class="clr444444" required></input>
+                        </div>
+                        <div class="apd-fldwdt">
+                            <label class="font_16">Alert Trigger Frequency (min) <font size="3px" color="red"><sup>*</sup></font>
+                            <span class="apd-rbtrglfnfmly font_12 clr1b639e">&nbsp;&nbsp;(For continuous failure, alerts are triggered once every set AlertTriggerFrequency) </span></label>
+                            <input type="number" name="alertTriggerFrequency" ng-model="slaSettingForm.alertTriggerFrequency" min="1" placeholder="Alert Trigger Frequency" class="clr444444" required></input>
+                        </div>
+                        
+                        <!-- label class="alert alert-danger apd-frmfld control-label font_14"
+						ng-show="showAddModuleErrorMsg"> {{AddModuleErrorMsg}} </label-->
+                        <div class="pull-right"  data-ng-controller="form_controller">
+                            <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="setSlaSetting()">PROCEED</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>

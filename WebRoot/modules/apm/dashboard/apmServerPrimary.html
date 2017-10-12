@@ -1,0 +1,10 @@
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4  apdmainright-ctgry" ng-repeat="summary in apmserverprimarydata">
+	<div class="apd-grpcntlg3">
+		<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">{{summary.label}}</div>
+		<div class="font_50 apdgrplnht apd-rbtrgfnfmly clr626161">{{summary.value}}<span class="font_16 clr424242 apd-rbtrglfnfmly apd-mrgnlft">{{summary.unit}}</span>
+		</div>
+	</div>
+	<div>
+		<appedo-area-chart-directive  id="d3Area_server_{{$index+1}}" modtype="apm" acctype="{{summary.label}}" paneltype="server"></appedo-area-chart-directive>
+	</div>
+</div>

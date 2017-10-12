@@ -1,0 +1,63 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" >
+        <!--left heading-->
+
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        
+        <!-- <div class="apd-fbck apd-curpnt" data-ng-click="close(); openAddModuleType();"><img src="assets/images/back.png" /></div> -->
+        <div class="font_22 clr626161 apdo-adttl apd-rbtmdmfnfmly">Access rights</div>
+        
+        <!--right icons-->
+        <div class="apd-clsewr clr626161">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close();" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm">
+	            <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="fa fa-key font_22 color-warning aped-apiconttle" ></i>
+						<span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">Give permission for a user</span>
+	                </div>
+	            </div>
+                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                    <form class="apd-rbtrgfnfmly font_18" name="accessRightsForm">
+                        <div class="apd-fldwdt">
+							<label for="emailIds" class="font_14">Select Email id type<font size="3px" color="red"><sup>*</sup></font></label>
+							<select name="emailIds" id="emailIds" ng-model="formAccessRights.email" data-ng-options="email as email.email_id for email in licensingEmailIds" ng-disabled="isEdit">
+								<!-- <option value="" selected style="display:none">Select Email</option> -->
+							</select>
+                        </div>
+						
+						<div class="apd-fldwdt">
+							<label for="" class="font_14">Privilege</label>
+							
+							<div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 ">
+								<input type="checkbox" name="licensemgmt" id="licensemgmt" class="css-checkbox font_13" ng-model="formAccessRights.useLiceseManagement" />
+								<label for="licensemgmt" class="checkbox-label font_13" style="">License Management</label>
+							</div>
+							
+							<div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 ">
+								<input type="checkbox" name="usageMetric" id="usageMetric" class="css-checkbox font_13" ng-model="formAccessRights.useUsageMetric" />
+								<label for="usageMetric" class="checkbox-label font_13" style="">View Usage Metrics</label>
+							</div>
+						</div>
+						
+                        <div class="pull-right" >
+							<button type="button" class="btn btn-success apdo-adbtn apd-no-margin font_13" ng-click="updateUserAccessRights()">UPDATE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

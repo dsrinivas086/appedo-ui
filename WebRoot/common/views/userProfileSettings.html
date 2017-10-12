@@ -1,0 +1,47 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+
+<div class="container">
+	<div class="apd-frm">
+		<form name="userDetailsForm" action="./updateProfile" method="post" class="apd-frm2wrpr" >
+			<div class="apd-login_home icon-login"></div>
+            <div class="apd-frmtitl font_20 apd-rbtrgfnfmly clr1b639e">
+                Profile
+            </div>
+            
+           	<!-- <label class="alert alert-danger apd-frmfld control-label font_14" ng-show="showSignupErrorMsg">
+				{{signupErrorMsg}}
+			</label> -->
+			
+			<label class="alert alert-danger apd-frmfld control-label font_14" ng-show="showErrorMsg"> {{errorMsg}} </label>
+			<label class="alert alert-success apd-frmfld control-label font_14" ng-show="showSuccessMsg"> {{successMsg}} </label>
+			
+			
+            <div class="apd-frm2fld font_14" >
+                <label for="inputEmail3" class="control-label font_14">Email</label>
+                <input type="email" name="emailId" id="emailId" class="clr444444 font_12" placeholder="Email id" ng-model="userProfile.emailId" select-on-click readonly="readonly" />
+            </div>
+            
+			<div class="apd-frm2fld font_14" >
+                <label for="firstName" class="control-label font_14">First Name</label>
+                <input type="text" name="firstName" id="firstName" class="clr444444 font_12" placeholder="First Name" focus="true" ng-model="userProfile.firstName" />
+            </div>
+            
+			<div class="apd-frm2fld font_14" >
+                <label for="lastName" class="control-label font_14">Last Name</label>
+                <input type="text" name="lastName" id="lastName" class="clr444444 font_12" placeholder="Last Name" ng-model="userProfile.lastName" />
+            </div>
+            
+			<div class="apd-frm2fld font_14" ng-class="{'has-error' : userDetailsForm.phoneNo.$invalid && userDetailsForm.phoneNo.$dirty}">
+                <label for="phoneNo" class="control-label font_14">Phone Number</label>
+                <input type="text" name="phoneNo" id="phoneNo" class="clr444444 font_12" placeholder="Phone number" ng-model="userProfile.mobile" ng-pattern="/^\d+$/" />
+                <p ng-show="userDetailsForm.phoneNo.$invalid && userDetailsForm.phoneNo.$dirty" class="help-block">Invalid number</p>
+            </div>
+            
+			<div class="apd-sbmtbtn1-wrper font_18">
+				<div class="apd-frgotps">
+					<button type="submit" class="apdo-loginbtn btn btn-success font_18" ng-disabled="userDetailsForm.$invalid" >Update Profile</button><!-- ng-click="updateMyProfile()" -->
+                </div>
+            </div>
+		</form>
+	</div>
+</div>

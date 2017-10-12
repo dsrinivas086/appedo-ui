@@ -1,0 +1,118 @@
+<div class="apd-testingcnt apd-subpnl">
+	<div class="row apdeo-adForm apd-marg-left ">
+<!-- This Needs to be comment or removed for Major Release June Major release	 -->
+<!-- 	    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  apdmainright-ctgry" ng-repeat="counterData in ltAreaChartData" id="ltChartDet_{{$index+1}}"> -->
+<!-- 	        <div class="apd-grpcntlg3"> -->
+<!-- 	            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">{{counterData.chartName}}</div> -->
+<!-- 	        </div> -->
+<!-- 	        <div> -->
+<!-- 				<appedo-area-chart-directive  id="d3Area_lt_chart_{{$index+1}}" modtype="lt" acctype="{{counterData.chartName}}" chartdata="counterData.chartData" pushdata="" paneltype="lt" parrentnodeid="ltChartDet_{{$index+1}}" xaxisformat="{{d3XaixsFormat}}" dotsize="0.5"></appedo-area-chart-directive> -->
+<!-- 	        </div> -->
+<!-- 	        <div class="apdobtmbar01"></div> -->
+<!-- 	    </div> -->
+<!-- This Needs to be un comment for Major Release June Major release	 -->
+
+	    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  apdmainright-ctgry" id="ltChartDet_1">
+	        <div class="apd-grpcntlg3">
+	            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">User Counts</div>
+	        </div>
+	        <div>
+				<appedo-area-chart-directive-load-test  id="d3Area_lt_chart_1" modtype="lt" acctype="User Counts" chartdata="userCountChartData" pushdata="" paneltype="lt" parrentnodeid="ltChartDet_1" xaxisformat="{{d3XaixsFormat}}" querydurationtype="{{queryDurationType}}"  chartdurationtype="{{chartDurationType}}" loadevent="getDrillDownLTChart" linkstatus="true" dotsize="2" linewidth="1" tooltip-label="User Counts" ></appedo-area-chart-directive-load-test>
+	        </div>
+	        <div class="apdobtmbar01"></div>
+	    </div>
+
+	    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  apdmainright-ctgry" id="ltChartDet_2">
+	        <div class="apd-grpcntlg3">
+	            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Request Response</div>
+	        </div>
+	        <div>
+				<appedo-area-chart-directive-load-test  id="d3Area_lt_chart_2" modtype="lt" acctype="Request Response" chartdata="requestResponseChartData" pushdata="" paneltype="lt" parrentnodeid="ltChartDet_2" xaxisformat="{{d3XaixsFormat}}" querydurationtype="{{queryDurationType}}"  chartdurationtype="{{chartDurationType}}" loadevent="getDrillDownLTChart" linkstatus="true" dotsize="2" linewidth="1" tooltip-label="Request Response" ></appedo-area-chart-directive-load-test>
+	        </div>
+	        <div class="apdobtmbar01"></div>
+	    </div>
+
+	    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  apdmainright-ctgry" id="ltChartDet_3">
+	        <div class="apd-grpcntlg3">
+	            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Hit Counts</div>
+	        </div>
+	        <div>
+				<appedo-area-chart-directive-load-test  id="d3Area_lt_chart_3" modtype="lt" acctype="Hit Counts" chartdata="hitCountChartData" pushdata="" paneltype="lt" parrentnodeid="ltChartDet_3" xaxisformat="{{d3XaixsFormat}}" querydurationtype="{{queryDurationType}}"  chartdurationtype="{{chartDurationType}}" loadevent="getDrillDownLTChart" linkstatus="true" dotsize="2" linewidth="1" tooltip-label="Hit Counts" ></appedo-area-chart-directive-load-test>
+	        </div>
+	        <div class="apdobtmbar01"></div>
+	    </div>
+
+	    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  apdmainright-ctgry" id="ltChartDet_4">
+	        <div class="apd-grpcntlg3">
+	            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Throughput</div>
+	        </div>
+	        <div>
+				<appedo-area-chart-directive-load-test  id="d3Area_lt_chart_4" modtype="lt" acctype="Throughput" chartdata="throughputChartData" pushdata="" paneltype="lt" parrentnodeid="ltChartDet_4" xaxisformat="{{d3XaixsFormat}}" querydurationtype="{{queryDurationType}}"  chartdurationtype="{{chartDurationType}}" loadevent="getDrillDownLTChart" linkstatus="true" dotsize="2" linewidth="1" tooltip-label="Throughput" ></appedo-area-chart-directive-load-test>
+	        </div>
+	        <div class="apdobtmbar01"></div>
+	    </div>
+
+	    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  apdmainright-ctgry" id="ltChartDet_5">
+	        <div class="apd-grpcntlg3">
+	            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Error Counts</div>
+	        </div>
+	        <div>
+				<appedo-area-chart-directive-load-test  id="d3Area_lt_chart_5" modtype="lt" acctype="Error Counts" chartdata="errorCountChartData" pushdata="" paneltype="lt" parrentnodeid="ltChartDet_5" xaxisformat="{{d3XaixsFormat}}" querydurationtype="{{queryDurationType}}"  chartdurationtype="{{chartDurationType}}" loadevent="getDrillDownLTChart" linkstatus="true" dotsize="2" linewidth="1" tooltip-label="Error Counts" ></appedo-area-chart-directive-load-test>
+	        </div>
+	        <div class="apdobtmbar01"></div>
+	    </div>
+
+	    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  apdmainright-ctgry" id="ltChartDet_6">
+	        <div class="apd-grpcntlg3">
+	            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Page Response</div>
+	        </div>
+	        <div>
+				<appedo-area-chart-directive-load-test  id="d3Area_lt_chart_6" modtype="lt" acctype="Page Response" chartdata="pageResponseChartData" pushdata="" paneltype="lt" parrentnodeid="ltChartDet_6" xaxisformat="{{d3XaixsFormat}}" querydurationtype="{{queryDurationType}}"  chartdurationtype="{{chartDurationType}}" loadevent="getDrillDownLTChart" linkstatus="true" dotsize="2" linewidth="1" tooltip-label="Page Response" ></appedo-area-chart-directive-load-test>
+	        </div>
+	        <div class="apdobtmbar01"></div>
+	    </div>
+	    
+		<div ng-show="loadTestType == 'APPEDO_LT'" >
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry" id="lt_Multi_1">
+				<div class="apd-grpcntlg3">
+					<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Loadgens Request Response</div>
+				</div>
+				<div>
+				<!-- This Needs to be comment or removed for Major Release June Major release	 -->
+<!-- 					<appedo-multi-line-chart-directive  id="lt_Multi_details_1" modtype="lt" acctype="Loadgens Avg. Request Response" chartdata="loadgensAvgReqResps" paneltype="lt" parrentnodeid="lt_Multi_1" xaxisformat="{{d3XaixsFormat}}" loadevent="" linkstatus="false" dotsize="1"></appedo-multi-line-chart-directive> -->
+				<!-- This Needs to be un comment for Major Release June Major release	 -->
+					<appedo-multi-line-chart-directive-load-test  id="lt_Multi_details_1" modtype="lt" acctype="Loadgens Request Response" chartdata="loadgensAvgReqResps" paneltype="lt" parrentnodeid="lt_Multi_1" xaxisformat="{{d3XaixsFormat}}" querydurationtype="{{queryDurationType}}"  chartdurationtype="{{chartDurationType}}" loadevent="getDrillDownLTChart" linkstatus="true" dotsize="2"></appedo-multi-line-chart-directive-load-test>
+				</div>
+				<div class="apdobtmbar01"></div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry" id="lt_Multi_2">
+				<div class="apd-grpcntlg3">
+					<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Loadgens Page Response</div>
+				</div>
+				<div>
+				<!-- This Needs to be comment or removed for Major Release June Major release	 -->
+<!-- 					<appedo-multi-line-chart-directive  id="lt_Multi_details_2" modtype="lt" acctype="Loadgens Avg. Page Response" chartdata="loadgensAvgPageResps" paneltype="lt" parrentnodeid="lt_Multi_2" xaxisformat="{{d3XaixsFormat}}" loadevent="" linkstatus="false" dotsize="1"></appedo-multi-line-chart-directive> -->
+				<!-- This Needs to be un comment for Major Release June Major release	 -->
+					<appedo-multi-line-chart-directive-load-test  id="lt_Multi_details_2" modtype="lt" acctype="Loadgens Page Response" chartdata="loadgensAvgPageResps" paneltype="lt" parrentnodeid="lt_Multi_2" xaxisformat="{{d3XaixsFormat}}" querydurationtype="{{queryDurationType}}"  chartdurationtype="{{chartDurationType}}" loadevent="getDrillDownLTChart" linkstatus="true" dotsize="2"></appedo-multi-line-chart-directive-load-test>
+				</div>
+				<div class="apdobtmbar01"></div>
+			</div>
+		</div>
+		
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  apdmainright-ctgry" ng-repeat="counterData in primaryCountersChartdata" id="ltAPMMonitorDet_{{$index+1}}">
+	        <div class="apd-grpcntlg3">
+				<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">
+						<span class="clr949494 font_12">{{counterData.category}}</span><br>
+						<span>{{counterData.display_name}}</span>
+				</div>
+	        </div>
+	        <div>
+	            <appedo-multi-area-chart-directive  id="d3Area_ltapm_monitor_{{$index+1}}" parrentnodeid="ltAPMMonitorDet_{{$index+1}}"  
+	            	modtype="lt" chartdata="counterData.graphData" tooltip-label="{{counterData.display_name}}" 
+	            	paneltype="lt" xaxisformat="{{d3XaixsFormat}}" >
+	            </appedo-multi-area-chart-directive>
+	        </div>
+	        <div class="apdobtmbar01"></div>
+	    </div>
+	</div>
+</div>

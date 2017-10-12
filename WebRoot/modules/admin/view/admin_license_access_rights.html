@@ -1,0 +1,125 @@
+<div class="apd-subpnl apdmrgtp25" ng-controller="adminAccessRightsController" >
+	<div class="apd-subpnlcntnt">
+		<div class="row ">
+		
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apd-mrbtm10	apd-border-bottom ">
+				<div class="col-md-3  font_18 clr1b639e">Access Rights</div>
+				
+				<div class="text-right ">
+					<button type="button" class="btn btn-success apdo-adbtn apd-no-margin font_13" ng-click="openUpdateUserAccessRights()">Add</button>
+				</div>
+			</div>
+			
+			<!-- 
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 pull-left font_18 clr1b639e apd-dsbslct"> 
+				<div style="border-bottom: 1px solid #1b639e;">
+					<select ng-model="formAccessRights.email" data-ng-options="email as email.email_id for email in licensingEmailIds">
+						<option value="" selected style="display:none">Select Email</option>
+					</select>
+				</div>
+			</div>
+		    
+             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-xs-push-1 " style="margin-left: -90px;">    
+				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+					<span>
+						<input type="checkbox" name="licensemgmt" id="licensemgmt" class="css-checkbox font_13" ng-model="formAccessRights.useLiceseManagement" />
+						<label for="licensemgmt" class="checkbox-label font_13" style="">License Management</label>
+					</span>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+					<span style="">
+						<input type="checkbox" name="usageMetric" id="usageMetric" class="css-checkbox font_13" ng-model="formAccessRights.useUsageMetric" />
+						<label for="usageMetric" class="checkbox-label font_13" style="">View Usage Metrics</label>
+					</span>
+				</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+				<button type="button" class="btn btn-success apdo-adbtn apd-no-margin font_13" ng-click="updateUserAccessRights()">UPDATE</button>
+			</div> -->
+		</div>
+		
+		<!-- 
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apd-mrgntp30">
+			<table class="table table-hover  table-condensed table-responsive">
+				<thead>
+					<tr>
+						<th class="col-md-1">R</th>
+						<th class="col-md-2">COMPANY</th>
+						<th class="col-md-1">EMAIL</th>
+						<th class="col-md-1">License Management</th>
+						<th class="col-md-1">View Usage Metrics</th>
+					</tr>
+				</thead>
+				<tbody id="array">
+					<tr>
+						<td class="col-md-1"><div><label><span style="font-weight:400;">11</span></label></div></td>
+						<td class="col-md-2"><div><label><span style="font-weight:400;">aa</span></label></div></td>
+						<td class="col-md-1"><div><label><span style="font-weight:400;">bb</span></label></div></td>
+						<td class="col-md-1"><div><label><span style="font-weight:400;">cc</span></label></div></td>
+						<td class="col-md-1"><div><label><span style="font-weight:400;">dd</span></label></div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		 -->
+		 
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+			<div class="row apd-border-bottom">
+				
+				<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 col-lg-offset-1 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">R</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Company</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Email Id</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 ">License Management</div>
+				</div>
+				
+				<div class="col-lg-2 col-lg-2 col-sm-4 col-xs-4 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 ">View Usage Metrics</div>
+				</div>
+			</div>
+			
+			<div class="row " ng-repeat="user in usersAdminPrivilege">
+				<!--  -->
+				<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 apd-curpnt apd-mrbtm10 apdcrd-mrtp10 apdbgdcolor" ng-click="openUpdateUserAccessRights(user)">
+					<i class="fa fa-pencil clr444"></i>
+				</div>
+				
+				<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 "></div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 ">{{user.companyName}}</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 ">{{user.emailId}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10  apd-center01">
+						<i class="fa fa-check color-success" ng-show="user.canManageLicense"></i>
+						<i class="fa fa-close color-danger" ng-show="! user.canManageLicense"></i>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-lg-2 col-sm-4 col-xs-4 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-center01">
+						<i class="fa fa-check color-success" ng-show="user.canViewUsageReports"></i>
+						<i class="fa fa-close color-danger" ng-show="! user.canViewUsageReports"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

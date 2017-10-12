@@ -1,0 +1,175 @@
+<!-- 
+<div class="apd-subpnl apdmrgtp25">
+	<div class="apd-subpnlcntnt">
+        <div class="row apd-custmtitle">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 pull-left font_18 clr1b639e apd-dsbslct"> <!--apd-adchsf-- >
+	            <select name="rumSelectedModule" id="rumSelectedModule" ng-model="selectedModule" ng-options="module as module.moduleName for module in rumModules"  ng-change = "loadRUMDetails()">
+	            </select>
+	        </div>
+	        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 pull-right font_18 clr1b639e apd-dsbslct"> <!--apd-adchsf-- >
+				<span class="clr1b639e">Last Received on:</span>
+				<span class="cdcccc ">20-Apr-2015 17:30:00</span>
+			</div>
+        </div>
+       	<div class="row apdeo-adForm apd-marg-left ">
+	        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry" id="dashRUM_1">
+		        <div class="apd-grpcntlg3">
+		            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Visitor Count</div>
+		            <div class="font_40 apdgrplnht apd-rbtrgfnfmly clr626161">{{totalVisitor}}</div>
+		        </div>
+		        <div>
+					<appedo-area-chart-directive  id="d3Area_RUM_1" modtype="rum" acctype="Visitor Count" chartdata="visitorsCountChartData" paneltype="rum" parrentnodeid="dashRUM_1" xaxisformat="{{d3XaixsFormat}}"></appedo-area-chart-directive>
+		        </div>
+		    </div>
+		</div>
+    </div>
+</div>
+ -->
+ 
+<div class="apdcrdcatgrywrpr" >
+	<div class="row apdcrdcatgry apd-rbtrgfnfmly">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apd-mrbtm10	apd-border-bottom ">
+			<div class="font_18 clr1b639e">Visitor Count</div>
+		</div>
+		
+		<div class="row apdeo-adForm apd-marg-left ">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry" id="dashRUM_1">
+				<div class="apd-grpcntlg3">
+					<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Visitor Count</div>
+					<div class="font_40 apdgrplnht apd-rbtrgfnfmly clr626161">{{rumChartData.totalVisitor}}</div>
+				</div>
+				<div>
+					<appedo-area-chart-directive  id="d3Area_RUM_1" modtype="rum" acctype="Visitor Count" chartdata="rumChartData.visitorsCountChartData" paneltype="rum" parrentnodeid="dashRUM_1" xaxisformat="{{d3XaixsFormat}}"></appedo-area-chart-directive>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	<div class="apdcrdcatgrywrpr" >
+		<div class="row apdcrdcatgry apd-rbtrgfnfmly">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apd-mrbtm10	apd-border-bottom ">
+				<div class="font_18 clr1b639e">Page Analysis</div>
+			</div>
+				
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="row  apd-border-bottom">
+					<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 font_14">Page Load Time</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 font_14">Avg. Time (Visitors Count)</div>
+				</div>
+					
+				<div class="row " ng-repeat="page in rumChartData.pagesLoadTime" >
+					<div id="page_{{$index}}" class="col-lg-8 col-md-8 col-sm-6 col-xs-12" ng-click="loadSelectedPageLoadTime()" ><!-- ng-click="loadSelectedPageLoadTime()" -->
+						<span class="font_10"> {{page.page}} </span>
+						<appedo-barchart-without-axis 
+							bardata="{{page.percentagePageLoadTime}}"  
+							barheight="10" 
+							parentid="page_{{$index}}" style="width: inherit;">
+						</appedo-barchart-without-axis><!-- loadevent="loadSelectedPageLoadTime" label="{{page.page}}" --> 
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 apd-mrgntp10">
+						{{page.loadtime}} ms ({{page.visitCount}})
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" ng-show="selectedPageURL.length > 0"><!-- ng-show="selectedPage != undefined" -->
+				<div class="apdeo-adForm apd-marg-left ">
+					<div id="rumPageLoadTime" class="apdmainright-ctgry " >
+						 <div class="apd-grpcntlg3">
+						 	<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Page Load Time (ms)</div>
+						 	<div class="font_10">
+						 		<span class="clr1b639e">URL:</span>
+								<span>{{selectedPage.page}}</span> 
+							</div>
+						 </div>
+						 
+						<div>
+							<appedo-area-chart-directive 
+								id="d3Area_pageloadtime" 
+								modtype="rum" acctype="{{'Page Load Time (ms)'}}" chartdata="rumChartData.pageLoadTimeChartData" 
+								paneltype="rum" parrentnodeid="rumPageLoadTime" xaxisformat="{{d3XaixsFormat}}"
+								loadevent="getPageBreakDownDetails" linkstatus="true" hiddenparamkey="rumId" dotsize="2" linewidth="1">
+							</appedo-area-chart-directive>
+						</div>
+						
+						<div class="apdobtmbar01"></div>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-offset-6  col-lg-6 col-md-6 col-sm-12 col-xs-12" ng-show="selectedRUMIdTimeForPageBreakDownDetails != undefined"><!-- ng-show="selectedPage != undefined" -->
+				<div class="apdeo-adForm apd-marg-left ">
+					<div id="rumPageLoadTime" class="apdmainright-ctgry " >
+						 <div class="apd-grpcntlg3">
+						 	<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Page Break Down Analysis</div>
+						 </div>
+						 
+						 	
+						<div class="row " ng-repeat="page in rumChartData.pageBreakDownData" >
+							<div id="page_{{$index}}" class="col-lg-8 col-md-8 col-sm-6 col-xs-12" ><!-- ng-click="loadSelectedPageLoadTime()" -->
+								<span class="font_10"> {{page.name}} </span>
+								<appedo-barchart-without-axis 
+									bardata="{{page.percentage}}"  
+									barheight="10" 
+									parentid="page_{{$index}}" style="width: inherit;">
+								</appedo-barchart-without-axis><!-- loadevent="loadSelectedPageLoadTime" label="{{page.page}}" --> 
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 apd-mrgntp10">
+								{{page.time}} ms
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- </div> -->
+
+
+	<div class="apdcrdcatgrywrpr" >
+		<div class="row apdcrdcatgry apd-rbtrgfnfmly">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apd-mrbtm10	apd-border-bottom ">
+				<div class="font_18 clr1b639e">Site Analysis</div>
+			</div>
+			
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdmainright-ctgry apd-brdrt" id="rumDash01"  >
+				<div class="apd-grpcntlg3">
+					<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Browser</div>
+				</div>
+				<div>
+					<appedo-donut-chart-directive id="d3RumDonut01" modulecode="Browser" acctype="Bro" chartdata="rumChartData.browserDonutData" paneltype="rum" parrentnodeid="rumDash01" parentid="d3RumDonut01"></appedo-donut-chart-directive>
+				</div>
+			</div>
+			
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdmainright-ctgry apd-brdrt" id="rumDash02" >
+				<div class="apd-grpcntlg3">
+					<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Device Type</div>
+				</div>
+				<div>
+					<appedo-donut-chart-directive id="d3RumDonut02" modulecode="DeviceType" acctype="DT" chartdata="rumChartData.deviceTypeDonutData" paneltype="rum" parrentnodeid="rumDash02" parentid="d3RumDonut02"></appedo-donut-chart-directive>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdmainright-ctgry apd-brdrt" id="rumDash03" >
+				<div class="apd-grpcntlg3">
+					<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">OS</div>
+				</div>
+				<div>
+					<appedo-donut-chart-directive id="d3RumDonut03" modulecode="OS" acctype="OS" chartdata="rumChartData.osDonutData" paneltype="rum" parrentnodeid="rumDash03" parentid="d3RumDonut03"></appedo-donut-chart-directive>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdmainright-ctgry apd-brdrt" id="rumDash04" >
+				<div class="apd-grpcntlg3">
+					<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Device Name</div>
+				</div>
+				<div>
+					<appedo-donut-chart-directive id="d3RumDonut04" modulecode="DeviceName" acctype="DN" chartdata="rumChartData.deviceNameDonutData" paneltype="rum" parrentnodeid="rumDash04" parentid="d3RumDonut04"></appedo-donut-chart-directive>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!-- </div> -->

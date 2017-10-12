@@ -1,0 +1,38 @@
+[
+  {
+    "selection": "SLA",
+    "module_name": "SLA Setting",
+    "desc_middle": "Set Email, SMS for Alert. Set Max Try and Alert frequency",
+    "desc_end": "Setting help to set the Maximum try Heal process can do to heal etc.",
+    "icon_name": "icon-settings",
+    "icon_color": "#795BC5",
+    "class": "sla-settings"
+  },
+  {
+    "selection": "SLA",
+    "module_name": "Manage Actions",
+    "desc_middle": "Manage your actions to perform heal on breach",
+    "desc_end": "Support VBS and Shell Script to perform healing",
+    "icon_name": "icon-actions",
+    "icon_color": "#B34FBC",
+    "class": "sla-actions"
+  },
+  {
+    "selection": "SLA",
+    "module_name": "Manage Rule",
+    "desc_middle": "Group your action and created Rule to heal on breach",
+    "desc_end": "Currently support only one rule to get configured to SLA.",
+    "icon_name": "icon-rules",
+    "icon_color": "#FA7126",
+    "class": "sla-rules"
+  },
+  {
+    "selection": "SLA",
+    "module_name": "SLA Policy",
+    "desc_middle": "Configure your servers to Heal",
+    "desc_end": "Set, measure, capture, alert and AUTO HEAL",
+    "icon_name": "icon-sla",
+    "icon_color": "#46C1BA",
+    "class": "apd-sla"
+  }
+]

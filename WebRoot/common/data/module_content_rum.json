@@ -1,0 +1,11 @@
+[
+  {
+    "selection": "RUM",
+    "module_name": "Real User Monitor",
+    "desc_middle": "You can add various tests to monitor the Real performance",
+    "desc_end": "Analyse visitor count, browser type, device and more...",
+    "icon_name": "icon-rum",
+    "icon_color": "#CD8527",
+    "class": "apd-rum"
+  }
+]

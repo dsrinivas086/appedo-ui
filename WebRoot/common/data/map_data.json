@@ -1,0 +1,82 @@
+[
+	{
+	  "id": 1,
+	  "name": "Chennai",
+	  "latitude": 13.0827,
+	  "longitude": 80.2707,
+	  "running": 3,
+	  "completed": 14
+	},
+	{
+	  "id": 2,
+	  "name": "Dubai",
+	  "latitude": 25.2048,
+	  "longitude": 55.2708,
+	  "running": 0,
+	  "completed": 18
+	},
+	{
+	  "id": 3,
+	  "name": "New Jersey",
+	  "latitude": 40.0000,
+	  "longitude": -74.5000,
+	  "running": 5,
+	  "completed": 6
+	},
+	{
+	  "id": 4,
+	  "name": "Melbourne",
+	  "latitude": -37.8136,
+	  "longitude": 146.063,
+	  "running": 100,
+	  "completed": 110
+	},
+	{
+	  "id": 5,
+	  "name": "California",
+	  "latitude": 37.0000,
+	  "longitude": -120.5000,
+	  "running": 56,
+	  "completed": 15
+	},
+	{
+	  "id": 6,
+	  "name": "Hyderabad",
+	  "latitude": 17.3700,
+	  "longitude": 78.4800,
+	  "running": 21,
+	  "completed": 18
+	},
+	{
+	  "id": 7,
+	  "name": "Mumbai",
+	  "latitude": 18.9750,
+	  "longitude": 72.8258,
+	  "running": 6,
+	  "completed": 0
+	},
+	{
+	  "id": 8,
+	  "name": "New Delhi",
+	  "latitude": 28.6139,
+	  "longitude": 77.2090,
+	  "running": 0,
+	  "completed": 14
+	},
+	{
+	  "id": 9,
+	  "name": "Brasilia",
+	  "latitude": -15.7939,
+	  "longitude": -47.8828,
+	  "running": 15,
+	  "completed": 131
+	},
+	{
+	  "id": 10,
+	  "name": "Salt Lake",
+	  "latitude": 40.7500,
+	  "longitude": -111.8833,
+	  "running": 11,
+	  "completed": 12
+	}
+]

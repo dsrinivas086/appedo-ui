@@ -1,0 +1,161 @@
+<!-- 
+<div class="apd-subpnl apdmrgtp25">
+	<div class="apd-subpnlcntnt">
+        <div class="row apd-custmtitle">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 pull-left font_18 clr1b639e apd-dsbslct"> <!--apd-adchsf-- >
+	            <select name="rumSelectedModule" id="rumSelectedModule" ng-model="selectedModule" ng-options="module as module.moduleName for module in rumModules"  ng-change = "loadRUMDetails()">
+	            </select>
+	        </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 pull-left font_18 clr1b639e apd-dsbslct"> <!--apd-adchsf-- >
+	            <select name="rumSelectedModule" id="rumSelectedModule" ng-model="selectedModule" ng-options="module as module.moduleName for module in rumModules"  ng-change = "loadRUMDetails()">
+	            </select>
+	        </div>
+	        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 pull-right font_18 clr1b639e apd-dsbslct"> <!--apd-adchsf-- >
+					<span class="clr1b639e">Last Received on:</span>
+					<span class="cdcccc ">20-Apr-2015 17:30:00</span>
+			</div>
+        </div>
+       	<div class="row apdeo-adForm apd-marg-left ">
+	        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry" id="dashRUM_1">
+		        <div class="apd-grpcntlg3">
+		            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Visitor Count</div>
+		            <div class="font_40 apdgrplnht apd-rbtrgfnfmly clr626161">{{totalVisitor}}</div>
+		        </div>
+		        <div>
+					<appedo-area-chart-directive  id="d3Area_RUM_1" modtype="rum" acctype="Visitor Count" chartdata="visitorsCountChartData" paneltype="rum" parrentnodeid="dashRUM_1" xaxisformat="{{d3XaixsFormat}}"></appedo-area-chart-directive>
+		        </div>
+		    </div>
+		</div>
+    </div>
+</div>
+-->
+<div class="apd-subpnl apdmrgtp25">
+	<div class="apd-subpnlcntnt">	    
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apd-mrbtm10	apd-border-bottom ">
+				<div class="font_18 clr1b639e">
+					Event Analysis <span class="font_14 clr626161" ng-show="selectedEvent != undefined" >- {{selectedEvent.eventName}} ({{selectedEvent.eventMethod}})</span> 
+				</div>
+			</div>
+				
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="row  apd-border-bottom">
+					<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 font_14">Event Load Time</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 font_14">Avg. Time (Visitors Count)</div>
+				</div>
+
+				<div class="row " ng-repeat="event in ciChartData.eventsSummary" >
+					<div id="event_{{$index}}" class="col-lg-8 col-md-8 col-sm-6 col-xs-12" ng-click="loadSelectedEventDetails()" >
+						<span class="font_10"> {{event.eventName}} ({{event.eventMethod}}) </span>
+						<appedo-barchart-without-axis 
+							bardata="{{event.percentageEventVisitorCount}}"  
+							barheight="10" 
+							parentid="event_{{$index}}" style="width: inherit;">
+						</appedo-barchart-without-axis><!-- loadevent="loadSelectedPageLoadTime" label="{{page.page}}" --> 
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 apd-mrgntp10">
+						{{event.avgEventDuration}} ms ({{event.eventVisitorCount}})
+					</div>
+				</div>
+			</div>
+				
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" ng-show="selectedEvent != undefined">
+				<div class="apdeo-adForm apd-marg-left ">
+					<div id="ciEventLoadTime" class="apdmainright-ctgry " >
+						 <div class="apd-grpcntlg3">
+						 	<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Event Load Time (ms)</div>
+						 	<div class="font_10">
+						 		<span class="clr1b639e">Event:</span>
+								<span>{{selectedEvent.eventName}} ({{selectedEvent.eventMethod}})</span> 
+							</div>
+						 </div>
+						 
+						<div>
+							<appedo-area-chart-directive 
+								id="d3Area_eventLoadtime" 
+								modtype="cievent" acctype="{{'Event Load Time (ms)'}}" chartdata="ciChartData.eventLoadTimeChartData" 
+								paneltype="cievent" parrentnodeid="ciEventLoadTime" xaxisformat="{{d3XaixsFormat}}">
+							</appedo-area-chart-directive>
+						</div>
+						
+						<div class="apdobtmbar01"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="apdcrdcatgrywrpr" >
+	<div class="row apdcrdcatgry apd-rbtrgfnfmly">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apd-mrbtm10	apd-border-bottom ">
+			<div class="font_18 clr1b639e">
+				Event Visitor Count <span class="font_14 clr626161" ng-show="selectedEvent != undefined">- {{selectedEvent.eventName}} ({{selectedEvent.eventMethod}})</span> 
+			</div>
+		</div>
+		
+		<div class="row apdeo-adForm apd-marg-left ">
+			<div id="ciEventVisitorCount"class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry" >
+				<div class="apd-grpcntlg3">
+					<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Event Visitor Count</div>
+					<div class="font_40 apdgrplnht apd-rbtrgfnfmly clr626161">{{totalEventVisitors}}</div>
+				</div>
+				<div>
+					<appedo-area-chart-directive 
+						id="d3Area_CI_Event_Visitor" 
+						modtype="cievent" acctype="Visitors Count" chartdata="ciChartData.dailyVisitorsCount" 
+						paneltype="cievent" parrentnodeid="ciEventVisitorCount" xaxisformat="{{d3XaixsFormat}}">
+					</appedo-area-chart-directive>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="apd-subpnl apdmrgtp25">
+	<div class="apd-subpnlcntnt">	    
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apd-mrbtm10	apd-border-bottom ">
+					<div class="font_18 clr1b639e">
+						Site Analysis <span class="font_14 clr626161 " ng-show="selectedEvent != undefined">- {{selectedEvent.eventName}} ({{selectedEvent.eventMethod}})</span> 
+					</div>
+				</div>
+				<div id="eventDash01" class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdmainright-ctgry apd-brdrt" >
+					<div class="apd-grpcntlg3">
+						<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Browser</div>
+					</div>
+					<div>
+						<appedo-donut-chart-directive  id="d3EventDonut01" modulecode="Browser" acctype="Bro" chartdata="ciChartData.browserWiseDonutData" paneltype="rum" parrentnodeid="eventDash01" parentid="d3EventDonut01"></appedo-donut-chart-directive>
+					</div>
+				</div>
+				
+				<div id="eventDash02" class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdmainright-ctgry apd-brdrt" >
+					<div class="apd-grpcntlg3">
+						<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Device Type</div>
+					</div>
+					<div>
+						<appedo-donut-chart-directive  id="d3EventDonut02" modulecode="DeviceType" acctype="DT" chartdata="ciChartData.deviceTypeWiseDonutData" paneltype="rum" parrentnodeid="eventDash02" parentid="d3EventDonut02"></appedo-donut-chart-directive>
+					</div>
+				</div>
+				<div id="eventDash03" class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdmainright-ctgry apd-brdrt" >
+					<div class="apd-grpcntlg3">
+						<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">OS</div>
+					</div>
+					<div>
+						<appedo-donut-chart-directive  id="d3EventDonut03" modulecode="OS" acctype="OS" chartdata="ciChartData.osWiseDonutData" paneltype="rum" parrentnodeid="eventDash03" parentid="d3EventDonut03"></appedo-donut-chart-directive>
+					</div>
+				</div>
+				<div id="eventDash04" class="col-lg-3 col-md-3 col-sm-6 col-xs-6 apdmainright-ctgry apd-brdrt" >
+					<div class="apd-grpcntlg3">
+						<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Device Name</div>
+					</div>
+					<div>
+						<appedo-donut-chart-directive  id="d3EventDonut04" modulecode="DeviceName" acctype="DN" chartdata="ciChartData.deviceNameWiseDonutData" paneltype="rum" parrentnodeid="eventDash04" parentid="d3EventDonut04"></appedo-donut-chart-directive>
+					</div>
+				</div>
+			</div>
+
+	</div>
+	
+</div>

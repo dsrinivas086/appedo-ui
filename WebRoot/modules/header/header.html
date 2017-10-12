@@ -1,0 +1,166 @@
+<header class="header" data-ng-controller="header_controller">
+    <toast></toast>
+    <div class="row apdotopbar ">
+        <!--logo-->
+        <div class="logo col-lg-6 col-md-6 col-sm-6 col-xs-4">
+            <img src="assets/images/LOGO.png" alt="Appedo" title="Appedo" />
+        </div>
+
+        <!--right panel-->
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-8 col-md-push-0 col-lg-push-2 ">
+            <div class="toprightpanel">
+                <!--search icon-->
+                <div class="apdo-srch"><i class="icon-svg apdosearh"></i>
+                </div>
+                <!--profile icon-->
+                <div class="apdo-prfle "><img src="assets/images/user.jpg" class="img-circle" />
+                </div>
+                <!--options icon-->
+                <div class="apdrightoptn dropdown" dropdown>
+                    <div class="apd-header-dropdown dropdown-toggle" dropdown-toggle>
+                        <i class="icon-svg8 font_18"></i>
+                    </div>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="./#/profileSettings">Profile Settings</a></li>
+                        <li data-ng-controller="form_controller"><a data-ng-click="changePasswordModal()">Change Password</a></li>
+                        <li><a>Configure Dashboard</a></li>
+                        <li><a>Get Help</a></li>
+                        <li><a href="./logoutSession">Signout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--navigation here start-->
+    <div class="row col-lg-10 col-md-10 col-sm-10 col-xs-10 nav-main font_16 apd-notorglfnfmly">
+        <nav class="navbar navbar-default col-lg-12 col-md-12 col-sm-12 col-xs-12 apdnavbar">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!-- div class="collapse navbar-collapse col-lg-12 col-md-12 col-sm-12 col-xs-12" id="bs-example-navbar-collapse-1"-->
+                <ul class="nav navbar-nav col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <li id="dashboard" class="apd-dashboard" ui-sref="/dashboard" ui-sref-active="active"><a><i class="apdonavtpicns icon-svg2" title="Dashboard" ></i>DashBoard</a></li>
+                    <li id="sum" class="apd-sum" ui-sref="/sum_metrics" ui-sref-active="active" ng-class="getClass('/sum_details')"><a><i class="apdonavtpicns icon-svg3" title="SUM" ></i>SUM</a></li><!-- ui-sref="/sum_metrics"  -->
+                    <li id="rum" class="apd-rum" ui-sref="/rum_metrics" ui-sref-active="active" ng-class="getClass('/rum_details')"><a><i class="apdonavtpicns icon-svg4" title="RUM"></i>RUM</a></li>
+                    <li id="apm" class="apd-apm dropdown dropdown-toggle" ng-class="getClass('/apm_home/application') || getClass('/apm_home/servers') || getClass('/apm_home/db') || getClass('/apm_details')" dropdown dropdown-toggle>
+                        <a><i class="apdonavtpicns icon-svg5" title="App Deep Dive" ></i><span class="badge">{{AppSum + serverSum + dbSum}}</span>App Deep Dive</a>
+                        <!--dropdown-->
+                        <ul class="apd-drpdn-nav apd-rbtrgfnfmly dropdown-menu" role="menu">
+							<li>
+	                            <!--applications-->
+	                            <div class="apd-drpdn-navct apm-application" ui-sref="/apm_home/application">
+	                                <div class="apd-drpdn-icnttl">
+	                                    <div class="aped-apicon apd-naapicon">
+	                                        <i class="icon-application"></i>
+	                                    </div>
+	                                    <div class="apd-nactn">
+	                                        <div class="font_20 apd-lineheight18 apd-natlehd clr626161">Applications</div>
+	                                        <div class="font_14"><span class="apd-nactnac"><span class="apd-navnbr">{{applicationActive}}</span> Active</span> <span class="apd-nactndvdr">|</span> <span class="apd-nactninact"><span class="apd-navnbr">{{applicationInactive}}</span> Inactive</span> </div>
+	                                    </div>
+	                                </div>
+	                                <div class="apd-nactndes font_12 clr626161">You can add <strong>Mobile Apps, Web Apps, Enterprise Apps</strong> and more to monitor the performance.</div>
+	                            </div>
+							</li>
+							<li>
+	                            <!-- servers-->
+	                            <div class="apd-drpdn-navct apm-servers" ui-sref="/apm_home/servers">
+	                                <div class="apd-drpdn-icnttl">
+	                                    <div class="aped-apicon apd-naapicon-ser">
+	                                        <i class="icon-servers"></i>
+	                                    </div>
+	                                    <div class="apd-nactn">
+	                                        <div class="font_20 apd-lineheight18 apd-natlehd clr626161">Servers</div>
+	                                         <div class="font_14"><span class="apd-nactnac"><span class="apd-navnbr">{{serverActive}}</span> Active</span> <span class="apd-nactndvdr">|</span> <span class="apd-nactninact"><span class="apd-navnbr">{{serverInactive}}</span> Inactive</span> </div>
+	                                    </div>
+	                                </div>
+	                                <div class="apd-nactndes font_12 clr626161">You can add <strong>various Servers</strong> to monitor the performance.</div>
+	                            </div>
+							</li>
+							<li>
+	                            <!-- Database-->
+	                            <div class="apd-drpdn-navct apm-database" ui-sref="/apm_home/db">
+	                                <div class="apd-drpdn-icnttl">
+	                                    <div class="aped-apicon apd-naapicon-db">
+	                                        <i class="icon-database"></i>
+	                                    </div>
+	                                    <div class="apd-nactn">
+	                                        <div class="font_20 apd-lineheight18 apd-natlehd clr626161">Databases</div>
+	                                         <div class="font_14"><span class="apd-nactnac"><span class="apd-navnbr">{{dbActive}}</span> Active</span> <span class="apd-nactndvdr">|</span> <span class="apd-nactninact"><span class="apd-navnbr">{{dbInactive}}</span> Inactive</span> </div>
+	                                    </div>
+	                                </div>
+	                                <div class="apd-nactndes font_12 clr626161">You can add <strong>various Databases</strong> to monitor the performance.</div>
+	                            </div>
+							</li>
+						</ul>
+                        <!--dropdown end-->
+                    </li>
+                    <li id="lt" class="apd-lt" title="Load Test" ui-sref="/load_test" ui-sref-active="active">
+                        <a><i class="apdonavtpicns icon-svg6" ></i>Load Test</a>
+                    </li>
+                    <!-- li id="sla" class="apd-sla" ui-sref="/sla" ui-sref-active="active" title="SLA"><a><i class="apdonavtpicns icon-svg7" ></i>SLA</a></li-->
+                    <li id="sla" class="apd-sla dropdown" ng-class="getClass('/sla_home/actions') || getClass('/sla_home/rule') || getClass('/sla_home/slapolicy')" dropdown dropdown-toggle>
+                        <a><i class="apdonavtpicns icon-svg7" title="SLA" ></i>SLA</a>
+                        <!--dropdown-->
+                        <ul class="apd-drpdn-nav apd-rbtrgfnfmly dropdown-menu" role="menu">
+							<li>
+	                            <div class="apd-drpdn-navct sla-actions" ui-sref="/sla_home/actions">
+	                                <div class="apd-drpdn-icnttl">
+	                                    <div class="aped-apicon"  style="color: rgb(179, 79, 188);">
+	                                        <i class="icon-actions"></i>
+	                                    </div>
+	                                    <div class="apd-nactn">
+	                                        <div class="font_20 apd-lineheight18 apd-natlehd clr626161">Actions</div>
+	                                         <div class="font_14"><span class="apd-nactnac"><span class="apd-navnbr">{{slaBadgeValues.action_count}}</span> Actions</span>  </div>
+	                                    </div>
+	                                </div>
+	                                <div class="apd-nactndes font_12 clr626161">You can add <strong>Actions</strong>. Actions are used to <strong>HEAL</strong> servers.</div>
+	                            </div>
+							</li>
+	                            <div class="apd-drpdn-navct sla-rules" ui-sref="/sla_home/rule">
+	                                <div class="apd-drpdn-icnttl">
+	                                    <div class="aped-apicon"  style="color: rgb(250, 113, 38);">
+	                                        <i class="icon-rules"></i>
+	                                    </div>
+	                                    <div class="apd-nactn">
+	                                        <div class="font_20 apd-lineheight18 apd-natlehd clr626161">Rules</div>
+	                                         <div class="font_14"><span class="apd-nactnac"><span class="apd-navnbr">{{slaBadgeValues.rule_count}}</span>Rules</span>  </div>
+	                                    </div>
+	                                </div>
+	                                <div class="apd-nactndes font_12 clr626161">You can add <strong>Rules</strong>. Multiple actions can be mapped to a RULE.</div>
+	                            </div>
+							<li>
+							</li>
+							<li>
+	                            <div class="apd-drpdn-navct sla-policy" ui-sref="/sla_home/slapolicy">
+	                                <div class="apd-drpdn-icnttl">
+	                                    <div class="aped-apicon"   style="color: rgb(70, 193, 186);">
+	                                        <i class="icon-sla"></i>
+	                                    </div>
+	                                    <div class="apd-nactn">
+	                                        <div class="font_20 apd-lineheight18 apd-natlehd clr626161">SLA Policy</div>
+	                                         <div class="font_14"><span class="apd-nactnac"><span class="apd-navnbr">{{slaBadgeValues.sla_count}}</span> Policy</span>  </div>
+	                                    </div>
+	                                </div>
+	                                <div class="apd-nactndes font_12 clr626161">You can add <strong>SLA Policy</strong>. Help to Heal multiple servers using Rule</div>
+	                            </div>
+							</li>
+						</ul>
+                        <!--dropdown end-->
+                    </li>
+                    <li id="admin" class="apd-admin" title="Admin" ui-sref="/admin" ui-sref-active="active" ng-if="loginUser.isAdminUser" >
+                        <a><i class="apdonavtpicns fa fa-user" ></i>ADMIN</a>
+                    </li>
+                </ul>
+
+            <!--</div>  -->
+            <!-- /.navbar-collapse -->
+
+        </nav>
+    </div>
+    <!--navigation here end-->
+
+    <!--notification and add icons-->
+    <div class="apdo-ntfctn-main" data-ng-controller="form_controller">
+        <div class="apdo-ntfctn-add" data-ng-click="openAddModuleType()"><i class="icon-svg9"></i></div>
+        <div class="apdo-ntfctn-ntftn" data-ng-click="openNotificationsModal()"><i class="icon-svg10"><span class="badge">0</span></i></div>
+    </div>
+</header>

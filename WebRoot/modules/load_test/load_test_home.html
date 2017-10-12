@@ -1,0 +1,157 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer" data-ng-controller="load_test_controller">
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 font_16 apdofb clr1b639e apd-mrgntp15">Load Test</div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 font_14 clr1b639e">
+        	<div class="apm-radiobtn apm-radiobtn-no-margin apd-mrrt20">
+				<div class="apd-rdbtn">
+					<input type="radio" name="appedo_lt_type" id="jmeter" ng-model="appedo.loadtestValue" value="JMETER" class="css-checkbox" ng-change="loadtestType()" checked/>
+					<label for="jmeter" class="css-label font_16 ">Jmeter</label>
+			    </div>
+			    <div class="apd-rdbtn">
+					<input type="radio" name="appedo_lt_type" id="appedo_lt" ng-model="appedo.loadtestValue" value="APPEDO_LT" class="css-checkbox" ng-change="loadtestType()"/>
+					<label for="appedo_lt" class="css-label font_16 ">Appedo LT</label>
+			    </div>
+			</div>
+		</div>
+		 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 font_14 clr1b639e">
+		 	<div class="apm-radiobtn apm-radiobtn-no-margin apd-mrrt20">
+			    <div class="apd-rdbtn">
+			        <input type="radio" name="scripts_scenarios" id="scripts" ng-model="appedo.scripts_scenarios" value="Scripts" class="css-checkbox" ng-change="modeType()"/>
+						<label for="scripts" class="css-label font_16 ">Scripts</label>
+			    </div>
+			    <div class="apd-rdbtn">
+			        <input type="radio" name="scripts_scenarios" id="scenarios" ng-model="appedo.scripts_scenarios" checked="true" value="Scenarios" class="css-checkbox" ng-change="modeType()"/>
+						<label for="scenarios" class="css-label font_16 ">Scenarios</label>
+			    </div>
+		    </div>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 font_12 clr1b639e">
+			<div ng-if="appedo.loadtestValue == 'APPEDO_LT'">
+				<a href="" ng-href="./apm/downloadAgent?type=APPEDO_LT">
+					<b></b><i class="fa fa-cloud-download apd-mntor-dwnicon_color" style="position:relative; top:4px; right:3px;"></i><u>Appedo LT Tool</u></b><br>
+				</a>
+				<div>
+					<span class="clr626161 font_11 apd-rbtrbfnfmly apd-mrbtm10 apdcrd-mrtp05">
+						Generate script using Appedo load testing
+						tool and upload from the tool.
+					</span>
+				</div>
+			</div>
+			<div ng-if="appedo.loadtestValue=='JMETER'">
+				<input data-ui-file-upload type="file" name="importScript" id="importScript" class="btn btn-success " title="<i class='fa fa-cloud-upload' style='font-size: 18px; color: darkslateblue; position:relative; top:3px; right:3px;'></i>Upload .jmx" multiple 
+						onchange="angular.element(this).scope().uploadJmeterScript(this)" />
+				<div>
+					<span class="clr626161 font_11 apd-rbtrbfnfmly apd-mrbtm10 apdcrd-mrtp05">
+						Generate Script using jmeter.
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="apdcrdcatgrywrpr" data-ng-repeat="ltscenario in ltscenarioscontent" ng-show="appedo.scripts_scenarios == 'Scenarios'">
+
+        <div class="row apdcrdcatgry apd-rbtrgfnfmly" >
+           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 apdbgdcolor" style="" >
+                <div class="font_22 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 clr626161 apd-first-char-up">{{ltscenario.scenarioName}}</div>
+                <span class="cdcccc font_14 apd-rbtrglfnfmly apd-mrbtm10">Added by {{ltscenario.created_by}} on {{ltscenario.created_on | date:'dd-MMM-yyyy HH:mm:ss'}}</span>
+                <div class="font_14 apdcrd-mrtp05 apd-rbtrglfnfmly">
+	                <span class="apd-rbtrgfnfmly clr626161">Type:</span><span class="apd-rbtrgfnfmly"> {{ltscenario.type}}</span>
+                </div>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-sm-6 col-xs-12 apdbgdcolor" style="" title="">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Run(s)</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161">{{ltscenario.completed_runs}}</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 apdbgdcolor" data-ng-click="openLtRunSetting()" style="cursor: pointer;" title="Configure Script">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Mapped Script(s)</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161">{{ltscenario.mappedo_scripts}}</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 apdbgdcolor" style="" title="Configure Script">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Virtual User(s)</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161">{{ltscenario.virtual_users}}</div>
+            </div>
+            <!-- apdcrd-leftwrprmrg from apdcrd-leftwrpr -->
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 apdbgdcolor apd-curpnt" style="padding-top:2px;">
+				<a ng-click="openMonitorPage()" ><!-- {{ltscenario.run_id}} -->
+	                <div class="apd-crddnldicn apd-center">
+	                    <div class="apdcrd-leftwrpr apdo-crdiconpadd">
+	                        <div class="apdcrd-left-icn">
+	                            <i class="icon-monitor1"></i>
+	                            <div class="apd-mntor-redwrper">
+	                                <i ng-if="ltscenario.run_status==false" class="icon-red apd-redicon" ng-class="apd-redicon"></i>
+	                                <i ng-if="ltscenario.run_status==true && ltscenario.status !='QUEUED'" class="icon-red apd-greenicon" ng-class="apd-greenicon"></i>
+	                                <i ng-if="ltscenario.run_status==true && ltscenario.status =='QUEUED'" class="icon-red apd-yellowicon" ng-class="apd-yellowicon"></i>
+	                            </div>
+	                        </div>
+	                        <div class="apdcrd-leftcnt font_20 clr626161">Run/Status</div>
+	                    </div>
+	                </div>
+				</a>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 apdbgdcolor" style="padding-top:2px;">
+            	<a href="./#/ltScenarioReports/{{appedo.loadtestValue}}/{{ltscenario.scenarioName}}" ng-click="saveTransitionHiddenParams(ltscenario)" >
+	                <div class="apd-crddnldicn apd-center">
+	                    <div class="apdcrd-leftwrpr apdo-crdiconpadd" >
+	                        <div class="apdcrd-left-icn">
+	                            <i class="icon-profiler1 apd-prclr"></i>
+	                        </div>
+	                        <div class="apdcrd-leftcnt font_20 clr626161">Report</div>
+	                    </div>
+	                    <div class="pull-right apdosmopt dropdown" dropdown >
+		                     <div class="apd-apm-dropdown dropdown-toggle" dropdown-toggle>
+		                         <i class="icon-svg8" style="padding-top: 10px;"></i>
+		                     </div>
+		                     <ul class="dropdown-menu" role="menu">
+		                     	 <li ng-if="appedo.loadtestValue == 'APPEDO_LT'"><a ng-click="editMapScript()">Edit</a></li>
+		                         <li><a ng-click="deleteSelectedScenario($index)">Delete</a></li>
+		                     </ul>
+		                 </div>
+	                </div>
+				</a>
+            </div>
+            <!--cardlist end-->
+        </div>
+    </div>
+    <div class="apdcrdcatgrywrpr" data-ng-repeat="ltscript in ltscriptscontent" ng-show="appedo.scripts_scenarios == 'Scripts'">
+
+        <div class="row apdcrdcatgry apd-rbtrgfnfmly">
+           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 apdbgdcolor">
+                <div class="font_22 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 clr626161 apd-first-char-up">{{ltscript.scriptName}}</div>
+                <span class="cdcccc font_14 apd-rbtrglfnfmly apd-mrbtm10">Added by {{ltscript.created_by}} on {{ltscript.created_on | date:'dd-MMM-yyyy HH:mm:ss'}}</span>
+                <div class="font_14 apdcrd-mrtp05 apd-rbtrglfnfmly">
+	                <span class="apd-rbtrgfnfmly clr626161">Type:</span><span class="apd-rbtrgfnfmly"> {{ltscript.type}}</span>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 apdbgdcolor">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Last Status</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_22 apd-lineheight43 clr626161 apd-first-char-up">{{ltscript.status}}</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 apdbgdcolor">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Mapped Scenario(s)</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_22 apd-lineheight43 clr626161">{{ltscript.mapped_scenarios}}</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 apdbgdcolor">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Scenario Name</div>
+				<div class="pull-right apdosmopt dropdown" ng-if="appedo.loadtestValue == 'APPEDO_LT'" style="margin-top: -20px;" dropdown >
+	                <div class="apd-apm-dropdown dropdown-toggle" dropdown-toggle>
+	                    <i class="icon-svg8" style="padding-top: 10px;"></i>
+	                </div>
+	                <ul class="dropdown-menu" role="menu">
+	                    <li><a ng-click="deleteSelectedScript($index)">Delete</a></li>
+	                </ul>
+	            </div>
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_14 clr626161 apd-first-char-up" style="word-break: break-all">{{ltscript.scenarioName}}</div>
+            </div>
+			<!--cardlist end-->
+        </div>
+    </div>
+</div>
+<!-- apd-center01 -->

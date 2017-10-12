@@ -1,0 +1,23 @@
+<div class="apd-subpnl apdmrgtp25" ng-controller="sumMapController">
+    <div class="apd-subpnlcntnt">
+		<div class="row" >
+			<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+				<div class="apd-running">
+					<div class="apd-rbtmdmfnfmly font_16 clr424242 apd-running-label">Running</div>
+					<div class="apd-rbtrgfnfmly font_50 clr42a6db">{{ runningCount }}</div>
+				</div>
+				<div class="apd-completed">
+					<div class="apd-rbtmdmfnfmly font_16 clr424242 apd-completed-label">Completed</div>
+					<div class="apd-rbtrgfnfmly font_50 clr70c524">{{ completedCount }}</div>
+				</div>
+				<div class="apd-locations">
+					<div class="apd-rbtmdmfnfmly font_16 clr424242 apd-locations-label">Locations</div>
+					<div class="apd-rbtrgfnfmly font_50">{{ locationCount }}</div>
+				</div>
+			</div>
+			<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 apd-map"  style="height: 500px;">
+				<apd-map data="mapData"></apd-map>
+			</div>
+		</div>
+	</div>
+</div>

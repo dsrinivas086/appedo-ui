@@ -1,0 +1,5 @@
+[
+{"label":"Monitor","value":"MONITOR"},
+{"label":"Transaction","value":"TRANSACTION"},
+{"label":"Slow Query","value":"SLOW_QUERY"}
+]

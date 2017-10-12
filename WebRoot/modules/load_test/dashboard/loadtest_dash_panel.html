@@ -1,0 +1,81 @@
+<div class="apd-subpnl apdmrgtp25" data-ng-controller="ltDashPanel">
+    <div class="apd-subpnlcntnt">
+        <div class="row apd-custmtitle">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 pull-left font_18 clr1b639e apd-dsbslct"> <!--apd-adchsf-->
+                <select name="ltModules" id="ltModules" ng-model="selectedLastRunreport" ng-options="module as module.reportName+' - '+module.runStartTimeString for module in lastRunReports"  ng-change = "getLTChartData()">
+                </select>
+            </div>
+        </div>
+       	<div class="row">
+       		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry"></div>
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="summaryLt01"  >
+				<div class="apd-grpcntlg3">
+					<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Error</div>
+       			</div>
+	       		<div>
+					<appedo-donut-chart-directive  id="d3LTDonut01" modulecode="Error" acctype="ERR" chartdata="errorDonutData" paneltype="lt" parrentnodeid="summaryLt01" parentid="d3LTDonut01"></appedo-donut-chart-directive>
+				</div>
+         	</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="summaryLt02"  >
+				<div class="apd-grpcntlg3">
+					<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Success Vs Failure</div>
+				</div>
+				<div>
+					<appedo-donut-chart-directive  id="d3LTDonut02" modulecode="SuccessVsFailure" acctype="S & F" chartdata="svfDonutData" paneltype="lt" parrentnodeid="summaryLt02" parentid="d3LTDonut02"></appedo-donut-chart-directive>
+       			</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 apdmainright-ctgry apd-brdrt" id="summaryLt03"  >
+				<div class="apd-grpcntlg3">
+	           		<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">License - Max Run</div>
+	       		</div>
+       			<div>
+	   				<appedo-donut-chart-directive  id="d3LTDonut03" modulecode="License" acctype="RUN" chartdata="licDonutData" paneltype="lt" parrentnodeid="summaryLt03" parentid="d3LTDonut03"></appedo-donut-chart-directive>
+       			</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 apdmainright-ctgry" ng-repeat="summary in summarydata">
+				<div ng-show="$index == 0">
+					<div class="row">
+						<div class="apd-slplt col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							<div class="font_18 apd-slpltbmr clr1b639e">{{summary.lic_value}}</div>
+							<div class="font_16 clr626161">{{summary.lic_label}}</div>
+						</div>
+						<div class="apd-slplt col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							<div class="font_18 apd-slpltbmr clr1b639e">{{summary.smr_value}}</div>
+							<div class="font_16 clr626161">{{summary.smr_label}}</div>
+						</div>
+					</div>
+				</div>
+				<div ng-show="$index > 0">
+					<div class="row">
+						<div class="apd-slpltb col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							<div class="font_18 apd-slpltbmr clr1b639e">{{summary.lic_value}}</div>
+							<div class="font_16 clr626161">{{summary.lic_label}}</div>
+						</div>
+						<div class="apd-slpltb  col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							<div class="font_18 apd-slpltbmr clr1b639e">{{summary.smr_value}}</div>
+							<div class="font_16 clr626161">{{summary.smr_label}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+      	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry"><div class="apdobtmbar01"></div></div>
+      	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry" id="dashLT_1">
+	       	<div class="apd-grpcntlg3">
+	           	<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Page Response Time</div>
+	       	</div>
+	       	<div>
+				<appedo-area-chart-directive  id="d3Area_LT_1" modtype="lt" acctype="Page Response Time" chartdata="pageResponseTimeChartData" paneltype="lt" parrentnodeid="dashLT_1" xaxisformat="{{d3XaixsFormat}}"></appedo-area-chart-directive>
+	       </div>
+	   	</div>
+      	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry"><div class="apdobtmbar01"></div></div>
+       	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry" id="dashLT_2">
+	        <div class="apd-grpcntlg3">
+	            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Vusers</div>
+	        </div>
+	        <div>
+				<appedo-area-chart-directive  id="d3Area_LT_2" modtype="lt" acctype="Vusers" chartdata="vUsersChartData" paneltype="lt" parrentnodeid="dashLT_2" xaxisformat="{{d3XaixsFormat}}"></appedo-area-chart-directive>
+	        </div>
+    	</div>
+	</div>
+</div>

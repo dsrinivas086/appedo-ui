@@ -1,0 +1,79 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+
+<div class="apdcardcontainer apdmrgtp25" style="padding-top: 150px;" ng-if="! loginUser.isAdminUser">
+	<div class="apdcardcontainer" >
+		<div class="apdo-crdtlte col-lg-12 col-md-12 col-sm-12 col-xs-12 font_18 apd-center01">
+			<i class="fa fa-exclamation-triangle color-warning font_130" style=""></i>
+			<span class="font_40 ad-pdlft50">Access denied!</span>
+		</div>
+	</div>
+</div>
+
+<!-- TODO: thinks, need to use ng-if="loginUser.isAdminUser", since when radio btn selection changed respective ng-model change not working -->
+<div class="apdcardcontainer apdmrgtp25" ng-if="loginUser.isAdminUser" >
+	<div class="row">
+		<!-- <div class="apdo-crdtlte col-lg-3 col-md-3 col-sm-3 col-xs-3 font_18 clr1b639e">
+		<span class="apd-curpnt" style="position: absolute; top: 16px; left: 30px;" data-ng-click="backToAdminPage()"><img src="assets/images/back.png">
+    	</span><span class="ad-pdlt">ADMIN</span></div> -->
+		<div class="col-lg-11 col-md-6 col-sm-6 col-xs-6  col-lg-offset-1 clr1b639e" >
+			<div class="apm-radiobtn apm-radiobtn-no-margin apd-mrrt20 font_14">
+				<div class="apd-rdbtn clr1b639e apd-mrgnbtm" style="margin-bottom: 0px;">
+					<input type="radio" name="radioAdmin" id="radioLicense" class="css-checkbox" ng-model="userAccessPrivilege.selectedAdmintask" value="license" ng-change="loadAdminDetails()" checked="true" />
+					<label for="radioLicense" class="css-label radGroup1" style="color: #1b639e;">License</label>
+				</div>
+				<div class="apd-rdbtn clr1b639e" style="margin-bottom: 0px;">
+					<input type="radio" name="radioAdmin" id="radioUseMetric" class="css-checkbox" ng-model="userAccessPrivilege.selectedAdmintask" value="usageMetrics" ng-change="loadAdminDetails()"/>
+					<label for="radioUseMetric" class="css-label radGroup1" style="color: #1b639e;">Usage Metrics</label>
+				</div>
+			</div>
+			
+			<!--  <div class="apd-divider apd-mrrt20 "></div>-->
+			<i class="fa fa-angle-double-right apd-mrrt20 clr444 font_30 admin_angle_right" ng-if="userAccessPrivilege.selectedAdmintask=='license'" ></i>
+			
+			<!-- <div class="disp_inline" ng-if="selectedAdmintask=='license'" > -->
+				<div class="apm-radiobtn apm-radiobtn-no-margin apd-mrrt20" ng-if="userAccessPrivilege.selectedAdmintask=='license'">
+					<div class="apd-rdbtn clr1b639e apd-mrgnbtm" style="margin-bottom: 0px;">
+						<input type="radio" name="radioLicenseName" id="radioManage" class="css-checkbox" ng-model="admin.selectedLicenseType" value="manage" ng-click="loadLiceseDetails()" checked="true" />
+						<label for="radioManage" class="css-label radGroup1 font_13">Manage</label>
+					</div>
+					<div class="apd-rdbtn clr1b639e" style="margin-bottom: 0px;" ng-if="loginUser.enableAccessRights">
+						<input type="radio" name="radioLicenseName" id="radioRights" class="css-checkbox" ng-model="admin.selectedLicenseType" value="accRights" ng-click="loadLiceseDetails()"/>
+						<label for="radioRights" class="css-label radGroup1 font_13">A.Rights</label>
+					</div>
+					<div class="apd-rdbtn clr1b639e apd-mrgnbtm" style="margin-bottom: 0px;">
+						<input type="radio" name="radioLicenseName" id="radioReports" class="css-checkbox" ng-model="admin.selectedLicenseType" value="reports" ng-click="loadLiceseDetails()"/>
+						<label for="radioReports" class="css-label radGroup1 font_13">Reports</label>
+					</div>
+					<div class="apd-rdbtn clr1b639e" style="margin-bottom: 0px;">
+						<input type="radio" name="radioLicenseName" id="radioSettings" class="css-checkbox" ng-model="admin.selectedLicenseType" value="settings" ng-click="loadLiceseDetails()"/>
+						<label for="radioSettings" class="css-label radGroup1 font_13">Settings</label>
+					</div>
+				</div>
+				
+				<!-- <div class="apd-divider apd-mrrt20 "></div> -->
+			<!-- </div> -->
+			
+			<i class="fa fa-angle-double-right apd-mrrt20 clr444 font_30 admin_angle_right" ng-if="userAccessPrivilege.selectedAdmintask=='license' && admin.selectedLicenseType=='manage'"></i>
+			
+			<div class="apm-radiobtn apm-radiobtn-no-margin apd-mrrt20" ng-if="userAccessPrivilege.selectedAdmintask=='license' && admin.selectedLicenseType=='manage'">
+	        	<div class="apd-rdbtn clr1b639e apd-mrgnbtm" style="margin-bottom: 0px;" ng-if="noLicense">
+			        <input type="radio" name="radioLicenseManage" id="radioNewLicense" class="css-checkbox" ng-model="manage.licenseCategory" value="newLicense" ng-click="loadLicenseManageDetails()" checked="true" />
+					<label for="radioNewLicense" class="css-label radGroup1 font_12" style="color: #1b639e;">New License</label>
+			    </div>
+			    <div class="apd-rdbtn clr1b639e" style="margin-bottom: 0px;">
+					<input type="radio" name="radioLicenseManage" id="radioRewal" class="css-checkbox" ng-model="manage.licenseCategory" value="renewal" ng-click="loadLicenseManageDetails()"/>
+					<label for="radioRewal" class="css-label radGroup1 font_12 clr1b639e " style="color: #1b639e;">Renewal</label>
+				</div>
+				<div class="apd-rdbtn clr1b639e apd-mrgnbtm" style="margin-bottom: 0px;">
+			        <input type="radio" name="radioLicenseManage" id="radioExtension" class="css-checkbox" ng-model="manage.licenseCategory" value="extension" ng-click="loadLicenseManageDetails()"/>
+					<label for="radioExtension" class="css-label radGroup1 font_12" style="color: #1b639e;">Extension</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div data-ng-include="'modules/admin/view/admin_license_details.html'" ng-if="showLicensedetails"></div>
+	<div data-ng-include="'modules/admin/view/admin_license_access_rights.html'" ng-if="showAccRightsdetails"></div>
+	<div data-ng-include="'modules/admin/view/admin_license_reports.html'" ng-if="showReportsdetails"></div>
+	<div data-ng-include="'modules/admin/view/admin_license_settings.html'" ng-if="showSettingsdetails"></div>
+	<div data-ng-include="'modules/admin/view/admin_usage_metrics_details.html'" ng-if="showUsagemetricsDetails"></div>
+</div>

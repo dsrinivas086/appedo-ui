@@ -1,0 +1,55 @@
+<div data-ng-include="'modules/header/login_header.html'"></div>
+<div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="apd-frm">
+        <form name="signupForm" action="./userSignup" class="apd-frm2wrpr">
+            <div class="apd-login_home icon-login"></div>
+            <div class="apd-frmtitl font_20 apd-rbtrgfnfmly clr1b639e">
+                Signup
+            </div>
+           	<label class="alert alert-danger apd-frmfld control-label font_14" ng-show="showSignupErrorMsg">
+				{{signupErrorMsg}}
+			</label>
+            <div class="apd-frm2fld font_14" ng-class="{'has-error' : signupForm.userid.$invalid && signupForm.userid.$dirty}">
+                <label for="userid" class="control-label font_14">Email<font size="3px" color="red"><sup>*<sup></font></label>
+                <input type="email" class="clr444444 font_12" name="userid" id="userid" placeholder="Email id" ng-model="signupData.email" focus="true" select-on-click required />
+                <p ng-show="signupForm.userid.$invalid && signupForm.userid.$dirty" class="help-block">Email Address in invalid format</p>
+            </div>
+            <div class="apd-frm2fld font_14" ng-class="{'has-error' : signupForm.password.$invalid && signupSubmit}">
+                <label for="password" class="control-label font_14">Password<font size="3px" color="red"><sup>*<sup></font></label>
+                <input type="password" class="clr444444 font_12" name="password" id="password" placeholder="Password" ng-model="signupData.pwd" required />
+            </div>
+			<div class="apd-frm2fld font_14" ng-class="{'has-error' : signupForm.retypePwd.$invalid && signupForm.retypePwd.$dirty}">
+                <label for="retypePwd" class="control-label font_14">Retype Password<font size="3px" color="red"><sup>*<sup></font></label>
+                <input type="password" class="clr444444 font_12" name="retypePwd" id="retypePwd" placeholder="Retype Password" ng-model="signupData.retypePwd" check-password-match match="signupData.pwd" required />
+				<p ng-show="signupForm.retypePwd.$invalid && signupForm.retypePwd.$dirty" class="help-block">Password doesn't match</p>
+            </div>
+			<div class="apd-frm2fld font_14" ng-class="{'has-error' : signupForm.firstName.$invalid && signupSubmit}">
+                <label for="firstName" class="control-label font_14">First Name<font size="3px" color="red"><sup>*<sup></font></label>
+                <input type="text" class="clr444444 font_12" name="firstName" id="firstName" placeholder="First Name" ng-model="signupData.firstName" required />
+                <p ng-show="signupForm.firstName.$invalid && signupSubmit" class="help-block">First name must be mandatory</p>
+            </div>
+			<div class="apd-frm2fld font_14" ng-class="{'has-error' : signupForm.lastName.$invalid && signupSubmit}">
+                <label for="lastName" class="control-label font_14">Last Name<font size="3px" color="red"><sup>*<sup></font></label>
+                <input type="text" class="clr444444 font_12" name="lastName" id="lastName" placeholder="Last Name" ng-model="signupData.lastName" required />
+                <p ng-show="signupForm.lastName.$invalid && signupSubmit" class="help-block">Last name must be mandatory</p>
+            </div>
+			<div class="apd-frm3fld font_14">
+                <label for="user_imageText" class="control-label font_14">Captcha Code<font size="3px" color="red"><sup>*<sup></font></label>
+                <input type="text" class="clr444444 font_12" name="user_imageText" placeholder="Type the code shown" ng-model="signupData.captcha" required>		
+				<img border="0" src="Captcha.jpg" style="margin-top: 2px"/>				
+            </div>
+            <div class="font_12" style="width: 104%; margin: 20px 0 0 0; display: inline-block;">
+				<p>By signing up, you agree to Appedo's <a href="http://www.appedo.com/terms-of-use/" target="_blank">Terms and Conditions</a> and <a href="http://www.appedo.com/privacy-policy/" target="_blank">Privacy Policy</a>.</p>
+			</div>
+           <div class="apd-sbmtbtn1-wrper font_18" style="margin: 1px;">
+                <div class="apd-frgotps">
+                    <button type="submit" class="apdo-loginbtn btn btn-success font_18" ng-disabled="signupForm.$invalid" >Sign Up</button>
+                </div>
+				
+            </div>
+			<div class="font_13 clr7e7e7e apd-sprmpadtpf">Already have an account? 
+					<span><a href="#/login">Login</a></span>
+			</div>
+        </form>
+    </div>
+</div>

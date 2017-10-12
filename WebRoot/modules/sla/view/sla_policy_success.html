@@ -1,0 +1,43 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+	<div class="row thadr-tp" data-ng-controller="form_controller">
+		<!--left heading-->
+
+		<div class="apd-ftplog">
+			<img src="assets/images/appedo.svg" />
+		</div>
+		<div class="font_22 apdo-adttl apd-rbtmdmfnfmly">Add/Edit</div>
+		<!--right icons-->
+		<div class="apd-clsewr">
+			<div class="aped-apiconcls">
+				<i class="icon-help font_22" title="help"></i>
+			</div>
+		</div>
+	</div>
+	<div class="apdad-mbdy">
+		<div class="apd-admcntwrpr">
+			<div class="row apd-admcnt">
+				<div class="row apdeo-adForm">
+					<div class="aped-apiconttlewr wordbreak" ng-hide="isEditEnabled">
+						<i class="{{moduleCardContent.icon_name}} aped-apiconttle"  style="color: rgb(70, 193, 186);"></i> <span
+							class="font_20 clr388F3C aped-apiconttlewr"><span class="apd-rbtrbfnfmly apd-first-char-up">{{slaPolicyForm.policyName}}</span>&nbsp;<span class="apd-rbtrglfnfmly">has been added successfully!</span></span>
+					</div>
+					<div class="aped-apiconttlewr wordbreak" ng-show="isEditEnabled">
+						<i class="{{moduleCardContent.icon_name}} aped-apiconttle"  style="color: rgb(70, 193, 186);"></i> <span
+							class="font_20 clr388F3C aped-apiconttlewr"><span class="apd-rbtrbfnfmly apd-first-char-up">{{slaPolicyForm.policyName}}</span>&nbsp;<span class="apd-rbtrglfnfmly">has been updated successfully!</span></span>
+					</div>
+					<div>
+						<div class="clr84A1C1 font_14 apd-mrgntp10 apd-rbtrglfnfmly">Add another?</div>
+						<p class="clr9E9EA1 font_11 apd-lineheight12 apd-mrgntp40 apd-rbtrglfnfmly">Policy requires Counters measurements to manage the healing.<br/>
+						Counters can be mapped from APP DEEP Dive Details page or using button below. SLA requires at least one counter mapped. 
+						</p>
+					</div>
+	                <div class="pull-right"  data-ng-controller="form_controller">
+	                    <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="mapCounter()">Map Counter</button>
+	                    <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="cardLayout()">CLOSE</button>
+	                </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

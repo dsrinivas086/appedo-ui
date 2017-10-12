@@ -1,0 +1,64 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer" >
+	<div class="row">
+		<div class="apdo-crdtlte col-lg-12 col-md-12 col-sm-12 col-xs-12 font_18 clr1b639e" ng-if="showCardEmptyMsg">
+	    	Please click on <span class="apdo-ntfctn-add" style="margin-right: 4px;" data-ng-click="openAddModuleType()">
+	    	<i class="icon-svg9"></i></span>to create new Synthetic User Monitor.
+   		</div>
+		<div class="apdo-crdtlte col-lg-12 col-md-12 col-sm-12 col-xs-12 font_18 clr1b639e" ng-if="showCard">Synthetic User Monitoring</div>
+	</div>
+     
+	<div class="apdcrdcatgrywrpr" data-ng-repeat="test in sumTests">
+		<div class="row apdcrdcatgry apd-rbtrgfnfmly">
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 apdbgdcolor">
+				<div class="font_22 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 clr626161 apd-first-char-up wordbreak">{{test.testname}}</div>
+				
+				<div>
+					<div class="font_14 apd-mrbtm10 apd-rbtrglfnfmly clr626161" >
+						Updated On: <span class="cdcccc font_14 apd-rbtrglfnfmly apd-mrbtm10 ">{{test.modifiedOn | date:'dd-MMM-yyyy HH:mm:ss'}}</span>
+					</div>
+				</div>
+				
+				<div class="font_14 ">
+					<span class="apd-rbtrgfnfmly clr626161">Type:</span> <span class="apd-rbtrgfnfmly">{{test.testtype}}</span>
+				</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 apdbgdcolor apd-curpnt" ng-click="openModuleDetailGrpahs($index)">
+				<div class="font_16 clr949494 apdcrd-mrtp10">Run Every (min)</div>
+				<div class="font_40 apdcrd-mrtp10 apdcrd-vrscnt font_16 apd-lineheight43 clr626161">{{test.runevery}}</div>
+			</div>
+			
+			<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 apdbgdcolor apd-curpnt" ng-click="openModuleDetailGrpahs($index)">
+				<div class="font_16 clr949494 apdcrd-mrtp10">Status</div>
+				<div class="apdcrd-mrtp10 font_16 apd-lineheight43 clr626161">{{test.status}}</div>
+			</div>
+			
+			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 apdbgdcolor apd-curpnt" ng-click="openModuleDetailGrpahs($index)">
+				<div class="font_16 clr949494 apdcrd-mrtp10">Location</div>
+				<div class="apdcrd-mrtp10 font_12 apd-lineheight26 clr626161">{{test.cities}}</div>
+			</div>
+		
+			<div class="pull-right apdosmopt dropdown" dropdown >
+				<div class="apd-apm-dropdown dropdown-toggle" dropdown-toggle>
+					<i class="icon-svg8" style="padding-top: 10px; margin-left: -10px;"></i>
+				</div>
+				<ul class="dropdown-menu" role="menu">
+					<li><a ng-click="editSum($index)">Edit</a></li>
+					<li><a ng-click="deleteSelectedSum($index)">Delete</a></li>
+				</ul>
+			</div>
+			
+			
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apdbgdcolor" >
+				<div class="">
+					<div class="font_14 apdcrd-mrtp05 apd-rbtrglfnfmly clr626161" >Run Duration:
+						<span class="cdcccc font_14 apd-rbtrglfnfmly  ">
+							{{test.startdate | asDate | date:'dd-MMM-yyyy HH:mm:ss'}} TO {{test.enddate | asDate | date:'dd-MMM-yyyy HH:mm:ss'}}
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

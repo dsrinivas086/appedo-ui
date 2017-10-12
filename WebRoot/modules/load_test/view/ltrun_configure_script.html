@@ -1,0 +1,182 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 apdo-adttl apd-rbtmdmfnfmly ">
+            Configure Script
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds form_controller -->
+    <div class="apdad-mbdy">
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm ">
+	            <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="{{moduleCardContent.icon_name}} aped-apiconttle"  style="color: rgb(151, 126, 49);"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">{{moduleCardContent.module_name}}</span>
+	                </div>
+	            </div>
+                <form class="apd-rbtrgfnfmly font_18" name="ltRunSettingConfigForm">
+                    <div class="apd-fldwdt01">
+                        <label class="font_14">Select Script<font size="3px" color="red"><sup>*</sup></font></label>
+						<!-- <select ng-model="">
+                       		<option value="1" >Script One</option>
+							<option value="2" >Script Two</option>
+							<option value="3" >Script Three</option>
+							<option value="4" >Script Four</option>
+                       	</select> -->
+                       	<select class="clr1b639e font_16" data-ng-model="ltRunSettingForm.script" data-ng-options="script as script.script_name for script in scriptData">
+                                <!-- <option value="">Select one</option> -->
+                        </select>
+                    </div>
+                    <div class="apd-fldwdt01">
+						<div class="chekbx" style="margin-top: 0px;">
+								<label>
+								<input class="font_12" type="checkbox" name="clearBrowserCache" id="ltRunSettingForm.clearBrowserCache" ng-value="true" ng-model="ltRunSettingForm.clearBrowserCache" checked="checked"/>
+								Enable Browser Cache</label>
+						</div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	                    <div class="apd-fldwdt01" style="margin-left:-15px;">
+	                        <label class="font_14">Start User Count <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <input type="number" placeholder="Start User Count" min="0" class="clr444444 apd-first-char-up" ng-model="ltRunSettingForm.startUserCount" required>
+                        </div>
+					</div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	                    <div class="apd-fldwdt01">
+	                        <label class="font_14">Max User Count <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <input type="number" placeholder="Max User Count" min="0" class="clr444444 apd-first-char-up" ng-model="ltRunSettingForm.maxUserCount" required>
+                        </div>
+                    </div>
+					<div class="apm-radiobtn apm-radiobtn apm-radiobtn-ltest col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<div class="apd-rdbtn ">
+							<input type="radio" name="radiog_lite6" id="radio10"  class="css-checkbox" ng-model="ltRunSettingForm.iterationDuration" value="iteration" checked="checked"/>
+							<label for="radio10" class="css-label radGroup1 font_14 ">Iteration</label>
+						</div>
+	                	<div class="apd-rdbtn">
+							<input type="radio" name="radiog_lite6" id="radio11"  class="css-checkbox" ng-model="ltRunSettingForm.iterationDuration" value="duration" checked="checked" />
+	                		<label for="radio11" class="css-label radGroup1 font_14">Duration</label>
+	               		</div>
+					</div>
+					<div ng-if="ltRunSettingForm.iterationDuration==='duration'">
+	                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+		                    <div class="apd-fldwdt01">
+		                        <label class="font_14">Hours <font size="3px" color="red"><sup>*</sup></font></label>
+		                        <input type="number" placeholder="Hours" min="0" class="clr444444 apd-first-char-up" ng-model="ltRunSettingForm.durationHrs">
+	                        </div>
+	                    </div>
+	                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+		                    <div class="apd-fldwdt01">
+		                        <label class="font_14">Min <font size="3px" color="red"><sup>*</sup></font></label>
+		                        <input type="number" placeholder="Min" min="0" class="clr444444 apd-first-char-up" ng-model="ltRunSettingForm.durationMins">
+	                        </div>
+	                    </div>
+	                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+		                    <div class="apd-fldwdt01">
+		                        <label class="font_14">Sec <font size="3px" color="red"><sup>*</sup></font></label>
+		                        <input type="number" placeholder="Sec" min="0" class="clr444444 apd-first-char-up" ng-model="ltRunSettingForm.durationSecs">
+	                        </div>
+	                    </div>
+                    </div>
+					<div ng-if="ltRunSettingForm.iterationDuration==='iteration'">
+	                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		                    <div class="apd-fldwdt01">
+		                        <label class="font_14">Iteration<font size="3px" color="red"><sup>*</sup></font></label>
+		                        <input type="number" placeholder="Iteration Count" min="0" class="clr444444 apd-first-char-up" ng-model="ltRunSettingForm.iterationCount" required>
+	                        </div>
+	                    </div>
+					</div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                    <div class="apd-fldwdt01"  style="margin-left:-15px;">
+	                        <label class="font_14">Increment User <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <input type="number" placeholder="Increament User" min="0" class="clr444444 apd-first-char-up" ng-model="ltRunSettingForm.increamnetUser" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                    <div class="apd-fldwdt01"  style="margin-left:-15px;">
+	                        <label class="font_16">For Every</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	                    <div class="apd-fldwdt01"  style="margin-left:-15px;">
+	                        <label class="font_14">Hours <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <input type="number" placeholder="Hours" min="0" class="clr444444 apd-first-char-up" ng-model="ltRunSettingForm.forEveryHrs">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	                    <div class="apd-fldwdt01">
+	                        <label class="font_14">Min <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <input type="number" placeholder="Min" min="0" class="clr444444 apd-first-char-up" ng-model="ltRunSettingForm.forEveryMins">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	                    <div class="apd-fldwdt01">
+	                        <label class="font_14">Sec <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <input type="number" placeholder="Sec" min="0" class="clr444444 apd-first-char-up" ng-model="ltRunSettingForm.forEverySecs">
+                        </div>
+                    </div>
+	                <div class="pull-right"  data-ng-controller="form_controller">
+	                    <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="applyToAll()">Apply To All</button>
+	                </div>
+	                <div class="pull-right"  data-ng-controller="form_controller">
+	                    <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="apply()">Apply</button>
+	                </div>
+<!--                         <div class="apd-fldwdt01" ng-if="slaActionForm.getPublicAction===true">
+	                        <label class="font_14">Public Action<font size="3px" color="red"><sup>*</sup></font></label>
+							<select ng-model="">
+                        		<option value="1" >Public Action One</option>
+								<option value="2" >Public Action Two</option>
+								<option value="3" >Public Action Three</option>
+								<option value="4" selected>Public Action Four</option>
+                        	</select>
+	                    </div>
+	                    <div class="apd-fldwdt01" ng-hide="slaActionForm.getPublicAction===true">
+	                        <label class="font_14">Action Name <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <input type="text" placeholder="Action Name" class="clr444444 apd-first-char-up" ng-model="slaActionForm.actionName">
+                        </div>
+	                    <div class="apd-fldwdt01" style="margin-top: 15px;" >
+	                        <label class="font_14">Description <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <input type="text" placeholder="Description" class="clr444444 apd-first-char-up" ng-model="slaActionForm.actionDescription">
+                        </div>
+                   		<div class="apm-radiobtn apm-radiobtn apm-radiobtn-ltest">
+	                        <div class="apd-rdbtn ">
+								<input type="radio" name="radiog_lite" id="radio1"  class="css-checkbox" ng-model="slaActionForm.radioPublicORPrivate" value="public" checked="checked"  />
+	                       		<label for="radio1" class="css-label radGroup1 font_16 ">Public</label>
+                       		</div>
+	                        <div class="apd-rdbtn">
+								<input type="radio" name="radiog_lite" id="radio2"  class="css-checkbox" ng-model="slaActionForm.radioPublicORPrivate" value="pvt"   />
+	                       		<label for="radio5" class="css-label radGroup1 font_16 ">Private</label>
+                       		</div>
+                  		</div>
+                        <label class="font_16" style="vertical-align: middle; padding-top: 14px;" >Parameter Format </label>
+						<div class="apm-radiobtn apd-mrgnbtm">
+	                        <div class="apd-rdbtn ">
+								<input type="radio" name="radiog_lite1" id="radio3"  class="css-checkbox" ng-model="slaActionForm.parameterType" value="json" checked="checked"  />
+	                       		<label for="radio3" class="css-label radGroup2 font_16 ">JSON</label>
+                       		</div>
+                  		</div>
+	                    <div class="apd-fldwdt01">
+							<label class="font_14">Script Parameters </label>
+							<textarea name="sctiptParameter" id="sctiptParameter" class="form-control font_12 " style="width: 486px; height: 200px;"
+							ng-model="slaActionForm.scriptParameter" textarea-fit-to-content ></textarea>
+						</div>
+                        <div class="pull-right"  data-ng-controller="form_controller">
+                            <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="addActionScript()">PROCEED</button>
+                        </div>
+ -->                        
+				</form>
+            </div>
+        </div>
+    </div>
+</div>

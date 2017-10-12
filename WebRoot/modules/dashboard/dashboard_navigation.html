@@ -1,0 +1,48 @@
+<!--dashboard subnavigation-->
+<div class="apdomaincdsbrd-subnav col-xs-12 col-sm-12 col-md-12 col-lg-12" data-ng-controller="dashboard_navigation_controller">
+    <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 font_18 clr1b639e apd-dashbrd-title">{{dashBoardTitle}}</div>
+	    <div class="apdomaincdsbrdnv-list">
+	        <i ng-class="{true: 'dbactive', false: 'dbinactive'}[displayflag_servicemap]" tooltip-placement="bottom" tooltip="Services Map" data-ng-click="setDashboardType('servicesmap'); setType('SM')"></i>
+	
+	        <i ng-class="{true: 'dbactive', false: 'dbinactive'}[displayflag_sum]" tooltip-placement="bottom" tooltip="SUM Metrics" data-ng-click="setDashboardType('sum'); setType('SUM')"></i>
+	
+	        <i ng-class="{true: 'dbactive', false: 'dbinactive'}[displayflag_rum]" tooltip-placement="bottom" tooltip="RUM Metrics" data-ng-click="setDashboardType('rum'); setType('RUM')"></i>
+	
+	        <i ng-class="{true: 'dbactive', false: 'dbinactive'}[displayflag_apm]" tooltip-placement="bottom" tooltip="App Deep Dive Metrics" data-ng-click="setDashboardType('apm'); setType('APM')"></i>
+	
+	        <i ng-class="{true: 'dbactive', false: 'dbinactive'}[displayflag_loadtest]" tooltip-placement="bottom" tooltip="Load Test Metrics" data-ng-click="setDashboardType('loadtest'); setType('LT')"></i>
+
+	    </div>
+	</div>
+
+    <div ng-switch="dbtype">
+        
+        <div ng-switch-when="sum">
+			<div data-ng-include="'modules/sum/dashboard/sum_dash_map.html'"></div> 
+			<div data-ng-include="'modules/sum/dashboard/sum_dash_summary.html'"></div> 
+			<div data-ng-include="'modules/sum/dashboard/sum_dash_panel.html'"></div>
+        </div>
+        <div ng-switch-when="rum">
+            <div data-ng-include="'modules/rum/dashboard/rum_dash_panel.html'"></div> 
+        </div>
+        <div ng-switch-when="apm">
+            <div data-ng-include="'modules/apm/dashboard/apm_dash_summary.html'"></div> 
+            <div data-ng-include="'modules/apm/dashboard/apm_dash_panel01.html'" ng-if="showApmDashPanel01"></div>
+            <div data-ng-include="'modules/apm/dashboard/apm_dash_panel02.html'" ng-if="showApmDashPanel02"></div> 
+            <div data-ng-include="'modules/apm/dashboard/apm_dash_panel03.html'" ng-if="showApmDashPanel03"></div>
+        </div>
+        <div ng-switch-when="loadtest">
+			<div data-ng-include="'modules/load_test/dashboard/loadtest_dash_panel.html'"></div>
+        </div>
+        <div ng-switch-when="servicesmap">
+			<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash.html'"></div>
+<!-- 			<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash_sum.html'"></div> -->
+<!-- 			<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash_rum.html'"></div> -->
+<!-- 			<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash_apm_summary.html'"></div> -->
+<!-- 			<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash_apm_app.html'"></div> -->
+<!-- 			<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash_apm_svr.html'"></div> -->
+<!-- 			<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash_apm_db.html'"></div> -->
+        </div>
+    </div>
+</div>

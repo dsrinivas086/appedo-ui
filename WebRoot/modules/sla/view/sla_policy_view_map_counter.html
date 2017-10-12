@@ -1,0 +1,106 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 apdo-adttl apd-rbtmdmfnfmly ">
+            View Mapped Counters
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds form_controller adForm01 class does not have left margin -->
+    <div class="apdad-mbdy">
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm01">
+	            <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="{{moduleCardContent.icon_name}} aped-apiconttle" style="color: rgb(70, 193, 186);"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">{{moduleCardContent.module_name}}</span>
+	                </div>
+	            </div>
+                <form class="apd-rbtrgfnfmly font_12" name="slaPolicyViewMappedCounter">
+                	<div class="row">
+                		<div class="col-lg-1 col-md-1 col-sm-4 col-xs-4" >
+	                		<div class="apd-fldwdt02">
+	                      		<label class="font_12">R</label>
+	                      	</div>
+	                    </div>
+	                    <div class="col-lg-1 col-md-1 col-sm-4 col-xs-4" >
+	                		<div class="apd-fldwdt02">
+	                      		<label class="font_12">E</label>
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-2 col-md-2 col-sm-8 col-xs-8">
+	                		<div class="apd-fldwdt02">
+			                    <label class="font_12">App/Svr/Db Name</label>
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-3 col-md-3 col-sm-8 col-xs-8">
+	                		<div class="apd-fldwdt02">
+		                      <label class="font_12">Cat & Counter Name</label>
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-3 col-lg-3 col-md-2 col-sm-6 col-xs-6">
+	                		<div class="apd-fldwdt02">
+		                      <label class="font_12">Threshold Value</label>
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+	                		<div class="apd-fldwdt02">
+			                    <label class="font_12">Min Br Cnt</label>
+	                      	</div>
+	                    </div>
+                	</div>
+                	<div class="row" data-ng-repeat="counter in mappedcounters">
+                		<div class="col-lg-1 col-md-1 col-sm-4 col-xs-4" >
+	                		<div class="apd-fldwdt02">
+<!-- 	                      		<a href="" ng-click="deleteMapCounter()" >DELTE</a> -->
+							<img href="" src="assets/images/cancel.png" style="cursor: pointer;" ng-click="deleteMapCounter()" tooltip="Delete" tooltip-placement="right" />
+	                      	</div>
+	                    </div>
+	                    <div class="col-lg-1 col-md-1 col-sm-4 col-xs-4" >
+	                		<div class="apd-fldwdt02">
+	                      		<a href="" ng-click="editMapCounter()" ><i class="fa fa-pencil" style="font-size: 17px;" tooltip="Edit" tooltip-placement="right"></i></a>
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-2 col-md-2 col-sm-8 col-xs-8">
+	                		<div class="apd-fldwdt02">
+			                    <label class="font_12">{{counter.moduleValue}}</label>
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-3 col-md-3 col-sm-8 col-xs-8">
+	                		<div class="apd-fldwdt02">
+		                      <label class="font_12">{{counter.category}} & {{counter.countername}}</label>
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-3 col-lg-3 col-md-2 col-sm-6 col-xs-6">
+	                		<div class="apd-fldwdt02" align="center">
+		                      <label class="font_12">{{counter.thresholdValue}}</label>
+	                      	</div>
+	                    </div>
+	                	<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+	                		<div class="apd-fldwdt02"  align="center">
+			                    <label class="font_12">{{counter.minBreachCount}}</label>
+	                      	</div>
+	                    </div>
+                	</div>
+                	<div class="pull-right"  data-ng-controller="form_controller">
+	                    <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="closemodal()">Close</button>
+	                </div>
+	                <div class="pull-right"  data-ng-controller="form_controller">
+	                    <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="cardLayout()">Add Counter</button>
+	                </div>
+				</form>
+            </div>
+        </div>
+    </div>
+</div>

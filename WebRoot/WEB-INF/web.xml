@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+	<display-name>Appedo-VelocityUI</display-name>
+	
+	<context-param>
+		<param-name>Application-Version</param-name>
+		<param-value>3.0.119</param-value>
+	</context-param>
+	<context-param>
+		<param-name>VersionLastUpdate</param-name>
+		<param-value>2015-06-02 20:30</param-value>
+	</context-param>
+	<context-param>
+		<description>Constant file properties</description>
+		<param-name>CONSTANTS_PROPERTIES_FILE_PATH</param-name>
+		<param-value>/WEB-INF/classes/com/appedo/resource/config.properties</param-value>
+	</context-param>
+	<context-param>
+		<description>log4j file properties</description>
+		<param-name>LOG4J_PROPERTIES_FILE_PATH</param-name>
+		<param-value>/WEB-INF/classes/com/appedo/resource/log4j.properties</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>InitServlet</servlet-name>
+		<servlet-class>com.appedo.servlet.InitServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Captcha</servlet-name>
+		<servlet-class>com.appedo.servlet.ImageCaptcha</servlet-class>
+		<init-param>
+			<description>passing height</description>
+			<param-name>height</param-name>
+			<param-value>30</param-value>
+		</init-param>
+		<init-param>
+			<description>passing width</description>
+			<param-name>width</param-name>
+			<param-value>120</param-value>
+		</init-param>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Captcha</servlet-name>
+		<url-pattern>/Captcha.jpg</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>LoginController</servlet-name>
+		<servlet-class>com.appedo.controller.LoginController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginController</servlet-name>
+		<url-pattern>/loginSession</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginController</servlet-name>
+		<url-pattern>/logoutSession</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UserController</servlet-name>
+		<servlet-class>com.appedo.controller.UserController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/userSignup</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/verifyEmailAddress</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/forgotPassword</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/resetPassword</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/newPassword</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/getMyProfileDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/updateMyProfile</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/changePassword</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/updateProfile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/checkSessionExists</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/isAdmin</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/credentials/getAppedoPricing</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/credentials/getLicesingEmails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/credentials/getUsageMetrics</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/credentials/updateLicesense</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/credentials/getLicesenseDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/getLoginUserDetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/updateUserAccessRights</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/getUsersAdminPrivilege</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet>
+		<servlet-name>ModuleController</servlet-name>
+		<servlet-class>com.appedo.controller.ModuleController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModuleController</servlet-name>
+		<url-pattern>/apm/*</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet>
+		<servlet-name>ModuleCountersController</servlet-name>
+		<servlet-class>com.appedo.controller.ModuleCountersController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModuleCountersController</servlet-name>
+		<url-pattern>/apmCounters/*</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet>
+		<servlet-name>DownloadAgent</servlet-name>
+		<servlet-class>com.appedo.servlet.DownloadAgentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DownloadAgent</servlet-name>
+		<url-pattern>/apm/downloadAgent</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet>
+		<servlet-name>SUMController</servlet-name>
+		<servlet-class>com.appedo.controller.SUMController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SUMController</servlet-name>
+		<url-pattern>/sum/*</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet>
+		<servlet-name>RUMController</servlet-name>
+		<servlet-class>com.appedo.controller.RUMController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RUMController</servlet-name>
+		<url-pattern>/rum/*</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>CIController</servlet-name>
+		<servlet-class>com.appedo.controller.CIController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CIController</servlet-name>
+		<url-pattern>/ci/*</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>LTController</servlet-name>
+		<servlet-class>com.appedo.controller.LTController</servlet-class>
+		<multipart-config>
+            <max-file-size>20848820</max-file-size>
+            <max-request-size>418018841</max-request-size>
+            <file-size-threshold>1048576</file-size-threshold>
+        </multipart-config>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LTController</servlet-name>
+		<url-pattern>/lt/*</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet>
+		<servlet-name>SLAController</servlet-name>
+		<servlet-class>com.appedo.controller.SLAController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SLAController</servlet-name>
+		<url-pattern>/sla/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SLAController</servlet-name>
+		<url-pattern>/verifySLAEmailAddress</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	    <servlet-name>LTScheduler</servlet-name>
+	    <servlet-class>com.appedo.controller.LTScheduler</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LTScheduler</servlet-name>
+		<url-pattern>/ltScheduler/*</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>Controller</servlet-name>
+		<servlet-class>com.appedo.controller.Controller</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Controller</servlet-name>
+		<url-pattern>/reloadAgentsLatestVersionAndFilePath</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>ServiceMapController</servlet-name>
+		<servlet-class>com.appedo.controller.ServiceMapController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServiceMapController</servlet-name>
+		<url-pattern>/service/*</url-pattern>
+	</servlet-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- ========================================================== -->
+	<!-- Listeners -->
+	<!-- ========================================================== -->
+
+	<!-- Listener for the application -->
+	<listener>
+		<listener-class>com.appedo.listener.AppedoHttpSessionListener</listener-class>
+	</listener>
+</web-app>

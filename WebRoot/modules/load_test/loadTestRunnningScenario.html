@@ -1,0 +1,143 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer" ng-controller="loadTestRunningScenarioController" >
+	<div class="row">
+		<div class="apdo-crdtlte col-lg-6 col-md-6 col-sm-8 col-xs-8 font_18 clr1b639e">
+		<back-button><img src="assets/images/back.png" class="apd-curpnt"/></back-button> 
+		<span class="apd-mrgnlft10">Load Test - {{scenarioName}} - Running</span></div>
+		<!-- 
+		<div class="col-lg-offset-1 col-lg-4">
+			<div class="apd-center01 apd-mrbtm10 apdcrd-mrtp10 " >
+				<button type="submit" class=" btn btn-success apd-mrrt20" >Generate Chart</button>
+				<button type="submit" class=" btn btn-success" >View report</button>
+			</div>
+		</div>
+		-->
+	</div>
+
+	<div class="apdcrdcatgrywrpr" >
+		<div class="row apdcrdcatgry apd-rbtrgfnfmly" ><!-- ng-repeat="scenario in ltRunningScenarios"  -->
+			<div class="row " >
+				<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Report Name</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 apd-first-char-up">{{ltRunningScenario.reportName}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-8 col-xs-10 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Run Start Time</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.runStartTime | date:'dd-MMM-yyyy HH:mm:ss '}}</div>
+				</div>
+				
+				
+				<div class="col-lg-2 col-md-2 col-sm-8 col-xs-10 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Elapsed Time</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 ">{{ltRunningScenario.elapsedtime | millisecAsHoursMinSec}}</div>
+				</div>
+				
+				
+				<div class="col-lg-2 col-md-2 col-sm-8 col-xs-10 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Created User</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 " ng-show="loadTestType == 'APPEDO_LT'">{{ltRunningScenario.createdUser}}</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 " ng-show="loadTestType == 'JMETER'">{{ltRunningScenario.createdUser != 0 ? ltRunningScenario.createdUser : ''}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-8 col-xs-10 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Completed User</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 " ng-show="loadTestType == 'APPEDO_LT'">{{ltRunningScenario.completedUser}}</div>
+					<div class="cdcccc font_16 apd-rbtrglfnfmly apd-mrbtm10 " ng-show="loadTestType == 'JMETER'">{{ltRunningScenario.completedUser != 0 ? ltRunningScenario.completedUser : ''}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-8 col-xs-10 apdbgdcolor">
+					<!-- <div class="apd-center01 apdcrd-vrscnt lt-stop-circle " title="Stop" ng-click="stopRunningScenario()" style="cursor: pointer;" ></div> -->
+					
+					<div class="apd-center01 apd-mrbtm10 apdcrd-mrtp10 " ng-if="loadTestType=='APPEDO_LT'">
+						<button type="submit" class="btn btn-danger apd-mrrt20" ng-click="stopRunningScenario()" >Stop</button>
+					</div>
+				</div>
+			</div>
+			<!-- 
+			<div class="row lt-status-scripts-border">
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Script Name</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Created User(s)</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Completed User(s)</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-8 col-xs-12 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apdcrdchd01 ">
+						HTTP Status Count<br/>
+						
+						<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">2xx</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">3xx</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">4xx</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">5xx</div>
+						<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01">Oth</div>
+					</div>
+						
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">Error Count</div>
+				</div>
+				
+				<div class="col-lg-1 col-lg-1 col-sm-6 col-xs-8 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">Status</div>
+				</div>
+			</div>
+			
+			
+			<div class="row " ng-repeat="script in ltRunningScenario.scripts">
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{script.scriptName}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{script.createdUser}}</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor apdcrdchd01">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{script.completedUser}}</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-8 col-xs-12 apdbgdcolor ">
+					<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+						{{script.http200Status}}
+					</div>
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+						{{script.http300Status}}
+					</div>
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+						{{script.http400Status}}
+					</div>
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+						{{script.http500Status}}
+					</div>
+					
+					<div class="col-lg-3 col-md-3 col-sm-2 col-xs-4 apdbgdcolor apdcrdchd01 font_12 clr626161 apd-mrbtm10 apdcrd-mrtp10 breakWord">
+						{{script.httpOthStatus}}
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-2 col-sm-6 col-xs-8 apdbgdcolor ">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 apd-center01">{{script.errorCount}}</div>
+				</div>
+				
+				<div class="col-lg-1 col-lg-1 col-sm-6 col-xs-8 apdbgdcolor">
+					<div class="font_16 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26">{{script.status}}</div>
+				</div>
+			</div>
+			 -->
+		</div>
+	</div>
+	
+	
+	<div data-ng-include="'modules/load_test/loadTestRunningScriptDetails.html'"></div>
+</div>

@@ -1,0 +1,88 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 apdo-addheader apd-rbtmdmfnfmly">
+            Select Monitors
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm01">
+                <form class="apd-rbtrgfnfmly font_12" name="sumCities">
+                <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="icon-load aped-apiconttle" style="color: #977E31;"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">Load Testing</span>
+	                </div>
+	            </div>
+	            <br/>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <!--  first column  -->
+
+                        <div class="apd-fldwdt01">
+                            <label class="font_14">Monitors<font size="3px" color="red"><sup>*</sup></font></label>
+                            <select class="clr1b639e font_16" data-ng-model="ltMonitorData.ltMonitor" data-ng-options="ltMonitor as ltMonitor.apm for ltMonitor in ltMonitors">
+                                <option value="">Select one</option>
+                            </select>
+                        </div>
+                        <br/>
+                        <div class="apd-fldwdt01">
+                            <label class="font_14">Choose App/Svr/Db<font size="3px" color="red"><sup>*</sup></font></label>
+                            <div class="" style="border:1px solid #B0ABAB; height: 250px; overflow: auto;">
+                                <div class="" ng-repeat="agent in agentsData" align="left" style="">
+                                    <div class="chekbx" style="margin-left: 10px;">
+                                        <label>
+                                            <input class="font_12" type="checkbox" class="col-md-1" name="agent" id="" value="{{agent.module_name}}" ng-model="agent.isSelected" />
+                                            <span class="font_12" style="">{{agent.module_name}}</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="apd-fldwdt01">
+                            <label class="font_14">Selected Monitors<font size="3px" color="red"><sup>*</sup></font></label>
+                            <div class="">
+                                <div class="" style="border:1px solid #B0ABAB; height: 329px; overflow: auto;">
+                                <div  class="" ng-repeat="ltMonitor in ltMonitors" align="left" style="">
+								<div  ng-repeat="agent in ltMonitor.agents">
+									<div class="chekbx" ng-show="agent.isSelected" style="margin-left: 10px;">
+										<label for="agent_{{agent.module_code}}_{{agent.module_name}}">
+											<input class="font_12 clr1b639e"   
+		 								type="checkbox" class="col-md-1" name="agent" id="agent_{{agent.module_code}}_{{agent.module_name}}" 
+		 								value="{{agent.city}}" style="" ng-model="agent.isSelected" />
+											<span class="font_12" style="">{{agent.module_code}} - {{agent.module_name}}</span>
+										</label>
+									</div>
+								</div>
+								</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  <label class="alert alert-danger apd-frmfld control-label font_14"
+					ng-show="showConfigCountersErrorMsg"> {{ConfigCountersErrorMsg}} </label> -->
+                    <div class="pull-right" data-ng-controller="form_controller">
+                        <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="agentLoadGenerator()">PROCEED</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

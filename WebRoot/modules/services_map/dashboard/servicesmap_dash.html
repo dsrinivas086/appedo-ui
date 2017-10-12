@@ -1,0 +1,38 @@
+<div data-ng-controller="serviceMapController">
+	<div class="apd-subpnl apdmrgtp25" >
+	    <div class="apd-subpnlcntnt">
+	        <div class="row">
+	            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		            <div class="pull-left font_18 clr1b639e apd-dsbslct" ng-if="selectedType=='dashboard'">
+		                <select name="services" id="services" ng-model="selectedService" ng-options='services as services.name for services in serviceMaps'>
+	                	</select>
+		            </div>
+		        </div>
+		        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		            <div class="apm-radiobtn apm-radiobtn-no-margin apd-mrrt20 font_14" style="  margin-bottom: -45px; margin-top: -19px;">
+					    <div class="apd-rdbtn clr1b639e apd-mrgnbtm" >
+							<input type="radio" name="radioServiceMap" id="radioServiceMapDashboard" class="css-checkbox" ng-model="selectedType" value="dashboard" ng-change="loadServiceMap()" checked="true" />
+							<label for="radioServiceMapDashboard" class="css-label radGroup1" style="color: #1b639e;">Dashboard</label>
+					    </div>
+					    <div class="apd-rdbtn clr1b639e">
+							<input type="radio" name="radioServiceMap" id="radioServiceMapPanel" class="css-checkbox" ng-model="selectedType" value="panel" ng-change="loadServiceMap()"/>
+							<label for="radioServiceMapPanel" class="css-label radGroup1" style="color: #1b639e;">Panel</label>
+					    </div>
+				   </div>
+	        	</div>
+	        </div>
+	    </div>
+	</div>
+
+	<div ng-if="showDashboard">
+		<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash_sum.html'" ng-if="showServiceMapSum"></div>
+		<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash_rum.html'" ng-if="showServiceMapRum"></div>
+	<!-- 	<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash_apm_summary.html'" ></div> -->
+		<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash_apm_app.html'" ng-if="showServiceMapApp"></div>
+		<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash_apm_svr.html'" ng-if="showServiceMapSvr"></div>
+		<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash_apm_db.html'" ng-if="showServiceMapDb"></div>
+	</div>
+	<div ng-if="showPanel">
+		<div data-ng-include="'modules/services_map/dashboard/servicesmap_dash_apm_summary.html'" ></div>
+	</div>
+</div>

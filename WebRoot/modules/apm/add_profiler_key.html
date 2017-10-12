@@ -1,0 +1,65 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 apdo-adttl apd-rbtmdmfnfmly">
+        	<span ng-if="transaction.keyTransactionId != 0">Remove Key Transaction</span>
+        	<span ng-if="transaction.keyTransactionId == 0">Add Key Transaction</span>
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm">
+	            <div>
+	                <div class="aped-apiconttlewr">
+	                    <span class="font_14 apd-rbtrgfnfmly aped-apiconttlewr">Transaction : 
+	                    <span class ="clr1b639e" ng-if="transaction.transactionName.length <= 75" title ="{{transaction.transactionName}}" >{{transaction.transactionName}}</span>
+	                    <span class ="clr1b639e" ng-if="transaction.transactionName.length > 75" title ="{{transaction.transactionName}}" >{{transaction.transactionName.substring(1,75)}}...</span>
+	                    </span>
+	                </div>
+	            </div>
+                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+					<div ng-if="transaction.keyTransactionId == 0">
+						<form class="apd-rbtrgfnfmly font_18" name="keyAddForm">
+	                        <div class="apd-fldwdt">
+	                            <label class="font_14">Transaction Name <font size="3px" color="red"><sup>*</sup></font></label>
+	                            <input type="text" name="keyTransactionName" maxlength="100" ng-model="transaction.keyTransactionName" placeholder="Transaction Name" class="clr444444 apd-first-char-up" required>
+	                        </div>
+	                        <div class="apd-fldwdt">
+	                            <label class="font_14">Description <font size="3px" color="red"><sup>*</sup></font></label>
+	                            <input type="text" name="keyTransactionDescription" maxlength="500" ng-model="transaction.keyTransactionDescription" placeholder="Description" class="clr444444 apd-first-char-up" required>
+	                        </div>
+	                        <div class="pull-right"  data-ng-controller="form_controller">
+	                            <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="addKey()"  ng-disabled="keyAddForm.$invalid">Save</button>
+	                        </div>
+	                    </form>
+					</div>
+					<div ng-if="transaction.keyTransactionId != 0">
+						<div class="apd-rbtrgfnfmly">
+							<div class="apd-fldwdt">
+	                            <label class="font_14">Are you sure you want to remove?</label>
+	                        </div>
+			            </div>
+						<div class="pull-right"  data-ng-controller="form_controller">
+                            <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="removeKey()">Yes</button>
+                            <button type="submit" class="apdo-adbtn btn btn-success" data-ng-click="close()">No</button>
+                        </div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

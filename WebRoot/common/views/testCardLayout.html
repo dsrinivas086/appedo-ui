@@ -1,0 +1,115 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer " ng-controller="testCardController">
+	<div class="row">
+		<div class="apdo-crdtlte col-lg-12 col-md-12 col-sm-12 col-xs-12 font_18 clr1b639e">Test</div>
+	</div>
+
+    <!--cardlist start-- apd-lineheight26 apd-lineheight30 apdo-cnterver-->
+    <div class="apdcrdcatgrywrpr" >
+    	<div class="row apdcrdcatgry apd-rbtrgfnfmly">
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 apdbgdcolor">
+				<div class="font_22 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 clr626161 apd-first-char-up">Test 20150410</div>
+				
+				<div class="cdcccc font_14 apd-rbtrglfnfmly apd-mrbtm10">Added by admin on 10-Apr-2015 14:50:01</div>
+				
+				<div class="font_14 apdcrd-mrtp05 apd-rbtrglfnfmly" ng-click="openModuleDetailGrpahs()">
+					<span class="apd-rbtrgfnfmly clr626161">Type:</span><span class="apd-rbtrgfnfmly"> {{appcardcontent.type}} | {{appcardcontent.version}}</span>
+				</div>
+				
+				<div class="cdcccc font_14 apdcrd-mrtp05 apd-rbtrgfnfmly">GUID:
+					<span class="apd-rbtrgfnfmly"> 2451266asd-sad58-errww5-33</span>
+				</div>
+			</div>
+			
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 apdbgdcolor">
+				<div class="font_22 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 clr626161 apd-first-char-up">Test 20150410</div>
+				
+				<div class="cdcccc font_14 apd-rbtrglfnfmly apd-mrbtm10">Added by admin on 10-Apr-2015 14:50:01</div>
+				
+				<div class="cdcccc font_14 apdcrd-mrtp05 apd-rbtrgfnfmly">GUID:
+					<span class="apd-rbtrgfnfmly"> 2451266asd-sad58-errww5-33</span>
+				</div>
+			</div>
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 apdbgdcolor">
+				<div class="font_22 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 clr626161 apd-first-char-up">Test 20150410</div>
+				
+				<div class="cdcccc font_14 apd-rbtrglfnfmly apd-mrbtm10">Added by admin on 10-Apr-2015 14:50:01</div>
+				
+				<div class="cdcccc font_14 apdcrd-mrtp05 apd-rbtrgfnfmly">GUID:
+					<span class="apd-rbtrgfnfmly"> 2451266asd-sad58-errww5-33</span>
+				</div>
+			</div>
+    	</div>
+    	
+		<svg>
+			<rect x="10" y="10" height="50" width="50"
+			      rx="5" ry="5"
+			      style="stroke:#006600; fill: #00cc00"/>
+			<rect x="70" y="10" height="50" width="50"
+			      rx="10" ry="10"
+			      style="stroke:#006600; fill: #00cc00"/>
+			<rect x="130" y="10" height="50" width="50"
+			      rx="15" ry="15"
+			      style="stroke:#006600; fill: #00cc00"/>
+		</svg>
+		
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="row apd-mrbtm10">
+					<div class="col-md-8">Page Load Time</div>
+					<div class="col-md-4">Avg(VstCnt)</div>
+				</div>
+				
+				<div class="row" ng-repeat="event in ciEvents">
+					<div id="ci_event_{{$index}}" class="col-md-8" style="height: 35px;">
+						<appedo-barchart-without-axis bardata="{{event.value}}" label="{{event.label}}" barheight="30" parentid="ci_event_{{$index}}" style="width: inherit;"></appedo-barchart-without-axis>
+					</div>
+					<div class="col-md-4">
+						{{event.avgEventDuration}} ms ({{event.eventVisitorCount}})
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<span appedo-bar-chart bardata="ciEvents" maxpercentage="100" svgwidth="600" svgheight="100" svgpadding="10" barwidth="30" barpadding="5" ></span>
+		<p>ssssss</p>
+		
+		<span appedo-bar-chart-horizontal bardata="ciEvents" maxpercentage="100" svgwidth="600" svgheight="100" svgpadding="10" barheight="30" barpadding="5" multiply="5"></span>
+		
+		
+		<div class="row">
+			<div class="col-lg-8">
+				<!-- <div appedo-multi-line-chart style="width: 100%; height: 200px;" >
+				</div> -->
+				<div appedo-area-chart-discontinues-point
+					chartdata="testDiscontinueschartData" xaxisformat="{{d3XaixsFormat}}"
+					style="width: 100%; height: 200px;" >
+				</div>
+				
+			</div>
+		</div>
+		
+		<br><br>
+		
+		<div class="row">
+			<div class="col-lg-8" id="discountinuesPoint1">
+		        <div>
+					<appedo-area-chart-directive  id="d3Area_counter_monitor1" modtype="apm" chartdata="testContinueschartData" paneltype="application" parrentnodeid="discountinuesPoint1" xaxisformat="{{d3XaixsFormat}}" linkstatus="false"></appedo-area-chart-directive>
+		        </div>
+			</div>
+		</div>
+		
+		<br><br>
+		
+		<div class="row">
+			<div class="col-lg-8" id="discountinuesPoint">
+		        <div>
+					<appedo-multi-area-chart-directive  id="d3Area_counter_monitor" modtype="apm" chartdata="testDiscontinueschartData" paneltype="application" parrentnodeid="discountinuesPoint" xaxisformat="{{d3XaixsFormat}}" linkstatus="false"></appedo-area-chart-directive>
+		        </div>
+			</div>
+		</div>
+		
+    </div>
+</div>

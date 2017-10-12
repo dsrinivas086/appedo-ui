@@ -1,0 +1,124 @@
+
+<div class="apdmrgtp25 " >
+	<div class="apd-testingcnt apdmrgtp25 apd-subpnl">
+		<div class="row apdeo-adForm apd-marg-left ">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 apd-mrbtm10	apd-border-bottom ">
+				<div class="font_18 clr1b639e">Transactions</div>
+			</div>
+				
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="row apd-border-bottom ">
+					<div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 font_14 ">URI</div>
+					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 font_14 ">Hits</div>
+					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 font_14 ">Avg. Duration</div>
+				</div>
+					
+				<div class="row " ng-repeat="transaction in profilerData.transactionsData" >
+					<div id="transaction_{{$index}}" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 " ng-click="getProfilerTransactionTimeTaken()" ><!-- ng-click="loadSelectedPageLoadTime()" -->
+						<span class="font_10"> {{transaction.transactionName}} </span>
+						<appedo-barchart-without-axis 
+							bardata="{{transaction.percentageAvgDuration}}"  
+							barheight="10" 
+							parentid="transaction_{{$index}}" style="width: inherit;">
+						</appedo-barchart-without-axis><!-- loadevent="loadSelectedPageLoadTime" label="{{page.page}}" --> 
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 apd-mrgntp10">{{transaction.noOfHits}}</div>
+					<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 apd-mrgntp10">{{transaction.avgDuration}} ms</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-6 col-md-6 col-sm-4 col-xs-4" ng-show="profilerPanel.showTransactionTimeTaken"><!-- ng-show="selectedPage != undefined" -->
+				<div class="apdeo-adForm apd-marg-left ">
+					<div id="appTransactionTimeTaken" class="apdmainright-ctgry " >
+						 <div class="apd-grpcntlg3">
+						 	<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Transaction Time taken (ms)</div>
+						 	<div class="font_10">
+						 		<span class="clr1b639e">URI:</span>
+								<span> - {{selectedTransaction.transactionName}}</span> 
+							</div>
+						 </div>
+						 
+						<div>
+							<appedo-area-chart-directive 
+								id="d3Area_TransactionTimeTaken" 
+								modtype="app" acctype="{{'Transaction Time taken (ms)'}}" chartdata="profilerData.transactionTimeTakenData" 
+								paneltype="app" parrentnodeid="appTransactionTimeTaken" xaxisformat="{{d3XaixsFormat}}" 
+								loadevent="getProfilerMethodTrace" linkstatus="true" >
+							</appedo-area-chart-directive>
+						</div>
+						
+						<div class="apdobtmbar01"></div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<!-- Methods Trace -->
+			<div class="" ng-show="profilerPanel.showMethodTrace">
+				<div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12 apdmrgtp25" style="padding: 0 !important;">
+					
+					<div class="row apd-border-bottom ">
+						 <div class="apd-grpcntlg3">
+						 	<div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Methods trace</div>
+						 </div>
+						<div class="font_14 apd-rbtmdmfnfmly apd-grpcntlg3tl " style=" padding-left: 10px; padding-right: 10px;">
+							<span>Method Full Name</span>
+							<span class="apd-right" style="float: right;">Duration</span>
+						</div>
+					</div>
+
+					<div class="row ">
+						<div ui-tree="options" class="apdcrd-mrtp10">
+							<ol ui-tree-nodes ng-model="profilerData.methodsTrace" >
+								<li ng-repeat="item in profilerData.methodsTrace" ui-tree-node ng-include="'items_renderer.html'" ></li>
+							</ol>
+						</div>
+					</div>
+					
+					
+					<script type="text/ng-template" id="items_renderer.html">
+						<div class="angular-ui-tree-handle" >
+							<span>{{item.items}}</span>
+						</div>
+					</script>
+					
+					<script type="text/ng-template" id="items_renderer.html">
+						<div class="angular-ui-tree-handle div_hover" data-nodrag><!-- class="angular-ui-tree-handle div_hover"  -->
+							<span data-ng-show="item.items.length > 0" class="apd-curpnt " >
+								<!--<a class="angular-ui-tree-icon" ng-click="toggle(this)">
+									<span class="angular-ui-tree-icon-collapse" ng-class="{'collapsed': collapsed, 'uncollapsed': !collapsed}"></span>collapsed:{{collapsed}}
+								</a>-->
+								
+								<a class="" data-nodrag ng-click="toggle(this)" >
+									<span class="glyphicon treeToggle" ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed}" ></span>
+								</a>
+							</span>
+							<span class="font_14">{{item.showText}}</span>
+							<!--span class="text-right" style="float: right; width: 50px;">{{item.time_trace}} ms</span -->
+							<span class="text-right apd-pdngrt05" style="float: right; ">{{item.duration}} ms</span><!-- width: 50px; -->
+							<div ng-show="{{item.type=='SQL_METHOD'?true:false}}">
+								{{item.query}}
+							</div>
+							<!-- p ng-show="{{item.exception_type.length>0?true:false}}">
+								{{item.exception_type}}
+							</p -->
+							<div ng-show="{{item.exception_message.length>0?true:false}}" style="color: #dd1100;">
+								{{item.exception_message}}
+							</div>
+							<!-- p ng-show="{{item.exception_stacktrace.length>0?true:false}}">
+								{{item.exception_stacktrace}}
+							</p -->
+							<!-- a class="pull-right angular-ui-tree-icon angular-ui-tree-icon-action" data-nodrag ng-click="remove(this)"><span class="fa fa-times"></span></a>
+							<a class="pull-right angular-ui-tree-icon angular-ui-tree-icon-action" data-nodrag ng-click="newSubItem(this)"><span class="fa fa-plus"></span></a -->
+						</div>
+						<ol ui-tree-nodes="options" ng-model="item.items" ng-class="{hidden: collapsed}" data-nodrag>
+							<li ng-repeat="item in item.items" ui-tree-node ng-include="'items_renderer.html'" data-nodrag >
+							</li>
+						</ol>
+					</script>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>

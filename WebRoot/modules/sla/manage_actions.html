@@ -1,0 +1,76 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer" data-ng-controller="slaActionCardController">
+	<div class="row">
+		<div class="apdo-crdtlte col-lg-6 col-md-6 col-sm-6 col-xs-12 font_18 clr1b639e">Manage Action</div>
+<!--         <div class="apdo-crdtlte col-lg-3 col-md-3 col-sm-3 col-xs-12 font_12 clr1b639e"  align="right"> -->
+<!--         	<button type="submit" class="btn btn-success" data-ng-click="">SLA Settings</button> -->
+<!--         </div> -->
+		<div class="apdo-crdtlte col-lg-2 col-md-2 col-sm-2 col-xs-12 font_12 clr1b639e">
+			<a href="./#/sla_home/slave_status" title="SLA Verification engine.">
+				<button type="submit" class="btn btn-success" data-ng-click="">SLAVE Status</button>
+			</a>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 font_12 clr1b639e">
+			<div style="margin-top: 10px;">
+				<!-- div>
+					<a href="./apm/downloadAgent?type=SLA&os=windows" title="SLA Verification engine.">
+						<b></b><i class="fa fa-cloud-download apd-mntor-dwnicon_color download-icon"></i><u>SLAVE(Windows) </u></b><br>
+					</a>
+				</div -->
+				<div align="center" style="margin-top: -22px;">
+					<a href="./apm/downloadAgent?type=SLA&os=linux" title="SLA Verification engine.">
+						<b></b><i class="fa fa-cloud-download apd-mntor-dwnicon_color download-icon"></i><u>SLAVE(Linux) </u></b><br>
+					</a>
+				</div>
+				<div>
+					<span class="clr626161 font_11 apd-rbtrbfnfmly apd-mrbtm10 apdcrd-mrtp05">
+						SLAVE must be installed in all the servers where healing need to take place.
+					</span>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+    <!--cardlist start-- apd-lineheight26 apd-lineheight30 apdo-cnterver-->
+	<div class="apdcrdcatgrywrpr" data-ng-repeat="slaaction in slaactions">
+		<div class="row apdcrdcatgry apd-rbtrgfnfmly">
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 apdbgdcolor">
+				<div  class="font_22 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 clr626161 apd-first-char-up wordbreak">{{slaaction.action_name}}</div>
+				<span class="cdcccc font_14 apd-rbtrglfnfmly apd-mrbtm10">Added by {{slaaction.created_by}} on {{slaaction.created_on | date:'dd-MMM-yyyy HH:mm:ss'}}</span>
+				<div class="font_14 apdcrd-mrtp05 apd-rbtrglfnfmly" ng-click="openModuleDetailGrpahs()">
+					<span class="apd-rbtrgfnfmly clr626161">Type:</span><span class="apd-rbtrgfnfmly"> {{slaaction.type}}</span>
+				</div>
+			</div>
+
+ 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 apdbgdcolor" ng-click="openModuleDetailGrpahs()">
+				<div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Mapped Rules</div>
+
+				<div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161">{{slaaction.mapped_rules}}</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 apdbgdcolor" ng-click="openModuleDetailGrpahs()">
+				<div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Mapped SLA</div>
+
+				<div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161">{{slaaction.mapped_sla}}</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 apdbgdcolor">
+				<div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Rule Name</div>
+				
+				<div ng-hide="slaaction.isRefered" class="pull-right apdosmopt dropdown" style="margin-top: -25px;" dropdown >
+					<div class="apd-apm-dropdown dropdown-toggle" dropdown-toggle>
+						<i class="icon-svg8" style="padding-top: 10px;"></i>
+					</div>
+                     <ul class="dropdown-menu" role="menu">
+						<li><a ng-click="editAction()">Edit</a></li>
+						<li><a ng-click="deleteAction()">Delete</a></li>
+					</ul>
+				</div>
+				<div ng-show="slaaction.isRefered" ng-click="displayMessage()" class="pull-right apdosmopt dropdown" style="margin-top: -25px;" dropdown >
+					<div class="apd-apm-dropdown dropdown-toggle" dropdown-toggle>
+						<i class="icon-svg8" style="padding-top: 10px;"></i>
+					</div>
+				</div>
+				<div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_22 apd-lineheight43 clr626161 apd-first-char-up">{{slaaction.rule_name}}</div>
+			</div>
+		</div>
+	</div>
+</div>

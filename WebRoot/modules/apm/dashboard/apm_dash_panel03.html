@@ -1,0 +1,41 @@
+<div class="apd-subpnl" data-ng-controller="apmDashPanel03">
+    <div class="apd-subpnlcntnt">
+		<div class="row apd-custmtitle">
+	        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	            <div class="pull-left font_18 clr1b639e apd-dsbslct"> <!--apd-adchsf-->
+	            	<select name="databaseModules" id="databaseModules" data-ng-model="sectionSelectDb" ng-change="getModuleCountersData()"
+	            		data-ng-options="sectionSelectDb as sectionSelectDb.moduleName for sectionSelectDb in userDatabaseCounterModules"  >
+					</select>
+	            </div>
+	        </div>
+	        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	            <div class="pull-right font_18 clr1b639e">Database</div>
+	        </div>
+        </div>
+        <div data-ng-include="'modules/apm/dashboard/apmDashDb.html'"></div>
+    </div>
+</div>
+
+<!-- tried, for single controller for Application/Server/Database in dashboard page, might use in future, TODO: in below controller to change based on slice/push
+<div ng-init="moduleCodes = ['APPLICATION', 'SERVER', 'DATABASE']" >{{moduleCodes}}
+	<div ng-init="moduleCode = moduleCode" ng-repeat="moduleCode in moduleCodes">{{moduleCode}}
+		<div class="apd-subpnl" data-ng-controller="apmDashPanel">
+		    <div class="apd-subpnlcntnt">
+				<div class="row apd-custmtitle">
+			        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			            <div class="pull-left font_18 clr1b639e apd-dsbslct">
+			            	<select name="databaseModules" id="databaseModules" data-ng-model="sectionSelectDb" ng-change="getModuleCountersData()"
+			            		data-ng-options="sectionSelectDb as sectionSelectDb.moduleName for sectionSelectDb in userDatabaseCounterModules"  >
+							</select>
+			            </div>
+			        </div>
+			        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			            <div class="pull-right font_18 clr1b639e">Database</div>
+			        </div>
+		        </div>
+		        <div data-ng-include="'modules/apm/dashboard/apmDashDb.html'"></div>
+		    </div>
+		</div>
+	</div>
+</div>
+ -->

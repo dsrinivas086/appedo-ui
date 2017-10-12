@@ -1,0 +1,37 @@
+[
+  {
+    "module_name": "Common",
+    "feature": "Data Retention",
+    "lite": "1 day",
+    "essentials": "1 month",
+    "pro": "6 months",
+	"enterprise": "",
+	"notes": ""
+  },
+  {
+    "module_name": "Common",
+    "feature": "Payment Options",
+    "lite": "N/A",
+    "essentials": "Netbanking, Creditcard",
+    "pro": "Netbanking, Creditcard, Invoice",
+	"enterprise": "Netbanking, Creditcard, Invoice",
+	"notes": ""
+  },
+  {
+    "module_name": "Common",
+    "feature": "Initial Sesponse for Standard Issues",
+    "lite": "3 days",
+    "essentials": "2 days",
+    "pro": "1 day",
+	"enterprise": "6 hrs",
+	"notes": ""
+  },
+  {
+   "module_name": "Common",
+    "feature": "Available Support Level",
+    "lite": "Website",
+    "essentials": "Website/Email",
+    "pro": "Website/Email/Chat/Phone",
+	"enterprise": "Website/Email/Chat/Phone",
+	"notes": ""
+  }]

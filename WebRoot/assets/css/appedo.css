@@ -1,0 +1,3245 @@
+/*fontfamiy source here*/
+
+@font-face {
+    font-family: 'RobotoRegular';
+    src: url('../fonts/RobotoRegular.eot');
+    src: url('../fonts/RobotoRegular.eot') format('embedded-opentype'), url('../fonts/RobotoRegular.woff2') format('woff2'), url('../fonts/RobotoRegular.woff') format('woff'), url('../fonts/RobotoRegular.ttf') format('truetype'), url('../fonts/RobotoRegular.svg#RobotoRegular') format('svg');
+}
+/*roboto medium*/
+
+@font-face {
+    font-family: 'RobotoMedium';
+    src: url('../fonts/RobotoMedium.eot');
+    src: url('../fonts/RobotoMedium.eot') format('embedded-opentype'), url('../fonts/RobotoMedium.woff2') format('woff2'), url('../fonts/RobotoMedium.woff') format('woff'), url('../fonts/RobotoMedium.ttf') format('truetype'), url('../fonts/RobotoMedium.svg#RobotoMedium') format('svg');
+}
+/*roboto light*/
+
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('../fonts/RobotoLight.eot');
+    src: url('../fonts/RobotoLight.eot') format('embedded-opentype'), url('../fonts/RobotoLight.woff2') format('woff2'), url('../fonts/RobotoLight.woff') format('woff'), url('../fonts/RobotoLight.ttf') format('truetype'), url('../fonts/RobotoLight.svg#RobotoLight') format('svg');
+}
+/*RobotoBold*/
+
+@font-face {
+    font-family: 'RobotoBold';
+    src: url('../fonts/RobotoBold.eot');
+    src: url('../fonts/RobotoBold.eot') format('embedded-opentype'), url('../fonts/RobotoBold.woff2') format('woff2'), url('../fonts/RobotoBold.woff') format('woff'), url('../fonts/RobotoBold.ttf') format('truetype'), url('../fonts/RobotoBold.svg#RobotoBold') format('svg');
+}
+/*NotoSansMyanmarBold*/
+
+@font-face {
+    font-family: 'NotoSansMyanmarBold';
+    src: url('../fonts/NotoSansMyanmarBold.eot');
+    src: url('../fonts/NotoSansMyanmarBold.eot') format('embedded-opentype'), url('../fonts/NotoSansMyanmarBold.woff2') format('woff2'), url('../fonts/NotoSansMyanmarBold.woff') format('woff'), url('../fonts/NotoSansMyanmarBold.ttf') format('truetype'), url('../fonts/NotoSansMyanmarBold.svg#NotoSansMyanmarBold') format('svg');
+}
+/*NotoSansMyanmarRegular*/
+
+@font-face {
+    font-family: 'NotoSansMyanmarRegular';
+    src: url('../fonts/NotoSansMyanmarRegular.eot');
+    src: url('../fonts/NotoSansMyanmarRegular.eot') format('embedded-opentype'), url('../fonts/NotoSansMyanmarRegular.woff2') format('woff2'), url('../fonts/NotoSansMyanmarRegular.woff') format('woff'), url('../fonts/NotoSansMyanmarRegular.ttf') format('truetype'), url('../fonts/NotoSansMyanmarRegular.svg#NotoSansMyanmarRegular') format('svg');
+}
+/*font familys here*/
+
+.apd-notobldfnfmly {
+    font-family: NotoSansMyanmarBold;
+}
+
+.apd-notorglfnfmly {
+    font-family: NotoSansMyanmarRegular;
+}
+
+.apd-rbtrgfnfmly {
+    font-family: RobotoRegular;
+}
+
+.apd-rbtrglfnfmly {
+    font-family: RobotoLight;
+}
+
+.apd-rbtrbfnfmly {
+    font-family: RobotoBold;
+}
+
+.apd-rbtmdmfnfmly {
+    font-family: RobotoMedium;
+}
+/* color code here*/
+
+.clr202020 {
+    color: #202020;
+}
+
+.clr378f3b {
+    color: #378f3b;
+}
+.clr969597 {
+    color: #969597;
+}
+
+.clr626161 {
+    color: #626161;
+}
+
+.clr7e7e7e {
+    color: #7e7e7e;
+}
+
+.clr1b639e {
+    color: #1b639e;
+}
+
+.clraaaaaa {
+    color: #aaa;
+}
+
+.clr424242 {
+    color: #424242;
+}
+
+.clr333333 {
+    color: #333;
+}
+
+.clr36b397 {
+    color: #36b397;
+}
+
+.clr949494 {
+    color: #949494;
+}
+
+.clr9ea7be {
+    color: #9ea7be;
+}
+
+.clr444444 {
+    color: #444444;
+}
+
+.clr3569a {
+    color: #03569a;
+}
+.clr388F3C {
+	color:#388F3C;
+}
+.clr84A1C1 {
+	color: #84A1C1;
+}
+.clr9E9EA1 {
+	color: #9E9EA1;
+}
+
+.clr42a6db {
+	color: #42a6db;
+}
+
+.clr70c524 {
+	color: #70c524;
+}
+
+/*svg colors*/
+
+.svgClr1D639F {
+    fill: #1D639F; 
+}
+/*font sizes here*/
+
+.font_10 {
+    font-size: 10px;
+}
+
+.font_11 {
+    font-size: 11px;
+}
+
+.font_12 {
+    font-size: 12px;
+}
+
+.font_14 {
+    font-size: 14px;
+}
+
+.font_16 {
+    font-size: 16px;
+}
+
+.font_18 {
+    font-size: 18px;
+}
+
+.font_24 {
+    font-size: 24px;
+}
+
+.font_36 {
+    font-size: 36px;
+}
+
+.font_50 {
+    font-size: 50px;
+}
+
+.apd-dsply {
+    display: inline-block;
+}
+
+.apd-wth {
+    width: 100%;
+}
+
+.font_20 {
+    font-size: 20px;
+}
+
+.font_22 {
+    font-size: 22px;
+}
+
+.font_24 {
+    font-size: 24px;
+}
+
+.font_26 {
+    font-size: 26px;
+}
+
+.font_28 {
+    font-size: 28px;
+}
+
+.font_30 {
+    font-size: 30px;
+}
+
+.font_32 {
+    font-size: 32px;
+}
+
+.font_40 {
+    font-size: 40px;
+}
+
+.font_50 {
+    font-size: 50px;
+}
+.font_130 {
+    font-size: 130px;
+}
+
+
+/*fontweight*/
+
+.apdofn {
+    font-weight: normal;
+}
+
+.apdofb {
+    font-weight: bold;
+}
+
+/* opacity */
+.opacity_50pc {
+    opacity: 0.5;
+}
+
+/*to get hand symbol*/
+
+.apd-curpnt {
+    cursor: pointer;
+}
+/*tocenter text and image*/
+
+.apd-center {
+    margin: 0 auto;
+    text-align: center;
+}
+.apd-center01 {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+.apd-right {
+    margin: 0 auto;
+    text-align: right;
+}
+
+/*tocenter text and image*/
+/*margin classes*/
+
+.apd-mrgntp {
+    margin-top: 0;
+}
+
+.apd-mrgntp-lable {
+    margin-top: 0;
+}
+
+.apd-mrgntp10 {
+    margin-top: 10px;
+}
+
+.apd-mrgntp15 {
+    margin-top: 15px;
+}
+.apd-mrgntp30 {
+    margin-top: 30px;
+}
+
+.apd-mrgntp36 {
+    margin-top: 36px;
+}
+
+.apd-mrgntp40 {
+    margin-top: 40px;
+}
+
+.apd-mrgnlft {
+    margin-left: 5px;
+}
+.apd-mrgnlft10 {
+    margin-left: 10px;
+}
+
+.apd-mrgnbtm {
+    margin-bottom: 0;
+}
+
+.apdcrd-mrtp {
+    margin-top: 27px;
+}
+
+.apdcrd-mrtp10 {
+    margin-top: 10px;
+}
+.apdcrd-mrtp20 {
+    margin-top: 20px;
+}
+
+.apdcrd-mrtp05 {
+    margin-top: 5px;
+}
+.apd-mrbtm10 {
+    margin-bottom: 10px;
+}
+.apd-mrbtm20 {
+    margin-bottom: 20px;
+}
+.apd-mrrt20 {
+	margin-right: 20px;
+}
+.apd-mrrt05 {
+	margin-right: 5px;
+}
+
+.apdcrd-mrtp3 {
+    margin-top: 30px;
+}
+/*padding classes*/
+
+.apd-pdngtp {
+    padding-top: 0;
+}
+
+.apd-sprmpadtp {
+    padding-top: 12px;
+}
+
+.apd-sprmpadtpf {
+    padding-top: 32px;
+}
+
+.apd-pdngbtm {
+    padding-bottom: 0;
+}
+
+.apd-pdnglft {
+    padding-left: 0;
+}
+
+.apd-pdngrt {
+    padding-right: 0;
+}
+
+.apd-pdngrt05{
+	padding-right: 5px;
+}
+
+.pdb {
+    padding: 0;
+}
+
+.ad-pdlt {
+    padding-left: 30px;
+}
+
+.ad-pdlft15 {
+    padding-left: 15px;
+}
+.ad-pdlft50 {
+    padding-left: 50px;
+}
+
+.ad-pdrt15 {
+    padding-right: 15px;
+}
+
+.ad-pdbt15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/*line-height class*/
+
+.apd-lineheight26 {
+    line-height: 26px;
+    margin-bottom: 4px;
+}
+
+.apd-lineheight18 {
+    line-height: 18px;
+}
+
+.apd-lineheight26 {
+    line-height: 26px;
+}
+
+.apd-lineheight30 {
+    line-height: 30px;
+}
+
+/* for card layout */
+.apd-lineheight43 {
+    line-height: 43px;
+}
+.apd-lineheight12 {
+    line-height: 12px;
+}
+.apd-lineheight16 {
+    line-height: 16px;
+}
+
+html, body {
+	height: 100%;
+}
+
+/*body*/
+
+body {
+    background: #e6ecf2;
+    font-family: RobotoRegular;
+    line-height: 18px; 
+}
+/*header-topbar*/
+
+.apdotopbar {
+    height: 64px;
+    background: #1b639e;
+    padding: 7px 0 0 0;
+}
+
+.apdnavbar {
+    padding-left: 30px;
+}
+
+.apdobtmbar01 {
+    height: 1px;
+    background: #1b639e;
+    padding: 0 0 0 0;
+}
+
+.container-fluid {
+	height: 100%;
+	width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+/*login container*/
+.container-login{
+	min-height: 100%;
+	background-color: #ffffff;
+	width: 100%;
+}
+
+.header {
+    width: 100%;
+}
+
+.header .nav {
+	cursor: default;
+}
+
+.logo {
+    padding-top: 9px;
+    padding-left: 10px;
+}
+/*header-rightpanel sear*/
+
+.toprightpanel {
+    top: 1px;
+    float: right;
+    position: relative;
+}
+
+.apdo-srch {
+    display: table-cell;
+    margin: 0 10px;
+    text-align: right;
+    vertical-align: middle;
+    padding: 4px 12px;
+    font-size: 18px;
+}
+
+.sercline {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.apdosearhbar {
+    display: table-cell;
+}
+/* top right profile icon*/
+
+.apdo-prfle {
+    width: 20%;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 10px;
+}
+
+.apdo-prfle .img-circle {
+    height: 48px;
+    width: 48px;
+}
+
+/*heder right icon*/
+
+.apdrightoptn {
+    display: table-cell;
+    color: #fff;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    cursor: default;
+    text-align: center;
+    width: 20px;
+}
+
+.apdrightoptn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.apdrightoptn .dropdown-menu {
+    font-family: RobotoRegular;
+    font-weight: normal;
+    font-size: 15px;
+    color: #626161;
+    border-radius: 0px;
+    padding: 0px;
+    left: -175px;
+    top: 53px;
+    cursor: pointer;
+}
+
+.apdrightoptn .dropdown-menu > li > a:focus, .apdrightoptn .dropdown-menu > li > a:hover {
+    background-color: #F0F1F2;
+    color: #262626;
+    text-decoration: none;
+}
+
+.apdrightoptn > .open, .apdrightoptn > .open:focus {
+  background-color: #12618B;
+}
+
+.apd-header-dropdown {
+    cursor: pointer;
+    padding: 4px 12px;
+}
+
+.apd-header-dropdown:hover {
+    background-color: #177bb0;
+}
+
+.apd-apm-dropdown  {
+    cursor: pointer;
+    padding: 4px 12px;
+    position: absolute;
+    /*top: -14px;*/
+    top: -9px;
+    /* no right given eariler*/
+    right: -19;
+}
+
+.apd-apm-dropdown:hover {
+    background-color: #ededed;
+}
+
+.apdosearh {
+    color: #fff;
+}
+
+/* primary tabs */
+.apd-dashboard, .apd-sum, .apd-rum, .apddv, .apd-apm, .apd-lt, .apd-sla, .apd-admin {
+    cursor: pointer;
+}
+.apd-dashboard a, .apd-sum a, .apd-rum a, .apddv a, .apd-lt a, .apd-sla a, apd-admin a {
+    font-size: 16px;
+    color: #7e7e7e;
+}
+
+/*form control */
+
+.form-control,
+.form-group {
+    width: 280px;
+}
+/*removing row padding */
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+/*subnav*/
+
+.apd-sbnav {
+    width: 200px;
+    display: inline-block;
+    margin: 0 20px 10px 0px;
+    -webkit-box-shadow: 0px 4px 7px 0 #c7cdd2;
+    -moz-box-shadow: 0px 4px 7px 0 #c7cdd2;
+    -ms-box-shadow: 0px 4px 7px 0 #c7cdd2;
+    box-shadow: 0px 4px 7px 0 #c7cdd2;
+}
+
+.apd-sbnav ul {
+    width: inherit;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.apd-sbnav ul li {
+    display: block;
+    background: #fff;
+    padding: 20px 20px 20px 20px;
+    margin: 0 0 0 0;
+}
+
+.apd-sbnav ul li:hover {
+    background: #f0f1f2;
+}
+
+.apd-sbnav ul li.active {
+    background: #626161;
+    color: #fff;
+}
+
+/*dropdown css*/
+
+.apd-apm:hover >.dropdown-menu, .apd-sla:hover >.dropdown-menu {
+    display: block;
+}
+
+.apd-drpdn-nav {
+    width: 265px;
+    position: absolute;
+    -webkit-box-shadow: 0px 4px 7px 0 #c7cdd2;
+    -moz-box-shadow: 0px 4px 7px 0 #c7cdd2;
+    -ms-box-shadow: 0px 4px 7px 0 #c7cdd2;
+    box-shadow: 0px 4px 7px 0 #c7cdd2;
+    background: #fff;
+    padding: 0 0;
+    top: 66px;
+    z-index: 99;
+    text-transform: none;
+    display: none;
+}
+
+.apd-drpdn-navct {
+    padding: 10px 20px;
+    border-left: 4px solid #fff;
+    border-bottom: 1px solid #eee;
+    display: block;
+}
+
+.apd-drpdn-navct strong {
+    font-weight: bold;
+}
+
+.apd-drpdn-navct:hover {
+    background: #f0f1f2;
+	border-left: 4px solid #8AC642;
+    cursor: pointer;
+}
+
+.apd-drpdn-icnttl {
+    display: block;
+    width: inherit;
+    text-align: left;
+}
+
+.apd-nactnac {
+    color: #43a047;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.apd-natlehd {
+    padding-bottom: 5px;
+}
+
+.apd-nactndvdr {
+    margin: 0 7px;
+}
+
+.apd-nactninact {
+    color: #f85151;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.apd-nactn {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    margin: 5px 0 0 10px;
+}
+
+.apd-nactndes {
+    white-space: normal;
+    text-align: left;
+    text-transform: none;
+}
+
+.apd-nactndes {
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.apd-navnbr {
+    margin-right: 7px;
+}
+/*main-navigation here*/
+
+.navbar-default .navbar-nav>li>a {
+    color: #7e7e7e;
+    border-bottom: 4px solid #fff;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #03569a;
+}
+
+.nav-main {
+    width: 100%;
+    padding: 0px 0 0 0;
+    margin: 0 0 3px 0;
+    background: none;
+    text-transform: uppercase;
+    -webkit-box-shadow: 0 1px 10px 0 #c7cdd2;
+    -moz-box-shadow: 0 1px 3px 0 #c7cdd2;
+    -ms-box-shadow: 0 1px 3px 0 #c7cdd2;
+    box-shadow: 0 1px 3px 0 #c7cdd2;
+}
+
+.navbar-header,
+.container-fluid>.navbar-header,
+.container>.navbar-collapse,
+.container-fluid>.navbar-collapse {
+    margin-right: 0;
+    margin-left: 0
+}
+
+.navbar-form {
+    margin-top: 0;
+    box-shadow: 0;
+    border: 0;
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+    float: left;
+    box-shadow: 0;
+}
+
+.navbar {
+    margin-bottom: 0;
+    background: #fff;
+    border: 0px solid transparent;
+    border-radius: 0;
+}
+/* Modified by appedo left and right padding made zero. This to take care border bottom to show in alignment with Text of li/a */
+.navbar-nav>li>a {
+    padding-top: 2px;
+    padding-bottom: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navbar-default .navbar-nav > .inactive > a {
+    border-bottom: 4px solid #fff;
+}
+
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:focus, 
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #e7e7e7;
+    border-bottom: 4px solid #e7e7e7;
+    color: #555;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    color: #03569a;
+    border-bottom: 4px solid #33b296;
+    font-weight: bold;
+    position: inherit;
+}
+
+.navbar-nav>li:first-child {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.navbar-collapse {
+    padding-left: 30px;
+}
+/*nav badge*/
+
+.nav .badge {
+    padding: 3px 4px;
+    background-color: #9ea8db;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    font-family: RobotoRegular;
+    font-weight: normal;
+    position: absolute;
+    top: 1px;
+    left: 62px;
+    color: #fff;
+}
+/*main content area here*/
+
+.apdmaincontent {
+    width: 100%;
+    padding: 0px 0 0 0;
+    background: #e6ecf2;
+}
+/*--dashboard sub navigation*/
+
+.apdomaincdsbrd-subnav {
+    width: 100%;
+    padding: 25px 0 0 0;
+    margin: 0 auto;
+}
+
+.apdomaincdsbrdnv-list {
+    width: 200px;
+    height: 18px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.apd-dashbrd-title {
+    padding-left: 30px;
+}
+
+.dbinactive {
+    text-align: center;
+    height: 20px;
+    font-size: 20px;
+    color: #03569a;
+    width: 20px;
+    background: url("../images/apdoBtn.png") no-repeat center 5px;
+    display: inline-block;
+    position: relative;
+    bottom: 2px;
+}
+
+.apdomaincdsbrdnv-nrml:hover {
+    text-align: center;
+    font-size: 24px;
+    color: #03569a;
+    background: url("../images/apdoBtnHover.png") no-repeat center -5%;
+    display: inline-block;
+}
+
+.dbactive {
+    text-align: center;
+    height: 20px;
+    font-size: 20px;
+    color: #03569a;
+    width: 20px;
+    background: url("../images/apdoBtnHover.png") no-repeat center -5%;
+    display: inline-block;
+    position: relative;
+    bottom: 1px;
+}
+/*dashboard content css*/
+
+.apd-testingcnt {
+    background: #fff;
+    padding: 10px;
+    display: block;
+}
+
+.apd-subpnl {
+    background: #fff;
+    -webkit-box-shadow: 0 2px 4px #c7cdd2;
+    -moz-box-shadow: 0 2px 4px #c7cdd2;
+    box-shadow: 0 2px 4px #c7cdd2;
+    margin: 0 30px 20px 30px;
+}
+
+.apdmrgtp25 {
+    margin-top: 25px;
+}
+
+.apd-subpnlcntnt {
+    width: 100%;
+    background: #fff;
+    margin: 0 0px 0 0px;
+    padding: 15px 15px 15px 15px;
+    display: inline-block;
+}
+
+.apd-subpnlcntnttp {
+    padding-top: 10px;
+}
+
+.apd-smrytpbar {
+    height: auto;
+    display: inline-block;
+    width: 100%;
+}
+
+.apd-smrytitle {
+    margin: 0;
+    padding: 0;
+}
+
+.apd-slplt {
+    display: inline-block;
+    padding-right: 0;
+}
+
+.apd-slpltb {
+    display: inline-block;
+    padding-top: 38px;
+    padding-right: 0;
+}
+
+.apd-slpltm {
+    display: inline-block;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 0;
+}
+
+.apd-slpltbmr {
+    margin-bottom: 8px;
+}
+
+.apdmainright-ctgry {
+    margin-bottom: 12px;
+}
+
+.apd-brdrt {
+    border-right: 1px solid #e2e4eb;
+}
+
+.apd-brdbtm {
+    border-top: 1px solid #e2e4eb;
+    padding-top: 17px;
+}
+
+.apd-brdtm {
+    border-bottom: 1px solid #e2e4eb;
+    padding-top: 17px;
+}
+
+.apd-custmtitle {
+    border-bottom: 1px solid #e2e4eb;
+    padding-bottom: 10px;
+}
+
+.apd-grpcntlg3 {
+    padding: 3% 0 2% 67px;
+    line-height: 22px;
+}
+
+.apd-grpcntlg3tl {
+    margin-bottom: 4px;
+}
+
+.apd-grpcntlg6 {
+    padding: 3% 0 2% 11%;
+    line-height: 22px;
+}
+
+.apdgrplnht {
+    line-height: 34px;
+}
+
+.apdosmopt {
+    float: right;
+    padding: 0px 0 0 0;
+    cursor: default;
+}
+
+.apdosmopt .dropdown-menu {
+    font-family: RobotoRegular;
+    font-weight: normal;
+    font-size: 15px;
+    color: #626161;
+    border-radius: 0px;
+    min-width: 200px;
+    padding: 0px;
+    cursor: pointer;
+	top: 15px;
+  	right: -15px;
+}
+
+.apdosmopt.open > .dropdown-toggle, .apdosmopt.open > .dropdown-toggle:focus {
+	background-color: #d5d5d5;
+}
+
+.apd-fscreen {
+    margin-right: 10px;
+}
+
+.apd-fscreen a,
+.apdosmopt a {
+    color: #000;
+    text-decoration: none;
+}
+
+.apdmainright-ctgry:last-child {
+    border-right: none
+}
+
+.list-parent {
+    color: #aaa;
+    cursor: default;
+    list-style-image: none;
+    list-style-position: outside;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-top: 3px;
+}
+.list-parent > ul {
+    list-style: outside none none;
+    padding-left: 20px;
+}
+.list-parent li {
+    padding: 3px 0;
+}
+.list-parent li > a {
+    clear: both;
+    color: #333;
+    display: block;
+    font-weight: 400;
+    line-height: 1.42857;
+    padding: 3px 0px;
+    white-space: nowrap;
+}
+.list-parent li > a:focus, .list-parent li > a:hover {
+    background-color: #F0F1F2;
+    color: #262626;
+    text-decoration: none;
+}
+
+/*custom icons*/
+
+.apdo-ntfctn-main {
+	position: absolute;
+    right: 30px;
+    top: 109px;
+	bottom: auto;
+    display: inline-flex;
+    z-index: 999;
+}
+
+.apdo-ntfctn-add {
+    border-radius: 50px;
+    background: #03569a;
+    padding: 11px 12px;
+    color: #fff;
+    right: 20px;
+    font-size: 18px;
+    display: inline-block;
+    -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.apdo-ntfctn-ntftn {
+    border-radius: 50px;
+    background: #03569a;
+    padding: 11px 14px;
+    color: #fff;
+    position: relative;
+    right: 0px;
+    font-size: 18px;
+    display: inline-block;
+    -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+/*badge*/
+
+.badge {
+    padding: 3px 5px;
+    background-color: #f56b6b;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    font-family: RobotoRegular;
+    font-weight: normal;
+    position: absolute;
+    top: 1px;
+    left: 24px;
+}
+/*nav icons*/
+
+.apdonavtpicns {
+    text-align: center;
+    padding: 10px 0 10px 0;
+    font-size: 18px;
+    color: #03569a;
+    display: block;
+}
+
+.apdeoadd {
+    margin: 0 auto 20px auto;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+}
+
+.apd-topicon {
+    position: absolute;
+    top: 0px;
+    left: -10px;
+    width: 40px;
+}
+
+.thadr-tp {
+    background: #fff;
+    height: 54px;
+    padding-top: 10px;
+    margin-bottom: 3px;
+    line-height: 24px;
+    -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.apdad-mbdy {
+    background: #f2f3f7;
+}
+
+.apd-admcntwrpr {
+    display: block;
+    width: 70%;
+    padding: 15px 0;
+    margin: 0 auto;
+}
+
+.aped-aplcthdfm {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    margin: 0 0 10px 0;
+}
+
+.aped-aplcthd {
+    background: #fff;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    margin: 0 0 10px 0;
+    border-left: 5px solid #fff;
+    -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.apdad-heading {
+    margin: 10px 0 15px 0;
+    padding: 0;
+    width: inherit;
+}
+
+.aped-aplcthd h1 {
+    color: #2b6da3;
+    margin: 5px 0;
+    padding: 0;
+}
+
+
+/*div.aped-aplcthd:hover {
+    //border-left: 4px solid #aaa;
+    border-left: 4px solid #8AC642;
+}*/
+
+
+div.aped-aplcthd.active {
+    border-left: 4px solid #8ac642;
+}
+
+.apdeo-apiconrt {
+    position: relative;
+    top: 10px;
+}
+
+.aped-apicon {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50px;
+    background: transparent;
+    color: #8ac642;
+    font-size: 54px;
+}
+
+.apd-naapicon {
+    color: #9ea8dd;
+    display: inline-block;
+}
+
+.apd-naapicon-ser {
+    color: #efc450;
+    display: inline-block;
+}
+
+.apd-naapicon-db {
+    color: #6fbee8;
+    display: inline-block;
+}
+
+.aped-apiconttle {
+    display: inline;
+    vertical-align: middle;
+    padding: 2px 2px;
+    border-radius: 50px;
+    color: #8ac642;
+    font-size: 39px;
+    margin-right: 20px;
+}
+
+.aped-apiconttlewr {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.aped-apiconcls {
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.aped-apiconsrvr {
+    color: #fec107;
+}
+
+.aped-apicondtbse {
+    color: #029688;
+}
+
+.apd-adbtnmrtp {
+    margin-top: 10px;
+    background: #43a047;
+    border-radius: 0;
+    width: 150px;
+    border: 0;
+    padding: 8px 0;
+}
+
+.apd-adbtnmrtp-seconder {
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 0;
+    width: 150px;
+    color: #333;
+    border: 0;
+    -webkit-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    -moz-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    -ms-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    box-shadow: 0px 1px 2px 1px #c7cdd2;
+    padding: 8px 0;
+    line-height: 1.42857143;
+}
+
+.apd-adbtnmrtp-seconder:hover {
+    background: #fff;
+    color: #333;
+    outline: none;
+    -webkit-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    -moz-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    -ms-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    box-shadow: 0px 1px 2px 1px #c7cdd2;
+}
+
+.apd-adbtnmrtp-seconder:focus {
+    background: #fff;
+    color: #333;
+    outline: none;
+    outline: 0 auto -webkit-focus-ring-color;
+    outline-offset: 0;
+    -webkit-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    -moz-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    -ms-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    box-shadow: 0px 1px 2px 1px #c7cdd2;
+}
+
+.apd-adbtnmrtp-seconder:active {
+    background: #fff;
+    color: #333;
+    outline: none;
+    outline: 0 auto -webkit-focus-ring-color;
+    outline-offset: 0;
+    -webkit-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    -moz-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    -ms-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    box-shadow: 0px 1px 2px 1px #c7cdd2;
+}
+
+.apd-adbtnmrtp-seconder:active,
+.apd-adbtnmrtp-seconder:focus,
+.apd-adbtnmrtp-seconder:visited {
+    outline: none;
+}
+
+.apdo-adbtn {
+    border-radius: 0;
+    width: 150px;
+    background: #43a047;
+    margin: 20px 10px 5px 0;
+    border: 0;
+    padding: 8px 0;
+}
+/*apdeo addform css*/
+/*Just to center the Form*/
+
+.apdeo-adForm {
+    width: 100%;
+    display: inline-block;
+    margin-left: 56px;
+}
+
+/* used in configure counters */
+.apdeo-adForm01 {
+    width: 100%;
+    display: inline-block;
+/*    margin-left: 56px; */
+}
+
+.apdeo-adForm-intfm {
+    width: 70%;
+}
+
+.apd-marg-left {
+    margin-left: 10px;
+}
+
+.apd-fldwdt {
+    width: 99%;
+    display: inline-block;
+}
+
+.apd-fldwdt input {
+    margin: 0px 0px 0 0;
+    display: block;
+    border: none;
+    padding: 3px 0 7px 0;
+    border-bottom: solid 1px #B0ABAB;
+    background: none;
+    width: inherit;
+    line-height: normal;
+}
+
+.apd-fldwdt label {
+    margin-top: 32px;
+    font-weight: normal;
+    line-height: 15px;
+}
+
+.apd-fldwdt input:focus,
+.apd-fldwdt input:valid {
+    box-shadow: none;
+    outline: none;
+}
+
+.apd-fldwdt select {
+    width: 99%;
+    border: none;
+    border-bottom: 1px solid #B0ABAB;
+    outline: none;
+    padding: 8px 0 8px 0;
+    box-sizing: border-box;
+    font-weight: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../images/dropdown.png") no-repeat right;
+    line-height: 18px;
+}
+
+.apd-fldwdt select::-ms-expand {
+    display: none;
+}
+
+.apd-fldwdt select option {
+    font-weight: normal;
+}
+/* Added by appedo for configure counter page*/
+.apd-fldwdt01 {
+    width: 99%;
+    margin: 10px 0 0 0;
+/*     display: inline-block; */
+}
+
+.apd-fldwdt01 input {
+    margin: 0px 0px 0 0;
+    display: inline;
+    border: none;
+    padding: 0px 0 0px 0;
+    border-bottom: solid 1px #B0ABAB;
+    background: none;
+    width: inherit;
+    line-height: normal;
+}
+
+.apd-fldwdt01 label {
+    margin-top: 0;
+    font-weight: normal;
+    line-height: normal;
+}
+
+.apd-fldwdt01 input:focus,
+.apd-fldwdt01 input:valid {
+    box-shadow: none;
+    outline: none;
+}
+
+.apd-fldwdt01 select {
+    width: 99%;
+    border: none;
+    border-bottom: 1px solid #B0ABAB;
+    outline: none;
+    padding: 0px 0 0px 0;
+    box-sizing: border-box;
+    font-weight: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../images/dropdown.png") no-repeat right;
+    line-height: normal;
+}
+
+.apd-fldwdt01 select::-ms-expand {
+    display: none;
+}
+
+.apd-fldwdt01 select option {
+    font-weight: normal;
+}
+
+.apd-fldwdt02 {
+    width: 99%;
+    margin: 10px 0 0 0;
+/*     display: inline-block; */
+}
+
+.apd-fldwdt02 input {
+    margin: 0px 0px 0 0;
+    display: inline;
+    border: none;
+    padding: 0px 0 0px 0;
+    border-bottom: solid 1px #B0ABAB;
+    background: none;
+    width: inherit;
+    line-height: normal;
+}
+
+.apd-fldwdt02 label {
+    margin-top: 0;
+    font-weight: normal;
+    line-height: normal;
+}
+
+/*add choose*/
+
+.apd-adchsf {
+    width: 100%;
+}
+
+.apd-apmslct {
+    margin: 10px 0;
+}
+
+.apd-apmslct h1 {
+    margin: 0;
+    padding: 10px 0 0 0;
+}
+
+.apd-apmslct select {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #1b639e;
+    outline: none;
+    padding: 10px 0 10px 0;
+    box-sizing: border-box;
+    font-weight: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../images/dropdown.png") no-repeat;
+    background-position: 98%;
+    line-height: normal;
+}
+
+.apd-apmslct select::-ms-expand {
+    display: none;
+}
+
+.apd-apmslct select option {
+    font-weight: normal
+}
+
+.apd-dsbslct select {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0px 30px 0px 0;
+    box-sizing: border-box;
+    font-weight: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../images/dropdown.png") no-repeat right;
+    line-height: normal;
+}
+
+.apd-dsbslct select::-ms-expand {
+    display: none;
+}
+
+.apd-dsbslct select option {
+    font-weight: normal
+}
+/*css for success added application or servers or db*/
+.apd-adaplcn {
+    padding-left: 25px;
+}
+
+.apd-addfbg {
+    background: -moz-linear-gradient(top, rgba(29, 99, 158, 0.95) 0%, rgba(29, 99, 158, 0.95) 284px, rgba(0, 0, 0, 0.95) 284px, rgba(0, 0, 0, 0.95) 100%);
+    /* FF3.6+ */
+    
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(29, 99, 158, 0.95)), color-stop(284px, rgba(29, 99, 158, 0.95)), color-stop(42%, rgba(0, 0, 0, 0.95)), color-stop(100%, rgba(0, 0, 0, 0.95)));
+    /* Chrome,Safari4+ */
+    
+    background: -webkit-linear-gradient(top, rgba(29, 99, 158, 0.95) 0%, rgba(29, 99, 158, 0.95) 284px, rgba(0, 0, 0, 0.95) 284px, rgba(0, 0, 0, 0.95) 100%);
+    /* Chrome10+,Safari5.1+ */
+    
+    background: -o-linear-gradient(top, rgba(29, 99, 158, 0.95) 0%, rgba(29, 99, 158, 0.95) 284px, rgba(0, 0, 0, 0.95) 284px, rgba(0, 0, 0, 0.95) 100%);
+    /* Opera 11.10+ */
+    
+    background: -ms-linear-gradient(top, rgba(29, 99, 158, 0.95) 0%, rgba(29, 99, 158, 0.95) 284px, rgba(0, 0, 0, 0.95) 284px, rgba(0, 0, 0, 0.95) 100%);
+    /* IE10+ */
+    
+    background: linear-gradient(to bottom, rgba(29, 99, 158, 0.95) 0%, rgba(29, 99, 158, 0.95) 284px, rgba(0, 0, 0, 0.95) 284px, rgba(0, 0, 0, 0.95) 100%);
+    /* W3C */
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f21d639e', endColorstr='#f2000000', GradientType=0);
+    /* IE6-9 */
+    
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+.apd-ftplog {
+    position: absolute;
+    top: -40px;
+    left: -28px;
+}
+
+.apd-fbck {
+    position: absolute;
+    top: 77px;
+    left: 40px;
+}
+
+.apdo-adttl {
+    padding-top: 10px;
+    padding-left: 20px;
+    display: inline-block;
+    width: 350px;
+    float: left;
+}
+
+.apd-clsewr {
+    float: right;
+    display: inline-block;
+    margin: 6px 20px 0 0;
+}
+
+.aped-aplcthdscs {
+    background: #43a047;
+    padding-top: 10px;
+    color: #fff;
+    padding-bottom: 10px;
+    margin: 0 0 10px 0;
+}
+
+.apdo-scsnme {
+    font-weight: bold;
+}
+
+.apd-adedscsicn {
+    display: table-cell;
+    vertical-align: middle;
+    height: 35px;
+    padding: 0px 9px 0 10px;
+    border-radius: 50px;
+    background: #FFFFFF;
+    color: #43A047;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.ad-pdtp {
+    padding-top: 10px;
+}
+
+.apd-mrgtp {
+    margin: 60px 0 20px 0;
+}
+
+.aped-apiconscs {
+    display: table-cell;
+    vertical-align: middle;
+    height: 40px;
+    padding: 0px 11px;
+    border-radius: 50px;
+    background: #8ac642;
+    color: #fff;
+    font-size: 16px;
+    line-height: 14px;
+}
+/*cards css*/
+
+.apdcardcontainer {
+    margin: 20px auto;
+}
+
+.apdo-crdtlte {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+}
+
+.apdo-crdiconpadd {
+    padding: 0px 10% 0px 10%;
+}
+
+.apdcrdcatgrywrpr {
+    width: inherit;
+    margin: 0 30px;
+}
+
+.apdo-cnterver {
+    position: relative;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.apdcrdcatgry {
+	background: #fff;
+    -webkit-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    -moz-box-shadow: 0px 1px 2px 1px 	#c7cdd2;
+    -ms-box-shadow: 0px 1px 2px 1px #c7cdd2;
+    box-shadow: 0px 1px 2px 1px #c7cdd2;
+    padding: 15px;
+    margin: 0 auto 10px auto;
+    height: auto;
+}
+
+.apdcrdnum01 {
+	text-align: right;
+    padding: 0px;
+}
+
+.apdcrdchd01 {
+	text-align: center;
+    padding: 0px;
+	margin-left: 0px;
+}
+
+
+.apdbgdcolor{
+	background: #fff;
+}
+.apdcrdcatgry-loadtest {
+    height: 80px;
+    padding: 10px 15px 10px 15px;
+}
+
+.apdcrdcatgry.active {
+    border-left: 4px solid #cddc39;
+}
+
+.apdo-crdtitle {
+    line-height: 22px;
+}
+
+.apd-crdoptn {
+    position: absolute;
+    right: 0;
+    top: -12px;
+}
+
+.apd-crdoptn a {
+    text-decoration: none;
+    color: gray;
+}
+
+.apd-crdoptn-loadtest {
+    top: 0;
+}
+
+.apdcrd-vrscnt {
+    text-transform: uppercase;
+}
+
+.cdcccc {
+    /*color: #cdcccc;*/
+    color: #1B639E;
+}
+/* right monitor and profiles box css*/
+
+.apdcrd-left {
+    display: inline-block;
+    width: 80px;
+    margin: 0 4px 0 0;
+    cursor: pointer;
+}
+
+.apdcrd-leftwrpr {
+    display: inline-block;
+}
+
+.apdcrd-leftwrprmrg {
+    margin-right: 100px;
+}
+
+.apd-mntor-redwrper {
+    position: relative;
+    top: -47px;
+    right: -14px;
+    font-size: 10px;
+}
+
+.apd-redicon {
+    color: #fb605c;
+    border: 3px solid #FFF;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+.apd-greenicon {
+    color: #8cc34b;
+    border: 3px solid #FFF;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+.apd-yellowicon {
+    color: #f7fb5c;
+    border: 3px solid #FFF;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+.apd-mntor-dwnicon {
+     position: relative;
+	 top: -36px;
+	 right: 10px;
+	 font-size: 10px;
+}
+
+.apd-mntor-dwnicon_color {
+     font-size: 20px;
+     color: darkslateblue;
+}
+/*text below monitor icons*/
+
+.apdcrd-leftcnt {
+    text-align: center;
+    margin: 10px auto 0 auto;
+}
+/*round circle */
+
+.apdcrd-left-icn {
+    width: inherit;
+    color: #9ea8db;
+    height: 49px;
+    line-height: 16px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 48px;
+}
+
+.apd-prclr {
+    color: #92a4b0;
+}
+
+.apd-crddnldicn a:hover {
+    text-decoration: none;
+}
+
+.apdo-crdiconpadd a:hover {
+    text-decoration: none;
+}
+
+/*tootltip*/
+
+.tooltip.bottom {
+    border-bottom-color: #676767;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #676767;
+    display: none;
+}
+/*lowhealth image*/
+
+.apd-lhthdvder {
+    border-right: 1px solid #e2ebe4;
+    padding-right: 0;
+}
+
+.apd-lhth {
+    display: inline-block;
+     width: 185px;
+}
+/*checkbox css*/
+
+.chekbx {
+    margin: 0;
+/*    display: inline-block;*/
+    width: 100%;
+    padding-left: 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.apd-chbx {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.chekbx-titl {
+    margin-top: 40px;
+}
+
+.chekbx input[type=checkbox].css-checkbox {
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.chekbx input[type=checkbox].css-checkbox + label.css-label {
+    padding-left: 23px;
+    height: 10px;
+    display: inline-block;
+    line-height: 10px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font-weight: normal;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-top: 15px;
+    color: #444;
+}
+
+.chekbx input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position: 0 -18px;
+}
+
+.chekbx label.css-label {
+    background-image: url("../images/checkbx.png");
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/*radiobutton*/
+
+.apm-radiobtn {
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.apm-radiobtn-ltest {
+    margin: 10px 0 0 0;
+}
+
+.apd-rdbtn {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.apd-rdbtn01 {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.apm-radiobtn input[type=radio].css-checkbox {
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.apm-radiobtn input[type=radio].css-checkbox + label.css-label {
+    padding-left: 25px;
+    height: 20px;
+    display: inline-block;
+    line-height: 20px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font-weight: normal;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #444;
+}
+
+.apm-radiobtn input[type=radio].css-checkbox:checked + label.css-label {
+    background-position: 0 -20px;
+}
+
+.apm-radiobtn label.css-label {
+    background-image: url("../images/radiobtn.png");
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* media css*/
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .navbar-nav {
+        float: left;
+        margin: 0
+    }
+    .navbar-nav>li {
+        float: left;
+        width: 117px;
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        white-space: nowrap
+    }
+    .navbar-nav>li>a {
+        /*        padding-top: 15px;*/
+        /*        padding-bottom: 15px;*/
+    }
+}
+
+@media (max-width: 1024px) {
+    .apdcrd-leftwrprmrg {
+        margin-right: 44px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .apd-grpcntlg3 {
+        padding: 3% 0 2% 49px;
+    }
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: none;
+    /* border: none; */
+    
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    box-shadow: none;
+}
+
+.apdomaincdsbrd-subnav .apdomaincdsbrdnv-list .fade.in {
+    opacity: 1;
+    background: none;
+}
+
+.fade.in {
+    background: -moz-linear-gradient(top, rgba(29, 99, 158, 0.95) 0%, rgba(29, 99, 158, 0.95) 284px, rgba(0, 0, 0, 0.95) 284px, rgba(0, 0, 0, 0.95) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(29, 99, 158, 0.95)), color-stop(284px, rgba(29, 99, 158, 0.95)), color-stop(42%, rgba(0, 0, 0, 0.95)), color-stop(100%, rgba(0, 0, 0, 0.95)));
+    background: -webkit-linear-gradient(top, rgba(29, 99, 158, 0.95) 0%, rgba(29, 99, 158, 0.95) 284px, rgba(0, 0, 0, 0.95) 284px, rgba(0, 0, 0, 0.95) 100%);
+    background: -o-linear-gradient(top, rgba(29, 99, 158, 0.95) 0%, rgba(29, 99, 158, 0.95) 284px, rgba(0, 0, 0, 0.95) 284px, rgba(0, 0, 0, 0.95) 100%);
+    background: -ms-linear-gradient(top, rgba(29, 99, 158, 0.95) 0%, rgba(29, 99, 158, 0.95) 284px, rgba(0, 0, 0, 0.95) 284px, rgba(0, 0, 0, 0.95) 100%);
+    background: linear-gradient(to bottom, rgba(29, 99, 158, 0.95) 0%, rgba(29, 99, 158, 0.95) 284px, rgba(0, 0, 0, 0.95) 284px, rgba(0, 0, 0, 0.95) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f21d639e', endColorstr='#f2000000', GradientType=0);
+}
+
+.apd-fldwdt:-ms-input-placeholder {
+    color: #aaa;
+}
+
+.apd-fldwdt::-webkit-input-placeholder {
+    color: #aaa;
+}
+/*login form */
+
+input[type="email"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder { color:#444444; opacity: 0.4;}
+input[type="email"]::-moz-placeholder, input[type="password"]::-moz-placeholder { color:#444444; opacity: 0.4; } /* firefox 19+ */
+input[type="email"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder { color:#444444; opacity: 0.4; } /* ie */
+input[type="email"]:-moz-placeholder, input[type="password"]:-moz-placeholder { color:#444444; opacity: 0.4; }
+
+.apd-frm {
+    width: 600px;
+    margin: 0px auto 0 auto;
+}
+
+.apd-frmwrpr {
+    width: 80%;
+    margin: 8px auto 0 auto;
+}
+
+.apd-frmtitl {
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.apd-frmfld {
+    width: 100%;
+    margin: 38px 0 0 0;
+    display: inline-block;
+}
+
+.apd-frmfld label {
+    display: block;
+    font-weight: normal;
+}
+
+.apd-frmfld input {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    background: none;
+    line-height: 22px;
+}
+
+.apd-frmfld input:focus {
+    outline: none;
+}
+
+.apd-login_home {
+    position: relative;
+    left: -66px;
+    display: inline-block;
+    top: 42px;
+    color: #8ac624;
+    font-size: 43px;
+}
+
+.apd-sbmtbtn-wrper {
+    display: table;
+    margin: 42px 0px 0 0;
+    width: 100%;
+}
+
+.apd-frgotps {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.apdo-loginbtn {
+    border-radius: 0;
+    width: 190px;
+    background: #43a047;
+    border: 0;
+    padding: 8px 0;
+}
+
+.apd-sgnup {
+    margin-top: 50px;
+}
+
+.apd-frmfld:-ms-input-placeholder {
+    color: #aaa;
+}
+
+.apd-frmfld::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+.apd-fldwdt .apd-mrgntp-lable {
+    margin: 10px 0 5px 0;
+}
+
+.apd-titl-loadtst {
+    display: block;
+    padding: 10px 10px 25px 10px;
+    margin: 0 20px;
+    font-size: 20px;
+}
+
+.apd-titl-loadfrmtst {
+    display: block;
+    padding: 0px 10px 19px 0px;
+    margin: 0 20px 0 0;
+    font-size: 20px;
+}
+/*custom calendar*/
+
+.apd-custom-calendar {
+    margin: 30px 0 0 0;
+    position: relative;
+}
+/*calender icon*/
+
+.apd-custom-calendar .apd-custom-calendar-icon {
+    position: absolute;
+    right: 5px;
+    top: 37px;
+}
+
+.apd-custom-calendar .btn-group>.btn:first-child {
+    margin-left: 10x;
+    margin-right: 21px;
+    background: none;
+    color: #1b639e;
+    font-size: 16px;
+}
+
+.apd-custom-calendar .btn-group .btn+.btn {
+    margin-left: -1px;
+    background: none;
+    color: #1b639e;
+    font-size: 16px;
+}
+
+.apd-custom-calendar .dropdown-menu {
+    border: none;
+    border-radius: 0;
+    margin: 0px 0 0;
+    box-shadow: 0 6px 10px 0 #333;
+    padding: 0;
+    -wekit-box-shadow: 0 15px 21px 0 rgba(132, 137, 141, 0.91);
+    -moz-box-shadow: 0 15px 21px 0 rgba(132, 137, 141, 0.91);
+    -ms-box-shadow: 0 15px 21px 0 rgba(132, 137, 141, 0.91);
+    -o-box-shadow: 0 15px 21px 0 rgba(132, 137, 141, 0.91);
+    box-shadow: 0 15px 21px 0 rgba(132, 137, 141, 0.91);
+}
+
+.apd-custom-calendar .btn-sm {
+    border-radius: 50px;
+    border-style: none;
+    border-width: medium;
+    margin-bottom: 1px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 6px 8px;
+    border: none;
+}
+
+.apd-custom-calendar .btn-default:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+.apd-custom-calendar btn-default.active {
+    background-color: #1b639e;
+}
+
+.apd-custom-calendar .btn-default:hover {
+    background-color: #d4ede7;
+    color: #333;
+}
+
+.apd-custom-calendar .btn-info.active:hover {
+    background-color: #1b639e;
+}
+
+.apd-custom-calendar .btn-default:active,
+{
+    background-color: inherit;
+    outline: none;
+    box-shadow: none;
+}
+
+.apd-custom-calendar .btn-info.active:active {
+    outline: none;
+}
+
+.apd-custom-calendar .btn-info {
+    background: #1b639e;
+    color: #fff !important;
+    outline: none;
+}
+
+.apd-custom-calendar .active:hover {
+    /*color: #fff;*/
+    
+    box-shadow: none;
+}
+
+.apd-custom-calendar .btn:active {
+    box-shadow: none;
+    color: #fff;
+    background-color: #1b639e;
+    outline: none;
+}
+
+.apd-custom-calendar .btn:Focus {
+    box-shadow: none;
+    color: #fff;
+    background-color: #1b639e;
+}
+
+.apd-custom-calendar .active {
+    box-shadow: none;
+}
+
+.apd-custom-calendar .btn-info .text-info {
+    color: #fff;
+}
+
+.apd-custom-calendar .text-info {
+    font-weight: bold;
+    color: #1b639e;
+}
+
+.apd-custom-calendar .btn-info .text-info:hover {
+    color: #fff;
+}
+
+.apd-custom-calendar.btn-info:active,
+.btn-info:focus,
+.btn-info:hover,
+.open > .dropdown-toggle.btn-info {
+    background-color: #1b639e;
+    border-color: transparent;
+    color: #FFF;
+}
+
+.apd-custom-calendar table thead tr:nth-child(1) {
+    background: #1b639e;
+    color: #fff;
+}
+
+.apd-custom-calendar table thead tr:nth-child(2) th {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.apd-custom-calendar table thead tr:nth-child(2) th:nth-child(2) {
+    padding-left: 10px;
+}
+
+.apd-custom-calendar table thead tr:nth-child(2) th:nth-child(8) {
+    padding-right: 10px;
+}
+
+.apd-custom-calendar table thead tr th:nth-child(1) {}
+
+.apd-custom-calendar table thead tr th:nth-child(1) button,
+.apd-custom-calendar table thead tr th:nth-child(1) button:hover,
+.apd-custom-calendar table thead tr th:nth-child(1) button:focus {
+    background: url("../images/left.png") no-repeat center top transparent;
+    height: 15px;
+    width: 8px;
+    margin-left: 15px;
+}
+
+.apd-custom-calendar table thead tr th:nth-child(1) button .glyphicon-chevron-left {
+    color: #fff;
+    display: none;
+}
+
+.apd-custom-calendar table thead tr th:nth-child(2) button {
+    background: transparent;
+    color: #fff;
+    margin-top: 0;
+    font-size: 16px;
+    margin-bottom: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.apd-custom-calendar b,
+.apd-custom-calendar strong {
+    font-weight: normal;
+}
+
+.apd-custom-calendar table thead tr th:nth-child(2) button:hover {
+    background: transparent;
+    color: #fff;
+}
+
+.apd-custom-calendar table thead tr th:nth-child(2) button:focus {
+    background: transparent;
+    outline: none;
+}
+
+.apd-custom-calendar .active:focus,
+.apd-custom-calendar .btn:focus {
+    outline: none;
+    color: #fff;
+    box-shadow: none;
+    background-color: #1b639e;
+}
+
+.apd-custom-calendar td,
+th {
+    padding: 0 1px 0 1px;
+}
+
+.apd-custom-calendar table thead tr {
+    padding: 0 10px;
+}
+
+.apd-custom-calendar ul li:focus,
+.apd-custom-calendar table:focus,
+.apd-custom-calendar tr:focus,
+.apd-custom-calendar td:focus {
+    outline: none;
+}
+
+.apd-custom-calendar small {
+    font-size: 12px;
+    font-weight: normal;
+    color: #1b639e;
+}
+
+.apd-custom-calendar .btn-default[disabled] {
+    color: #333;
+}
+
+.apd-custom-calendar .btn-default[disabled]:focus,
+{
+    opacity: 1;
+    background-color: none;
+    /*color:#333;*/
+}
+
+.apd-custom-calendar .btn-default.disabled:active {}
+/*
+.apd-custom-calendar .btn-default[disabled].active{
+  background-color: #1b639a;
+}
+*/
+
+.apd-custom-calendar table tbody tr:nth-child(1) td:nth-child(2) {
+    padding-left: 10px;
+}
+
+.apd-custom-calendar table tbody tr:nth-child(1) td:nth-child(8) {
+    padding-right: 10px;
+}
+
+.apd-custom-calendar table tbody tr td:nth-child(2) {
+    padding-left: 10px;
+}
+
+.apd-custom-calendar table tbody tr td:nth-child(8) {
+    padding-right: 10px;
+}
+
+.apd-custom-calendar table tbody tr td:nth-child(8) button.btn:active,
+.apd-custom-calendar table tbody tr td:nth-child(8) button.btn:focus,
+.apd-custom-calendar table tbody tr td:nth-child(2) button.btn:active .text-muted {
+    color: #FFF;
+}
+
+.apd-custom-calendar table[ng-switch-when="day"] thead tr:nth-child(2) th:nth-child(2) small,
+.apd-custom-calendar table[ng-switch-when="day"] thead tr:nth-child(2) th:nth-child(8) small,
+.apd-custom-calendar table[ng-switch-when="day"] tbody tr td:nth-child(2) button.btn-default[disabled],
+.apd-custom-calendar table[ng-switch-when="day"] tbody tr td:nth-child(8) button.btn-default[disabled],
+.apd-custom-calendar table[ng-switch-when="day"] tbody tr td:nth-child(2) button,
+.apd-custom-calendar table[ng-switch-when="day"] tbody tr td:nth-child(8) button,
+.apd-custom-calendar table[ng-switch-when="day"] tbody tr td:nth-child(2) button span.text-muted,
+.apd-custom-calendar table[ng-switch-when="day"] tbody tr td:nth-child(8) button span.text-muted {
+    color: #4cb394;
+    opacity: 1;
+}
+
+.apd-custom-calendar table thead tr th:nth-child(3) {}
+
+.apd-custom-calendar table thead tr th:nth-child(3) button,
+.apd-custom-calendar table thead tr th:nth-child(3) button:hover,
+.apd-custom-calendar table thead tr th:nth-child(3) button:focus {
+    background: url("../images/right.png") no-repeat center top transparent;
+    height: 15px;
+    width: 8px;
+    margin-right: 15px;
+}
+
+.apd-custom-calendar table thead tr th:nth-child(3) button .glyphicon-chevron-right {
+    color: #fff;
+    display: none;
+}
+
+.apd-custom-calendar .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    display: none;
+}
+
+.apd-custom-calendar ul li:nth-child(2) {
+    display: inline-block;
+    float: right;
+    padding: 0 10px 0 0 !important;
+}
+
+.apd-custom-calendar ul li:nth-child(2) span {
+    display: none;
+    font-size: 14px;
+    margin: 3px 10px;
+}
+
+.apd-custom-calendar ul li:nth-child(2) button,
+.apd-custom-calendar ul li:nth-child(2) button:active,
+.apd-custom-calendar ul li:nth-child(2) button:focus {
+    color: #1b639e;
+    background-color: transparent;
+    font-size: 14px;
+    padding: 0 8px 6px 8px;
+}
+
+.apd-custom-calendar .btn {
+    border: none;
+    font-size: 12px;
+    margin-top: 1px;
+}
+/*apd-placeholder*/
+
+.apdo-sumbottom-panel {
+    display: block;
+    width: inherit;
+    margin: 0 30px;
+}
+/*pagination*/
+
+.pagination {
+    margin: 10px 0;
+}
+
+.pagination>.active>a {
+    background-color: #1b639e;
+    border-color: #1b639e;
+}
+
+.pagination>.active>a:hover {
+    background-color: #2462a3;
+    border-color: #2462a3;
+}
+
+.pagination>.disabled>a {
+    border-color: #e2e4eb;
+    color: #1B639E;
+}
+
+.pagination-sm>li>a{
+	padding: 4px 9px;
+}
+
+.pagination>li>a{
+	color: #2462a3;
+}
+
+.pagination>li>a:focus,
+.pagination>li>a:hover {
+    background-color: #d5d5d5;
+    border-color: #e2e4eb;
+}
+.hide-overflow {
+    overflow: hidden;
+}
+
+/* download form buttons */
+.apd-dwnld-btn {
+	background-color: #92A4B0;
+	color: #ffffff;
+	padding: 3px 0;
+	width: 220px;
+}
+
+.apd-dwnldbtn {
+	border: 0 none;
+	border-radius: 0;
+	margin-top: 10px;
+	padding: 3px;
+	width: 150px;
+}
+
+.apd-mnt-icn, .apd-prf-icn {
+    padding: 0px 20px;
+}
+
+.apd-dwn-icn {
+    padding: 0px 20px;
+}
+
+.apd-dwn-txt {
+    position: relative;
+    bottom: 10px;
+}
+
+.apd-misc {
+	height: 150px;
+}
+
+/* Appedo Team added CSS */
+/* Sign up page */
+
+.apd-frm2wrpr {
+    width: 80%;
+    margin: 8px auto 0 auto;
+}
+
+.apd-frm2fld {
+    width: 100%;
+    margin: 20px 0 0 0;
+    display: inline-block;
+}
+
+.apd-frm2fld label {
+    display: block;
+    font-weight: normal;
+}
+
+.apd-frm2fld input {
+    display: block;
+    width: 100%;
+    padding: 3px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    background: none;
+}
+
+.apd-frm2fld input:focus {
+    outline: none;
+}
+.apd-frm2fld:-ms-input-placeholder {
+    color: #aaa;
+}
+
+.apd-frm2fld::-webkit-input-placeholder {
+    color: #aaa;
+}
+.apd-frm2fld:-moz-input-placeholder{
+    color: #aaa;
+    opacity: 1;
+}
+/* Captcha */
+.apd-frm3fld {
+    width: 100%;
+    margin: 20px 0 0 0;
+    display: inline-block;
+}
+
+.apd-frm3fld label {
+    display: block;
+    font-weight: normal;
+}
+
+.apd-frm3fld input {
+    display: inline;
+    width: 40%;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    background: none;
+}
+
+.apd-frm3fld input:focus {
+    outline: none;
+}
+.apd-frm3fld:-ms-input-placeholder {
+    color: #aaa;
+}
+
+.apd-frm3fld::-webkit-input-placeholder {
+    color: #aaa;
+}
+.apd-sbmtbtn1-wrper {
+    display: table;
+    margin: 30px 0px 0 0;
+    width: 100%;
+}
+/* This is to avoid the red block on first view of sign up page in firefox */
+input:required {
+    border-color: #ccc !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+/* notifications */
+.apd-notifications {
+    background: none repeat scroll 0 0 #fff;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+	margin: 0 0 5px;
+    padding: 10px 0px;
+    min-height: 50px;
+}
+
+.apd-notifications a:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.apd-notification {
+    position: relative;
+}
+
+.apd-alerticon {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #f56b6b;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 50px;
+    position: relative;
+    bottom: 10px;
+}
+
+.apd-notify-msg {
+    line-height: 24px;
+}
+
+.apd-first-char-up {
+	text-transform: capitalize;
+}
+
+/*low health*/
+.appedo-low-wrper {
+	display: inline-block;
+	width: 100%;
+}
+
+.appedo-low-top {
+	display: inline-block;
+	width: 100%;
+	height: inherit;
+}
+
+/* Required for Down Triangle */
+.apdo-redbar-low:after, .apdo-greebar-low:after, .apdo-yellowbar-low:after
+	{
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-color: transparent;
+	border-bottom: 0;
+}
+
+/* Fill */
+.apdo-redbar-low:after, .apdo-greebar-low:after, .apdo-yellowbar-low:after
+	{
+	bottom: -6px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	border-width: 7px;
+}
+/*arrow end*/
+/*health hover */
+.apdo-redbar-low.selectred::after {
+	border-top-color: rgb(239, 84, 80);
+}
+
+.apdo-yellowbar-low.selectyellow::after {
+	border-top-color: rgb(239, 196, 80);
+}
+
+.apdo-greebar-low.selectgreen::after {
+	border-top-color: rgb(67, 160, 71);
+}
+/*health common*/
+.apdo-redbar-low, .apdo-greebar-low, .apdo-yellowbar-low {
+	width: 32.8%;
+	position: relative;
+	display: inline-block;
+	padding: 0.3em;
+	margin-bottom: 0.5em;
+	float: left;
+	margin-right: 1px;
+}
+
+.apdo-greebar-low {
+	margin-right: 0;
+}
+
+.apdo-redbar-low {
+	background: rgb(239, 84, 80);
+}
+
+.apdo-yellowbar-low {
+	background: rgb(239, 196, 80);
+}
+
+.apdo-greebar-low {
+	background: rgb(67, 160, 71);
+}
+
+/* health sub box here*/
+.appedo-low-dow {
+	display: inline-block;
+	padding: 10px 10px 10px 15px;
+	color: #fff;
+	display: inline-block;
+	width: 99%;
+}
+/* sub box color */
+.apd-subred-box {
+	background: rgb(239, 84, 80);
+}
+
+.apd-subyellow-box {
+	background: rgb(239, 196, 80);
+}
+
+.apd-subgren-box {
+	background: rgb(67, 160, 71);
+}
+/*subox content heree*/
+.apdo-iconleft {
+	display: inline-block;
+	margin-right: 10px;
+	/* width: 20%;*/
+}
+
+.appedo-low-dowtext {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.appedo-low-dowicn.appedo-low-dowicn {
+	display: inline-block;
+	margin: 0;
+	vertical-align: middle;
+}
+
+/*****************************slider css***********************/
+.apdo-slider {
+	margin-top: 32px;
+	margin-bottom: 23px;
+}
+
+.apdo-slider01 {
+	margin : 0% 20% 1% 20%;
+}
+
+.jslider .jslider-value {
+	display: none;
+}
+
+.jslider .jslider-label {
+	display: none;
+}
+
+.jslider .jslider-scale ins {
+	left: -30px;
+	color: #7e7e7e;
+	width: 65px;
+	text-align: center;
+}
+
+.jslider {
+	border-radius: 4px;
+	font-family: RobotoRegular;
+}
+
+.jslider .jslider-bg i {
+	border-radius: 4px;
+}
+
+.jslider.sliderCSS .jslider-bg .l {
+	background: bcbcbd;
+}
+
+.jslider_round.sliderCSS .jslider-pointer {
+	margin-left: -4px;
+}
+/******************spinner css***************************/
+.spinner {
+	width: inherit;
+	padding: 0;
+}
+
+.spinner label {
+	margin: 42px 0 5px 0;
+	padding: 0;
+	font-size: 14px;
+	display: block;
+}
+
+.spinner input[readonly] {
+	background: none;
+}
+
+.spinner input {
+	text-align: left;
+	border: none;
+	box-shadow: none;
+	width: 100px;
+	padding-right: 29px;
+	padding-left: 8px;
+	display: inline-block;
+	border-bottom: 1px solid #1b639e;
+}
+
+.spinner input:focus {
+	box-shadow: none;
+	border-bottom: 1px solid #ddd;
+}
+
+.input-group-btn-vertical {
+	position: relative;
+	white-space: nowrap;
+	width: 1%;
+	vertical-align: bottom;
+	display: inline-block;
+	right: 27px;
+	top: -1px;
+}
+
+.input-group-btn-vertical>.btn {
+	display: block;
+	float: none;
+	width: 100%;
+	max-width: 100%;
+	padding: 8px;
+	margin-left: -1px;
+	margin-bottom: 3px;
+	position: relative;
+	border-radius: 0;
+	border: 2px solid #7e7e7e;
+}
+
+.input-group-btn-vertical>.btn:hover {
+	border: 2px solid #1b639e;
+	background: none;
+}
+
+.input-group-btn-vertical>.btn:focus {
+	outline: none;
+	background: none;
+	box-shadow: none;
+}
+
+.input-group-btn-vertical>.btn:active {
+	border: 2px solid #1b639e;
+	background-color: #1b639e;
+	box-shadow: none;
+}
+
+.input-group-btn-vertical>.btn:first-child {
+	margin-bottom: 0;
+	box-shadow: none;
+}
+
+/*low health*/
+.appedo-low-wrper {
+	display: inline-block;
+	width: 100%;
+}
+
+.appedo-low-top {
+	display: inline-block;
+	width: 100%;
+	height: inherit;
+}
+
+/* Required for Down Triangle */
+.apdo-redbar-low:after, .apdo-greebar-low:after, .apdo-yellowbar-low:after
+	{
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-color: transparent;
+	border-bottom: 0;
+}
+
+/* Fill */
+.apdo-redbar-low:after, .apdo-greebar-low:after, .apdo-yellowbar-low:after
+	{
+	bottom: -6px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	border-width: 7px;
+}
+/*arrow end*/
+/*health hover */
+.apdo-redbar-low.selectred::after {
+	border-top-color: rgb(239, 84, 80);
+}
+
+.apdo-yellowbar-low.selectyellow::after {
+	border-top-color: rgb(239, 196, 80);
+}
+
+.apdo-greebar-low.selectgreen::after {
+	border-top-color: rgb(67, 160, 71);
+}
+/*health common*/
+.apdo-redbar-low, .apdo-greebar-low, .apdo-yellowbar-low {
+	width: 32.8%;
+	position: relative;
+	display: inline-block;
+	padding: 0.3em;
+	margin-bottom: 0.5em;
+	float: left;
+	margin-right: 1px;
+}
+
+.apdo-greebar-low {
+	margin-right: 0;
+}
+
+.apdo-redbar-low {
+	background: rgb(239, 84, 80);
+}
+
+.apdo-yellowbar-low {
+	background: rgb(239, 196, 80);
+}
+
+.apdo-greebar-low {
+	background: rgb(67, 160, 71);
+}
+
+/* health sub box here*/
+.appedo-low-dow {
+	display: inline-block;
+	padding: 10px 10px 10px 15px;
+	color: #fff;
+	display: inline-block;
+	width: 99%;
+}
+/* sub box color */
+.apd-subred-box {
+	background: rgb(239, 84, 80);
+}
+
+.apd-subyellow-box {
+	background: rgb(239, 196, 80);
+}
+
+.apd-subgren-box {
+	background: rgb(67, 160, 71);
+}
+/*subox content heree*/
+.apdo-iconleft {
+	display: inline-block;
+	margin-right: 10px;
+	/* width: 20%;*/
+}
+
+.appedo-low-dowtext {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.appedo-low-dowicn.appedo-low-dowicn {
+	display: inline-block;
+	margin: 0;
+	vertical-align: middle;
+}
+
+/*****************************slider css***********************/
+.apdo-slider {
+	margin-top: 32px;
+	margin-bottom: 23px;
+}
+
+.jslider .jslider-value {
+	display: none;
+}
+
+.jslider .jslider-label {
+	display: none;
+}
+
+.jslider .jslider-scale ins {
+	left: -30px;
+	color: #7e7e7e;
+	width: 65px;
+	text-align: center;
+}
+
+.jslider {
+	border-radius: 4px;
+	font-family: RobotoRegular;
+}
+
+.jslider .jslider-bg i {
+	border-radius: 4px;
+}
+
+.jslider.sliderCSS .jslider-bg .l {
+	background: bcbcbd;
+}
+
+.jslider_round.sliderCSS .jslider-pointer {
+	margin-left: -4px;
+}
+/******************spinner css***************************/
+.spinner {
+	width: inherit;
+	padding: 0;
+}
+
+.spinner label {
+	margin: 42px 0 5px 0;
+	padding: 0;
+	font-size: 14px;
+	display: block;
+}
+
+.spinner input[readonly] {
+	background: none;
+}
+
+.spinner input {
+	text-align: left;
+	border: none;
+	box-shadow: none;
+	width: 100px;
+	padding-right: 29px;
+	padding-left: 10px;
+	padding-bottom: 8px;
+	display: inline-block;
+	border-bottom: 1px solid #1b639e;
+}
+
+.spinner input:focus {
+	box-shadow: none;
+	border-bottom:1px solid #1b639e;
+}
+
+.input-group-btn-vertical {
+	position: relative;
+	white-space: nowrap;
+	width: 1%;
+	vertical-align: bottom;
+	display: inline-block;
+	right: 24px;
+	top: -1px;
+}
+
+.input-group-btn-vertical>.btn {
+	display: block;
+	float: none;
+	width: 100%;
+	max-width: 100%;
+	padding: 8px;
+	margin-left: -1px;
+	margin-bottom: 3px;
+	position: relative;
+	border-radius: 0;
+	border: 2px solid #666666;
+}
+
+.input-group-btn-vertical>.btn:hover {
+	border: 2px solid #1b639e;
+	background: none;
+}
+
+.input-group-btn-vertical>.btn:focus {
+	outline: none;
+	background: none;
+	box-shadow: none;
+}
+
+.input-group-btn-vertical>.btn:active {
+	border: 2px solid #1b639e;
+	background-color: #1b639e;
+	box-shadow: none;
+}
+
+.input-group-btn-vertical>.btn:last-child {
+	margin-top: 1px;
+	margin-bottom: 1px;
+	border-bottom-right-radius: 0px;
+	box-shadow: none;
+}
+
+.input-group-btn-vertical>.btn:first-child {
+	margin-bottom: 0;
+	box-shadow: none;
+}
+
+.input-group-btn-vertical i {
+	position: absolute;
+	top: 3px;
+	left: 4px;
+	font-size: 10px;
+	color: #666666;
+}
+
+.input-group-btn-vertical>.btn:hover i {
+	color: #1b639e;
+}
+
+.input-group-btn-vertical>.btn:active i {
+	color: #fff;
+}
+/*********************************spinner css end*/
+/* readonly input background*/
+.form-control[readonly] {
+	background: transparent;
+	cursor: pointer;
+}
+/********************************************progressbar css here***/
+.apdo-progressbar_wrapper {
+	height: auto;
+	overflow: hidden;
+	margin-top: 10px;
+	border: 1px solid #ddd;
+	border-bottom: none;
+}
+
+.progressbar-title {
+	margin: 30px 0 0 0;
+}
+
+.apdo-progressbar_sub {
+	border-bottom: 1px solid #ddd;
+	background: #eee;
+	display: block;
+}
+
+.apdo-progressbar_sub.active {
+	background: #fff;
+}
+
+.apdo-progressbar_sub.active .progress-bar-success {
+	background: #42A6DB;
+}
+
+.apdo-progressbar_wrapper_cnt {
+	padding: 10px;
+}
+
+.progress {
+	margin-bottom: 0;
+	box-shadow: none;
+	background-color: transparent;
+	height: 10px;
+	box-shadow: none;
+	border-radius: 0;
+}
+
+.progress-bar {
+	box-shadow: none;
+	font-size: 10px;
+}
+
+.progress-bar-success {
+	background-color: #ddd;
+}
+
+.progress b {
+	display: none;
+}
+
+.apdo-addheader {
+    padding-top: 10px;
+    padding-left: 20px;
+    display: inline-block;
+    float: left;
+}
+
+/* Map styles */
+
+.apd-running, .apd-completed {
+	margin-bottom: 47px;
+}
+
+.apd-completed {
+	margin-bottom: 47px;
+}
+
+.apd-running-label, .apd-completed-label, .apd-locations-label {
+    margin-bottom: 20px;
+}
+
+.apd-mapContainer {
+	margin-top: 40px;
+}
+.download-icon{
+	position:relative;
+	top:4px;
+	right:3px;
+}
+}

@@ -1,0 +1,132 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 apdo-adttl apd-rbtmdmfnfmly">
+            {{formName}}
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm">
+	            <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="icon-sum aped-apiconttle" style="color:#24a35d"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">Synthetic User Monitor</span>
+	                </div>
+	            </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <form class="apd-rbtrgfnfmly font_18" name="sumAddForm">
+                    <div class="apd-fldwdt01">
+                        <label class="font_14">Test Name <font size="3px" color="red"><sup>*</sup></font></label>
+                        <input type="text" placeholder="Test Name" name="testName" id="testName" for="testName" class="clr444444 apd-first-char-up" maxlength="150" ng-blur="validateSUMTestName()" ng-model="sumTestAddData.testName">
+						<img ng-hide="showProceed" href="" src="assets/images/tickmark.png"  style="margin-top: -20px;" align="right"/>
+						<img ng-show="showProceed" href="" src="assets/images/cancel.png"  style="margin-top: -20px;" align="right"/>
+                    </div>
+	                        <div class="apm-radiobtn apm-radiobtn-ltest" style="margin-top: 30px;">
+	                             <div class="font_14">Mode</div>
+	                            <div class="apd-rdbtn">
+									<input type="radio" name="radiog_lite" id="radio1" value="URL" class="css-checkbox" checked="checked" maxlength="150" ng-model="sumTestAddData.testType" />
+	                                <label for="radio1" class="css-label radGroup1 font_16 ">URL</label>
+	                            </div>
+	                            <div class="apd-rdbtn">
+ 									<input type="radio" name="radiog_lite" id="radio2" class="css-checkbox" value="TRANSACTION" ng-model="sumTestAddData.testType" />
+	                                <label for="radio2" class="css-label radGroup1 font_16">Transaction</label>
+	                            </div>
+	                        </div>
+                        <div class="apd-fldwdt01" ng-if="sumTestAddData.testType === 'URL'" ng-class="{'has-error' : sumAddForm.url.$invalid && sumFormSubmitted, 'has-warning': showInfoHttpAppended}">
+	                        <label for="url" class="font_14">URL <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <input type="text" name="url" id="url" placeholder="URL" class="clr444444 form-control" ng-model="sumTestAddData.url" ng-blur="appendHttpPrefix()" ng-required="sumTestAddData.testType === 'URL'" valid-url />
+	                        <!-- valid-url is a directive loadin from directive.js -->
+								<!-- <p ng-show="sumAddForm.url.$invalid && sumFormSubmitted" class="help-block" >Invalid URL</p>  -->
+								<p ng-show="showInfoHttpAppended" class="help-block" >Prefix URL with http://</p>
+							
+	                    </div>
+	                    
+	                    <div class="apd-fldwdt01 " ng-if="sumTestAddData.testType === 'TRANSACTION'">
+							<label class="font_14">Transaction <font size="3px" color="red"><sup>*</sup></font></label>
+							<div class="font_12">
+								package mypackage;
+								<textarea name="transactionSeleniumImports" id="transactionSeleniumImports" class="form-control font_12 " style="width: 486px; height: 200px;"
+								ng-model="sumTestAddData.tranasctionImports" textarea-fit-to-content ng-required="sumTestAddData.testType === 'TRANSACTION'"></textarea>
+								public class MyWebsite {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String args[]) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FirefoxProfile profile = AppedoUtils.getFirefoxProfile();
+								<textarea name="transaction" id="transaction" class="form-control font_12 " placeholder="Transaction"  
+								ng-model="sumTestAddData.transaction" style="width: 486px;" textarea-fit-to-content ng-required="sumTestAddData.testType === 'TRANSACTION'"></textarea>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+								}
+							</div>
+						</div>
+                        <div class="apd-fldwdt01">
+	                        <label class="font_14">Run Every<font size="3px" color="red"><sup>*</sup></font></label>
+							<select ng-model="sumTestAddData.runEveryMinutes">
+                        		<option value="15" >15 Min</option>
+								<option value="30" >30 Min</option>
+								<option value="45" >45 Min</option>
+								<option value="60" selected>1 Hrs</option>
+								<option value="120" >2 Hrs</option>
+								<option value="240" >4 Hrs</option>
+								<option value="480" >8 Hrs</option>
+								<option value="720" >12 Hrs</option>
+								<option value="1440" >24 Hrs</option>
+                        	</select>
+	                    </div>
+	            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+	            	<div class="apd-fldwdt01" style="margin-left:-15px; margin-top:0px;" data-ng-controller="datePickerCtrls">
+					    <div class=" apd-custom-calendar ">
+								<label class="font_14 apd-mrgntp-lable">Start Date</label> 
+								<input for="startdate" type="text" id="startdate" name="startdate" class="form-control font_18" ng-model="sumTestAddData.startdate" readonly="readonly" 
+								datepicker-popup="{{format}}" is-open="opened" date-disabled="disabledTillYesterday(date, mode)" 
+								datepicker-options="dateOptions" close-text="OK" 
+								ng-change="setEndDateAsStartDate()"  />
+								<i class="glyphicon glyphicon-calendar apd-custom-calendar-icon" ng-click="open($event)"></i>
+						</div>
+					</div>
+				</div>
+	            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+					<div class="apd-fldwdt01" style="margin-top:0px;" data-ng-controller="datePickerCtrls">
+						<div class="apd-custom-calendar ">
+							<label class="font_14 apd-mrgntp-lable" style="margin-left: 6px;">End Date</label> 
+							<input style="margin-left: 6px;" for="enddate" type="text" id="enddate" name="enddate" class="form-control font_18" ng-model="sumTestAddData.enddate" readonly="readonly"
+							datepicker-popup="{{format}}" is-open="opened" date-disabled="disabledTillYesterday(date, mode)" 
+							datepicker-options="dateOptions" close-text="OK" 
+							ng-change="setEndDateAsStartDate()"  />
+							<i class="glyphicon glyphicon-calendar apd-custom-calendar-icon" ng-click="open($event)"></i>
+						</div>
+					</div>
+			    </div>
+                   <div class="apm-radiobtn apm-radiobtn-ltest apd-fldwdt01" style="margin-top: 30px;">
+                        <div class="font_14">Status</div>
+                       <div class="apd-rdbtn">
+							<input type="radio" name="radioSwitchStatus" id="activate" class="css-checkbox" checked="checked" ng-value="true" ng-model="sumTestAddData.status" />
+                           <label for="activate" class="css-label radGroup1 font_16 ">Activate</label>
+                       </div>
+                       <div class="apd-rdbtn">
+							<input type="radio" name="radioSwitchStatus" id="deactivate" class="css-checkbox" ng-value="false" ng-model="sumTestAddData.status" />
+                           <label for="deactivate" class="css-label radGroup1 font_16">Deactivate</label>
+                       </div>
+                   </div>
+                        <!-- <label class="alert alert-danger apd-frmfld control-label font_14"
+						ng-show="showAddModuleErrorMsg"> {{AddModuleErrorMsg}} </label> -->
+                        <div class="pull-right"  data-ng-controller="form_controller">
+                            <button type="submit" class="apdo-adbtn btn btn-success" ng-disabled="showProceed" data-ng-click="addCities()">PROCEED</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

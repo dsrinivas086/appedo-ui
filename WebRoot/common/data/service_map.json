@@ -1,0 +1,57 @@
+[
+  {
+    "service": "Application",
+    "appliations": [
+      {
+        "counter_id": 11,
+        "name": "App1",
+        "isSelected": false
+      },
+      {
+        "counter_id": 111,
+        "name": "App2",
+        "isSelected": false
+      },
+      {
+       "counter_id": 111,
+        "name": "App3",
+        "isSelected": false
+      }
+    ]
+  },
+  {
+    "service": "Server",
+    "appliations": [
+      {
+        "counter_id": 21,
+        "name": "Server1",
+        "isSelected": false
+      },
+      {
+        "counter_id": 22,
+        "name": "Server2",
+        "isSelected": false
+      },
+      {
+       "counter_id": 33,
+        "name": "Server3",
+        "isSelected": false
+      }
+    ]
+  },
+  {
+    "service": "Database",
+    "appliations": [
+      {
+        "counter_id": 44,
+        "name": "Database1",
+        "isSelected": false
+      },
+      {
+       "counter_id": 45,
+        "name": "Database2",
+        "isSelected": false
+      }
+    ]
+  }
+]

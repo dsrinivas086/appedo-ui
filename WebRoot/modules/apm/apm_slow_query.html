@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="apdo-crdtlte col-lg-8 col-md-8 col-sm-12 col-xs-12 font_16 clr1b639e">Expensive Queries</div>
+    <div class="apdo-crdtlte col-lg-2 col-md-2 col-sm-6 col-xs-6 font_16 clr1b639e">Count</div>
+    <div class="apdo-crdtlte col-lg-2 col-md-2 col-sm-6 col-xs-6 font_16 clr1b639e">Avg Duration(ms)</div>
+</div>
+<div class="apdcrdcatgrywrpr" data-ng-repeat="slowQuery in slowSQLQueryData">
+
+    <div class="row apdcrdcatgry apd-rbtrgfnfmly">
+       <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 apdbgdcolor">
+            <div class="font_14 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 clr626161">{{slowQuery.query}}</div>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 apdbgdcolor">
+            <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">{{slowQuery.count}}</div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 apdbgdcolor">
+            <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">{{slowQuery.avg_duration}}</div>
+        </div>
+    </div>
+</div>

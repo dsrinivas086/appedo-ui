@@ -1,0 +1,49 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="font_22 clr626161 apdo-adttl apd-rbtmdmfnfmly">
+            {{formName}}
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr clr626161">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close();" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm">
+	            <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="icon-rum aped-apiconttle" style="color:#CD8527"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">Service Map</span>
+	                </div>
+	            </div>
+                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                    <form class="apd-rbtrgfnfmly font_18" name="serviceMapAddForm">
+                        <div class="apd-fldwdt">
+                            <label class="font_14">Service Map Name <font size="3px" color="red"><sup>*</sup></font></label>
+                            <input type="text" name="serviceMapName" ng-model="serviceMapData.serviceMapName" maxlength="200" placeholder="Service Map Name" ng-blur="validateServiceMapName()" class="clr444444 apd-first-char-up" required>
+                            <img ng-hide="showProceed" href="" src="assets/images/tickmark.png"  style="margin-top: -20px;" align="right"/>
+							<img ng-show="showProceed" href="" src="assets/images/cancel.png"  style="margin-top: -20px;" align="right"/>
+                        </div>
+                        <div class="apd-fldwdt">
+                            <label class="font_14">Description <font size="3px" color="red"><sup>*</sup></font></label>
+                            <input type="text" name="serviceMapDescription" ng-model="serviceMapData.serviceMapDescription" maxlength="500" placeholder="Service Map Description" class="clr444444 apd-first-char-up" required>
+                        </div>
+                        <div class="pull-right"  data-ng-controller="form_controller">
+                            <button type="submit" class="apdo-adbtn btn btn-success" ng-disabled="serviceMapAddForm.$invalid || showProceed" data-ng-click="openServiceMapForm()">Proceed</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

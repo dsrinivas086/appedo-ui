@@ -1,0 +1,35 @@
+<div class="apd-subpnl" data-ng-controller="sumDashPanel">
+    <div class="apd-subpnlcntnt">
+        <div class="row apd-custmtitle">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 pull-left font_18 clr1b639e apd-dsbslct"> <!--apd-adchsf-->
+                <select name="webSiteModules" id="webSiteModules" ng-model="selectedWebSite" ng-options="module as module.testName for module in userWebsiteCounterModules"  ng-change = "getSUMChartData()">
+                </select>
+            </div>
+           <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 pull-left font_18 clr1b639e apd-dsbslct"> 
+                <select name="duration" id="duration" ng-model="selectedSUMDuration" ng-options='duration for duration in sumDurations' ng-change = "getSUMChartData()" >
+                </select>
+            </div>
+           <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 pull-left font_18 clr1b639e apd-dsbslct"> 
+                <select name="location" id="location" ng-model="selectedLocation" ng-change="getSelectedLocation(selectedLocation)">
+                	<option value="All Locations">All Locations</option>
+                	<option ng-repeat="location in sumLocations track by $index" value="{{location.City}}">{{location.City}}</option>
+                </select>
+            </div>
+        </div>
+        
+       	<div class="row apdeo-adForm apd-marg-left ">
+		    <div class="row">
+			    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry" id="dashSUM_Multi">
+			        <div class="apd-grpcntlg3">
+			            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Response Time</div>
+			        </div>
+			        <div>
+						<appedo-multi-line-chart-directive  id="d3Multi_SUM" modtype="sum" acctype="Response Time" chartdata="responseTimeChartData" paneltype="sum" parrentnodeid="dashSUM_Multi" xaxisformat="{{d3XaixsFormat}}" loadevent="" linkstatus="false"></appedo-multi-line-chart-directive>
+			        </div>
+			        <div class="apdobtmbar01">
+			        </div>
+			    </div>
+		    </div>
+		</div>
+    </div>
+</div>

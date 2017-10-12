@@ -1,0 +1,55 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer" data-ng-controller="slaSlaveCardController">
+     <div class="row">
+        <div class="apdo-crdtlte col-lg-9 col-md-9 col-sm-9 col-xs-12 font_18 clr1b639e">Slave Status</div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 font_12 clr1b639e">
+			<div>
+				<a href="./apm/downloadAgent?type=SLA">
+					<b></b><u>Download SLA Slave</u></b><br>
+				</a>
+				<div>
+					<span class="clr626161 font_11 apd-rbtrbfnfmly apd-mrbtm10 apdcrd-mrtp05">
+						Slave must be installed in all the servers where healing need to take place.
+					</span>
+				</div>
+			</div>
+		</div>
+    </div>
+    <!--cardlist start-- apd-lineheight26 apd-lineheight30 apdo-cnterver-->
+<!-- 				joSlaSlaveStatusCardLayout.put("os_type", rs.getString("osType")); -->
+<!-- 				joSlaSlaveStatusCardLayout.put("os_version", rs.getString("osVersion")); -->
+    <div class="apdcrdcatgrywrpr" data-ng-repeat="slave in slaves">
+
+        <div class="row apdcrdcatgry apd-rbtrgfnfmly">
+           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 apdbgdcolor">
+           		<div class="font_22 clr626161 apd-mrbtm10 clr626161">SLAVE Details</div>
+                <div class="font_16 clr626161">Mac Id:{{slave.mac_address}}</div>
+                <div class="font_12 clr626161">Status Last Received on {{slave.last_received_on | date:'dd-MMM-yyyy HH:mm:ss'}}</div>
+                <div class="font_16 clr626161">OS:{{slave.os_type}}	Version:{{slave.os_version}}</div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 apdbgdcolor">
+                <div class="font_22 clr949494 apd-center01 apdcrd-mrtp10">IP Address</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_20 apd-lineheight43 clr626161">{{slave.ip_address}}</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 apdbgdcolor">
+                <div class="font_22 clr949494 apd-center01 apdcrd-mrtp10">SLAVE Version SLA</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_20 apd-lineheight43 clr626161">{{slave.slave_version}}</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 apdbgdcolor">
+                <div class="font_22 clr949494 apd-center01 apdcrd-mrtp10">Running Status</div>
+				<div class="apdcrd-leftwrpr apdo-crdiconpadd" ng-show="{{slave.slave_status}}" style="margin-bottom: -30px; margin-left: 85px;">
+                    <div class="sla-slave-status_active" style="margin-left: 15px;">
+                    </div>
+                </div>
+                <div class="apdcrd-leftwrpr apdo-crdiconpadd" ng-show="!{{slave.slave_status}}" style="margin-bottom: -30px; margin-left: 85px;">
+                    <div class="sla-slave-status_inactive" style="margin-left: 15px;">
+                    </div>
+                </div>
+<!--                 <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_22 apd-lineheight43 clr626161">{{slave.slave_status}}</div> -->
+            </div>
+        </div>
+    </div>
+</div>

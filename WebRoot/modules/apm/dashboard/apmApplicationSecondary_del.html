@@ -1,0 +1,21 @@
+<div class="row apd-brdbtm">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 apd-lhthdvder">
+        <div class="row">
+            <div class="apd-lhth col-lg-9 col-md-9 col-sm-9 col-xs-3 pdb"><img src="assets/images/low_health.png" class="img-responsive" />
+            </div><i class="icon-chat apd-lcht clr36b397 col-lg-3 col-md-3 col-sm-3 col-xs-3"></i>
+        </div>        
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9  col-xs-9">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 apd-sprmpadtp apd-pdngrt" ng-repeat="summary in apmAppSecSumData">
+                <div class="clr9ea7be font_32 apd-rbtmdmfnfmly apd-lineheight26">{{summary.value+""+summary.unit}}</div>
+                <div class="clr1b639e font_14">{{summary.label}}</div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 apd-pdngrt"><i class="icon-reports apd-chrticn pull-right"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!--apm-dash-app-sec-smr  id="apm-application-secondary-summary" modtype="apm" acctype="apm_application_secondary_summary_details" paneltype="application" parentid="apm-application-secondary-summary"></apm-dash-app-sec-smr-->

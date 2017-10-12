@@ -1,0 +1,89 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 apdo-addheader apd-rbtmdmfnfmly">
+            Map Scripts
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm01">
+                <form class="apd-rbtrgfnfmly font_12" name="addLtScenario">
+                <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="icon-load aped-apiconttle" style="color: #977E31;"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">Load Testing</span>
+	                </div>
+	            </div>
+	            <!-- <br/> -->
+	            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+	             <div class="apd-fldwdt">
+                            <label class="font_14">Scenario Name <font size="3px" color="red"><sup>*</sup></font></label>
+                            <input type="text" name="scenarioName" ng-model="mapScript.scenarioName" placeholder="Scenario Name" maxlength="200" class="clr444444 apd-first-char-up font_16" required="required">
+                 </div>
+                 </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <!--  first column  -->
+                        <br/>
+                        <div class="apd-fldwdt01">
+                            <label class="font_14">Available Script(s)</font></label>
+                            <div class="" style="border:1px solid #B0ABAB; height: 329px; overflow: auto;">
+                                <div class="" ng-repeat="script in availableScripts" align="left" style="">
+                                    <div class="chekbx" style="margin-left: 10px;">
+                                        <label>
+                                            <input class="font_12" type="checkbox" class="col-md-1" name="scriptName" id="" value="{{script.scriptName}}" ng-model="script.isSelected" ng-click="checkSelectedScripts()"/>
+                                            <span class="font_12" style="">{{script.scriptName}}</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <br/>
+                        <div class="apd-fldwdt01">
+                            <label class="font_14">Selected Script(s)</label>
+
+                            <div class="">
+                                <div class="" style="border:1px solid #B0ABAB; height: 329px; overflow: auto;">
+								<div  ng-repeat="script in selectedScripts">
+									<div class="chekbx" ng-show="script.isSelected" style="margin-left: 10px;">
+										<label for="script_{{script.scriptName}}">
+											<input class="font_12 clr1b639e"   
+		 								type="checkbox" class="col-md-1" name="script" id="script_{{script.scriptName}}" 
+		 								value="{{script.scriptName}}" style="" ng-model="script.isSelected" ng-click="checkSelectedScripts()"/>
+											<span class="font_12" style="">{{script.scriptName}}</span>
+										</label>
+									</div>
+								</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  <label class="alert alert-danger apd-frmfld control-label font_14"
+					ng-show="showConfigCountersErrorMsg"> {{ConfigCountersErrorMsg}} </label> -->
+                    <div class="pull-right" data-ng-controller="form_controller">
+                        <button type="submit" class="apdo-adbtn btn btn-success" ng-disabled="addLtScenario.$invalid || showProceed" data-ng-click="saveLtMapScripts()">{{saveButton}}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

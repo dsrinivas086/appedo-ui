@@ -1,0 +1,93 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer" data-ng-controller="slaRuleCardController">
+    <div class="row">
+        <div class="apdo-crdtlte col-lg-6 col-md-6 col-sm-6 col-xs-12 font_18 clr1b639e">Manage Rules</div>
+<!--         <div class="apdo-crdtlte col-lg-3 col-md-3 col-sm-3 col-xs-12 font_12 clr1b639e"  align="right"> -->
+<!--         	<button type="submit" class="btn btn-success" data-ng-click="">SLA Settings</button> -->
+<!--         </div> -->
+        <div class="apdo-crdtlte col-lg-2 col-md-2 col-sm-2 col-xs-12 font_12 clr1b639e">
+        	<a href="./#/sla_home/slave_status" title="SLA Verification engine.">
+        		<button type="submit" class="btn btn-success" data-ng-click="">SLAVE Status</button>
+        	</a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 font_12 clr1b639e">
+			<div style="margin-top: 10px;">
+				<!-- div>
+					<a href="./apm/downloadAgent?type=SLA&os=windows" title="SLA Verification engine.">
+						<b></b><i class="fa fa-cloud-download apd-mntor-dwnicon_color download-icon"></i><u>SLAVE(Windows) </u></b><br>
+					</a>
+				</div -->
+				<div align="center" style="margin-top: -22px;">
+					<a href="./apm/downloadAgent?type=SLA&os=linux" title="SLA Verification engine.">
+						<b></b><i class="fa fa-cloud-download apd-mntor-dwnicon_color download-icon"></i><u>SLAVE(Linux) </u></b><br>
+					</a>
+				</div>
+				<div>
+					<span class="clr626161 font_11 apd-rbtrbfnfmly apd-mrbtm10 apdcrd-mrtp05">
+						SLAVE must be installed in all the servers where healing need to take place.
+					</span>
+				</div>
+			</div>
+		</div>
+    </div>
+    <!--cardlist start-- apd-lineheight26 apd-lineheight30 apdo-cnterver-->
+    <div class="apdcrdcatgrywrpr" data-ng-repeat="slarule in slarules">
+
+        <div class="row apdcrdcatgry apd-rbtrgfnfmly">
+           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 apdbgdcolor">
+                <div class="font_22 clr626161 apd-mrbtm10 apdcrd-mrtp10 apd-lineheight26 clr626161 apd-first-char-up wordbreak">{{slarule.rule_name}}</div>
+                <span class="cdcccc font_14 apd-rbtrglfnfmly apd-mrbtm10">Added by {{slarule.created_by}} on {{slarule.created_on | date:'dd-MMM-yyyy HH:mm:ss'}}</span>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 apdbgdcolor">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Mapped Actions</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161">{{slarule.mapped_actions}}</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 apdbgdcolor">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Mapped SLA</div>
+
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_40 apd-lineheight43 clr626161">{{slarule.mapped_sla}}</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 apdbgdcolor">
+                <div class="font_16 clr949494 apd-center01 apdcrd-mrtp10 wordbreak">SLA Name</div>
+
+				<div ng-hide="slarule.isRefered" class="pull-right apdosmopt dropdown" style="margin-top: -25px;" dropdown >
+                     <div class="apd-apm-dropdown dropdown-toggle" dropdown-toggle>
+                         <i class="icon-svg8" style="padding-top: 10px;"></i>
+                     </div>
+					<ul class="dropdown-menu" role="menu">
+						<li><a ng-click="editRule()">Edit</a></li>
+						<li><a ng-click="deleteRule()">Delete</a></li>
+					</ul>
+				</div>
+				<div ng-show="slarule.isRefered" ng-click="displayMessage()" class="pull-right apdosmopt dropdown" style="margin-top: -25px;" dropdown >
+					<div class="apd-apm-dropdown dropdown-toggle" dropdown-toggle>
+						<i class="icon-svg8" style="padding-top: 10px;"></i>
+					</div>
+				</div>
+                <div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_22 apd-lineheight43 clr626161 apd-first-char-up">{{slarule.sla_name}}</div>
+            </div>
+            
+<!--             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 apdbgdcolor"> -->
+<!-- 				<div class="font_16 clr949494 apd-center01 apdcrd-mrtp10">Rule Name</div> -->
+				
+<!-- 				<div ng-hide="slaaction.isRefered" class="pull-right apdosmopt dropdown" style="margin-top: -25px;" dropdown > -->
+<!-- 					<div class="apd-apm-dropdown dropdown-toggle" dropdown-toggle> -->
+<!-- 						<i class="icon-svg8" style="padding-top: 10px;"></i> -->
+<!-- 					</div> -->
+<!--                      <ul class="dropdown-menu" role="menu"> -->
+<!-- 						<li><a ng-click="editAction()">Edit</a></li> -->
+<!-- 						<li><a ng-click="deleteAction()">Delete</a></li> -->
+<!-- 					</ul> -->
+<!-- 				</div> -->
+<!-- 				<div ng-show="slaaction.isRefered" ng-click="displayMessage()" class="pull-right apdosmopt dropdown" style="margin-top: -25px;" dropdown > -->
+<!-- 					<div class="apd-apm-dropdown dropdown-toggle" dropdown-toggle> -->
+<!-- 						<i class="icon-svg8" style="padding-top: 10px;"></i> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="apdcrd-mrtp10 apd-center01 apdcrd-vrscnt font_22 apd-lineheight43 clr626161 apd-first-char-up">{{slaaction.rule_name}}</div> -->
+<!-- 			</div> -->
+        </div>
+    </div>
+</div>

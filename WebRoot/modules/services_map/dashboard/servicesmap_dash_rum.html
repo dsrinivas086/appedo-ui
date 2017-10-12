@@ -1,0 +1,57 @@
+<div class="apd-subpnl apdmrgtp25" data-ng-controller="serviceMapRumController">
+    <div class="apd-subpnlcntnt">
+    	<div class="row apd-smrytpbar">
+            <div class="pull-left apd-smrytitle font_18 clr1b639e">
+                RUM
+            </div>
+        </div>
+        <div class="row apd-custmtitle">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 pull-left font_18 clr1b639e apd-dsbslct"> <!--apd-adchsf-->
+                <select name="webSiteModules" id="webSiteModules" ng-model="selectedWebSite" ng-options="module as module.module_name for module in userWebsiteCounterModules"  ng-change = "getRUMChartData()">
+                </select>
+            </div>
+           <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 pull-left font_18 clr1b639e apd-dsbslct"> 
+                <select name="duration" id="duration" ng-model="selectedRUMDuration" ng-options='duration for duration in rumDurations' ng-change = "getRUMChartData()" >
+                </select>
+            </div>
+        </div>
+       	<div class="row apdeo-adForm apd-marg-left ">
+		    <div class="row">
+	            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 apdmainright-ctgry apd-brdrt" id="rumDash01"  >
+		            <div class="apd-grpcntlg3">
+			            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Browser</div>
+			        </div>
+			        <div>
+					   <appedo-donut-chart-directive  id="d3RumDonut01" modulecode="Browser" acctype="Brow" chartdata="browserDonutData" paneltype="rum" parrentnodeid="rumDash01" parentid="d3RumDonut01"></appedo-donut-chart-directive>
+			        </div>
+	            </div>
+	            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 apdmainright-ctgry apd-brdrt" id="rumDash02" >
+		            <div class="apd-grpcntlg3">
+			            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Device Type</div>
+			        </div>
+			        <div>
+					   <appedo-donut-chart-directive  id="d3RumDonut02" modulecode="DeviceType" acctype="DT" chartdata="deviceTypeDonutData" paneltype="rum" parrentnodeid="rumDash02" parentid="d3RumDonut02"></appedo-donut-chart-directive>
+			        </div>
+	            </div>
+	            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 apdmainright-ctgry apd-brdrt" id="rumDash03" >
+		            <div class="apd-grpcntlg3">
+			            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">OS</div>
+			        </div>
+			        <div>
+					   <appedo-donut-chart-directive  id="d3RumDonut03" modulecode="OS" acctype="OS" chartdata="osDonutData" paneltype="rum" parrentnodeid="rumDash03" parentid="d3RumDonut03"></appedo-donut-chart-directive>
+			        </div>
+			   </div>
+	        </div>
+	        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry"><div class="apdobtmbar01"></div></div>
+	        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  apdmainright-ctgry" id="dashRUM_1">
+		        <div class="apd-grpcntlg3">
+		            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">Visitor Count</div>
+		            <div class="font_40 apdgrplnht apd-rbtrgfnfmly clr626161">{{totalVisitor}}</div>
+		        </div>
+		        <div>
+					<appedo-area-chart-directive  id="d3Area_RUM_1" modtype="rum" acctype="Visitor Count" chartdata="visitorsCountChartData" paneltype="rum" parrentnodeid="dashRUM_1" xaxisformat="{{d3XaixsFormat}}"></appedo-area-chart-directive>
+		        </div>
+		    </div>
+		</div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<!--topheading-->
+<div class="apdeoadd"><!--data-ng-controller="form_controller"-->
+    <div class="row thadr-tp">
+        <!--left heading-->
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="font_22 clr626161 apdo-adttl apd-rbtmdmfnfmly">
+            Add
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr clr626161" ><!--data-ng-controller="form_controller"-->
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+
+        <div class="apd-admcntwrpr">
+            <div class="row apd-admcnt">
+                <div class="apdad-heading apd-rbtrgfnfmly font_20 clr1b639e">What would you like to add?</div>
+                <div class="apd-apmslct">
+                    <h1 class="font_14 clr1b639e ">Choose Module</h1>
+                    <div class="apd-adchsf">
+                        <select class="clr202020 font_16"
+                        		data-ng-model="selectType" 
+                        		data-ng-options="option.name for option in options track by option.name"
+                        		data-ng-init="selectType = options[itr]"></select>
+                    </div>
+                </div>
+                <div class="col-lg-12 clr3569a pdb active" data-ng-repeat="moduleCardContent in moduleCardsContent track by $index">
+
+                    <div class="row aped-aplcthd" ng-class="moduleCardContent.class" data-ng-click="openAddModule(moduleCardContent)" style="cursor: pointer;">
+
+                        <!--apps add-->
+                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 ad-pdlt ">
+                            <h1 class="clr1b639e font_24">
+                                    {{moduleCardContent.module_name}}
+                                </h1>
+                            <div class="clr1b639e apd-rbtrglfnfmly font_14 opacity_50pc">{{moduleCardContent.desc_middle}}</div>
+                            <div class="clr1b639e font_14">{{moduleCardContent.desc_end}}</div>
+
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-12  col-xs-12 apdeo-apiconrt">
+
+                            <!--
+                            <div class="aped-apicon" ng-class="moduleCardContent.moduleNavIcon" >
+                                <i class="{{moduleCardContent.icon_name}}"></i>
+                            -->
+
+                            <div class="aped-apicon" ng-style="{color: moduleCardContent.icon_color}">
+                                <i class={{moduleCardContent.icon_name}}></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<button type="button" class="apd-adbtnmrtp font_18 btn btn-success pull-right" >PROCEED</button> -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

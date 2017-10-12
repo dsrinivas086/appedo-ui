@@ -1,0 +1,118 @@
+<div data-ng-include="'modules/header/header.html'"></div>
+<div class="apdcardcontainer apdmrgtp25" data-ng-controller="apmAllDetailsController">
+    <div class="row">
+		<div class="apdo-crdtlte col-lg-3 col-md-3 col-sm-3 col-xs-3 font_18 clr1b639e">
+			<back-button><img src="assets/images/back.png" class="apd-curpnt"/></back-button> <span class="col-xs-offset-3"> APM Details </span>
+		</div>
+	</div>
+	<div class="apd-testingcnt apd-subpnl">
+		<div class="row apdeo-adForm apd-marg-left ">
+		    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  apdmainright-ctgry" ng-repeat="counterData in appPrimaryCountersChartdata" id="apmAppMonitorDet_{{$index+1}}">
+		        <div class="apd-grpcntlg3">
+		            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">
+		            	<span class="clr1b639e font_12">{{counterData.title}}</span>
+			            <span class="chartDashboardWidget apd-curpnt">
+							<a ng-click="addChartToDashboard()" title="Add to dashboard" ng-if="!counterData.show_in_dashboard">
+								<span class="fa-stack ">
+								<i class="apdonavtpicns icon-svg2" ></i>
+									<i class="fa fa-plus fa-stack-1x text-success dashboardSecondStacked"></i>
+								</span>
+							</a>
+							<a ng-click="removeChartToDashboard()" title="Remove from dashboard" ng-if="counterData.show_in_dashboard">
+								<span class="fa-stack ">
+								<i class="apdonavtpicns icon-svg2" ></i>
+									<i class="fa fa-times fa-stack-1x text-danger dashboardSecondStacked"></i>
+								</span>
+							</a>
+						</span><br>
+						<span class="clr949494 font_12">{{counterData.category}}</span><br>
+						<span>{{counterData.display_name}}</span>
+		            </div>
+		        </div>
+		        <div>
+					<!-- <appedo-area-chart-directive  id="d3Area_app_monitor_{{$index+1}}" modtype="apm" acctype="{{counterData.display_name}}" chartdata="counterData.graphData" pushdata="" paneltype="application" parrentnodeid="apmAppMonitorDet_{{$index+1}}" xaxisformat="{{d3XaixsFormat}}"></appedo-area-chart-directive> -->
+					
+					<!-- <appedo-multi-area-chart-directive  id="d3Area_app_monitor_{{$index+1}}" modtype="apm" acctype="{{counterData.display_name}}" chartdata="counterData.graphData" pushdata="" paneltype="application" parrentnodeid="apmAppMonitorDet_{{$index+1}}" xaxisformat="{{d3XaixsFormat}}"></appedo-multi-area-chart-directive> -->
+
+		            <appedo-multi-area-chart-directive  id="d3Area_app_monitor_{{$index+1}}" parrentnodeid="apmAppMonitorDet_{{$index+1}}"  
+		            	modtype="apm" chartdata="counterData.graphData" tooltip-label="{{counterData.display_name}}" 
+		            	paneltype="apm" xaxisformat="{{d3XaixsFormat}}" >
+		            </appedo-multi-area-chart-directive>
+		        </div>
+		        <div class="apdobtmbar01"></div>
+		    </div>
+<!-- 		</div> -->
+<!-- 		<div class="row apdeo-adForm apd-marg-left "> -->
+		    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  apdmainright-ctgry" ng-repeat="counterData in svrPrimaryCountersChartdata" id="apmSvrMonitorDet_{{$index+1}}">
+		        <div class="apd-grpcntlg3">
+		            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">
+		            	<span class="clr1b639e font_12">{{counterData.title}}</span>
+			            <span class="chartDashboardWidget apd-curpnt">
+							<a ng-click="addChartToDashboard()" title="Add to dashboard" ng-if="!counterData.show_in_dashboard">
+								<span class="fa-stack ">
+								<i class="apdonavtpicns icon-svg2" ></i>
+									<i class="fa fa-plus fa-stack-1x text-success dashboardSecondStacked"></i>
+								</span>
+							</a>
+							<a ng-click="removeChartToDashboard()" title="Remove from dashboard" ng-if="counterData.show_in_dashboard">
+								<span class="fa-stack ">
+								<i class="apdonavtpicns icon-svg2" ></i>
+									<i class="fa fa-times fa-stack-1x text-danger dashboardSecondStacked"></i>
+								</span>
+							</a>
+						</span><br>
+						<span class="clr949494 font_12">{{counterData.category}}</span><br>
+						<span>{{counterData.display_name}}</span>
+		            </div>
+		        </div>
+		        <div>
+					<!-- <appedo-area-chart-directive  id="d3Area_svr_monitor_{{$index+1}}" modtype="apm" acctype="{{counterData.display_name}}" chartdata="counterData.graphData" pushdata="" paneltype="server" parrentnodeid="apmSvrMonitorDet_{{$index+1}}" xaxisformat="{{d3XaixsFormat}}"></appedo-area-chart-directive> -->
+					
+					<!-- <appedo-multi-area-chart-directive  id="d3Area_svr_monitor_{{$index+1}}" modtype="apm" acctype="{{counterData.display_name}}" chartdata="counterData.graphData" pushdata="" paneltype="server" parrentnodeid="apmSvrMonitorDet_{{$index+1}}" xaxisformat="{{d3XaixsFormat}}"></appedo-multi-area-chart-directive> -->
+					
+		            <appedo-multi-area-chart-directive  id="d3Area_svr_monitor_{{$index+1}}" parrentnodeid="apmSvrMonitorDet_{{$index+1}}"  
+		            	modtype="apm" chartdata="counterData.graphData" tooltip-label="{{counterData.display_name}}" 
+		            	paneltype="apm" xaxisformat="{{d3XaixsFormat}}" >
+		            </appedo-multi-area-chart-directive>
+		        </div>
+		        <div class="apdobtmbar01"></div>
+		    </div>
+<!-- 		</div> -->
+<!-- 		<div class="row apdeo-adForm apd-marg-left "> -->
+		    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  apdmainright-ctgry" ng-repeat="counterData in dbPrimaryCountersChartdata" id="apmDbMonitorDet_{{$index+1}}">
+		        <div class="apd-grpcntlg3">
+		            <div class="font_16 apd-rbtmdmfnfmly apd-grpcntlg3tl">
+		            	<span class="clr1b639e font_12">{{counterData.title}}</span>
+			            <span class="chartDashboardWidget apd-curpnt">
+							<a ng-click="addChartToDashboard()" title="Add to dashboard" ng-if="!counterData.show_in_dashboard">
+								<span class="fa-stack ">
+								<i class="apdonavtpicns icon-svg2" ></i>
+									<i class="fa fa-plus fa-stack-1x text-success dashboardSecondStacked"></i>
+								</span>
+							</a>
+							<a ng-click="removeChartToDashboard()" title="Remove from dashboard" ng-if="counterData.show_in_dashboard">
+								<span class="fa-stack ">
+								<i class="apdonavtpicns icon-svg2" ></i>
+									<i class="fa fa-times fa-stack-1x text-danger dashboardSecondStacked"></i>
+								</span>
+							</a>
+						</span><br>
+						<span class="clr949494 font_12">{{counterData.category}}</span><br>
+						<span>{{counterData.display_name}}</span>
+		            </div>
+		        </div>
+		        <div>
+					<!-- <appedo-area-chart-directive  id="d3Area_db_monitor_{{$index+1}}" modtype="apm" acctype="{{counterData.display_name}}" chartdata="counterData.graphData" pushdata="" paneltype="db" parrentnodeid="apmDbMonitorDet_{{$index+1}}" xaxisformat="{{d3XaixsFormat}}"></appedo-area-chart-directive> -->
+
+					<!-- <appedo-multi-area-chart-directive  id="d3Area_db_monitor_{{$index+1}}" modtype="apm" acctype="{{counterData.display_name}}" chartdata="counterData.graphData" pushdata="" paneltype="db" parrentnodeid="apmDbMonitorDet_{{$index+1}}" xaxisformat="{{d3XaixsFormat}}"></appedo-multi-area-chart-directive> -->
+
+		            <appedo-multi-area-chart-directive  id="d3Area_db_monitor_{{$index+1}}" parrentnodeid="apmDbMonitorDet_{{$index+1}}"  
+		            	modtype="apm" chartdata="counterData.graphData" tooltip-label="{{counterData.display_name}}" 
+		            	paneltype="apm" xaxisformat="{{d3XaixsFormat}}" >
+		            </appedo-multi-area-chart-directive>
+		        </div>
+		        <div class="apdobtmbar01"></div>
+		    </div>
+		</div>
+	</div>	
+</div>

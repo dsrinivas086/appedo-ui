@@ -1,0 +1,127 @@
+[
+  {
+    "pricings": [
+      {
+        "module": "SUM",
+        "feature": "No.of cities",
+        "lite": "1",
+        "essential": "5",
+        "pro": "25",
+        "enterprise": "Call Sales",
+        "notes": "check the notes"
+      },
+      {
+        "module": "SUM",
+        "feature": "No.of page views per month",
+        "lite": "2",
+        "essential": "10",
+        "pro": "20",
+        "enterprise": "500",
+        "notes": "check the notes"
+      },
+      {
+        "module": "App/OS/DB",
+        "feature": "Application",
+        "lite": "2",
+        "essential": "15",
+        "pro": "20",
+        "enterprise": "contact sales",
+        "notes": "check the notes for.."
+      },
+      {
+        "module": "App/OS/DB",
+        "feature": "OS",
+        "lite": "3",
+        "essential": "45",
+        "pro": "50",
+        "enterprise": "500",
+        "notes": "check the notes for OS."
+      },
+      {
+        "module": "App/OS/DB",
+        "feature": "DB",
+        "lite": "5",
+        "essential": "5",
+        "pro": "10",
+        "enterprise": "50",
+        "notes": "check the notes for DB."
+      },
+      {
+        "module": "LT",
+        "feature": "No.of Virtual Users",
+        "lite": "10",
+        "essential": "50",
+        "pro": "250",
+        "enterprise": "Call Sales",
+        "notes": "check the notes"
+      },
+      {
+        "module": "LT",
+        "feature": "Max No.of Tests",
+        "lite": "5",
+        "essential": "40",
+        "pro": "20",
+        "enterprise": "Call Sales",
+        "notes": "check the notes"
+      },
+      {
+        "module": "SLA",
+        "feature": "No.of cities",
+        "lite": "1",
+        "essential": "5",
+        "pro": "25",
+        "enterprise": "Call Sales",
+        "notes": "check the notes"
+      },
+      {
+        "module": "SLA",
+        "feature": "No.of cities",
+        "lite": "1",
+        "essential": "5",
+        "pro": "25",
+        "enterprise": "Call Sales",
+        "notes": "check the notes"
+      },
+      {
+        "module": "SLA",
+        "feature": "No.of cities",
+        "lite": "1",
+        "essential": "5",
+        "pro": "25",
+        "enterprise": "Call Sales",
+        "notes": "check the notes"
+      }
+    ]
+  },
+  {
+    "licesePreiodDuration": [
+      {
+        "module": "License Price (Monthly)",
+        "feature": "",
+        "lite": "$0",
+        "essential": "$30",
+        "pro": "$150",
+        "enterprise": "Call Us",
+        "notes": ""
+      },
+      {
+        "module": "License Price (Annual)",
+        "feature": "",
+        "lite": "$0",
+        "essential": "$300",
+        "pro": "$1500",
+        "enterprise": "Call Us",
+        "notes": ""
+      },
+      {
+        "module": "License Price (Daily)",
+        "feature": "",
+        "lite": "$0",
+        "essential": "$5",
+        "pro": "$25",
+        "enterprise": "N/A",
+        "notes": ""
+      }
+    ]
+  }
+]

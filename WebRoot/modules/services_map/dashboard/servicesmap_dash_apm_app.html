@@ -1,0 +1,22 @@
+<div class="apd-subpnl" data-ng-controller="serviceMapAPMAppController">
+    <div class="apd-subpnlcntnt">
+        <div class="row apd-smrytpbar">
+            <div class="pull-left apd-smrytitle font_18 clr1b639e">
+                APM Application
+            </div>
+        </div>
+        <div class="row apd-custmtitle">
+	        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	            <div class="pull-left font_18 clr1b639e apd-dsbslct"> <!--apd-adchsf-->
+	                <select name="applicationModules" id="applicationModules" ng-model="sectionSelectApp" ng-change="getModuleCountersData()" 
+							ng-options="module as module.module_name for module in userApplicationCounterModules"  >
+	                </select>
+	            </div>
+	        </div>
+	        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	            <div class="pull-right font_18 clr1b639e">Application</div>
+	        </div>
+        </div>
+        <div data-ng-include="'modules/apm/dashboard/apmDashApp.html'"></div>
+    </div>
+</div>

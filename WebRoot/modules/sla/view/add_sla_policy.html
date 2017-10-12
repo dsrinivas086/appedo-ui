@@ -1,0 +1,62 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 apdo-adttl apd-rbtmdmfnfmly">
+            Add/Edit
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm">
+	            <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="{{moduleCardContent.icon_name}} aped-apiconttle" style="color: rgb(70, 193, 186);"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">{{moduleCardContent.module_name}}</span>
+	                </div>
+	            </div>
+                    <form class="apd-rbtrgfnfmly font_18" name="policyForm" novalidate>
+                         <div class="apd-fldwdt">
+                            <label class="font_14">Policy Name <font size="3px" color="red"><sup>*</sup></font></label>
+                            <input type="text" name="policyName" id="policyName" ng-blur="validatePolicyName()" ng-model="slaPolicyForm.policyName" placeholder="Policy Name" class="clr444444 apd-first-char-up" maxlength="150" required></input>
+                            <img ng-hide="showProceed" href="" src="assets/images/tick.png"  style="margin-top: -20px;" align="right"/>
+							<img ng-show="showProceed" href="" src="assets/images/cancel.png"  style="margin-top: -20px;" align="right"/>
+                        </div>
+                        <div class="apd-fldwdt">
+                            <label class="font_14">Description <font size="3px" color="red"><sup>*</sup></font></label>
+                            <input type="text" name="description" ng-model="slaPolicyForm.policyDescription" placeholder="Description" class="clr444444 apd-first-char-up" required></input>
+                        </div>
+	                    <div class="apd-fldwdt">
+	                    	<label class="font_14">Type<font size="3px" color="red"><sup>*</sup></font></label>
+							<select class="clr1b639e font_16" name="policytype" id="policytype" ng-model="slaPolicyForm.type" required>
+								<option value="" disabled selected style="display:none">Select type</option>
+                        		<option value="Alert" >Alert</option>
+								<option value="Alert&Heal" >Alert & Heal</option>
+                        	</select>
+	                    </div>
+                        <div class="apd-fldwdt">
+	                        <label class="font_14">Map Rule <font size="3px" color="red"><sup>*</sup></font></label>
+	                        <select class="clr1b639e font_16" name="policyRule" data-ng-model="slaPolicyForm.mappedRule" data-ng-options="rule as rule.ruleName for rule in rules" required>
+                                <option value="">Select rule</option>
+                            </select>
+	                    </div>
+                        <div class="pull-right"  data-ng-controller="form_controller">
+                            <button type="submit" class="apdo-adbtn btn btn-success" ng-disabled="policyForm.$invalid || showProceed" data-ng-click="addPolicySaveAndMapSvr()">PROCEED</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>

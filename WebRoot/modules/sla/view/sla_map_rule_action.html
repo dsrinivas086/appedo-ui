@@ -1,0 +1,77 @@
+<div class="apd-addfbg"></div>
+<div class="apdeoadd">
+    <div class="row thadr-tp" data-ng-controller="form_controller">
+        <!--left heading-->
+
+        <div class="apd-ftplog">
+            <img src="assets/images/appedo.svg" />
+        </div>
+        <div class="apd-fbck apd-curpnt" data-ng-click="close()"><img src="assets/images/back.png" />
+        </div>
+        <div class="font_22 clr626161 apdo-addheader apd-rbtmdmfnfmly">
+            Configure Actions
+        </div>
+        <!--right icons-->
+        <div class="apd-clsewr clr626161">
+            <div class="aped-apiconcls"><i class="icon-help font_22" title="help"></i>
+            </div>
+            <div class="aped-apiconcls"><i class="icon-close font_18 apd-curpnt" data-ng-click="close()" title="close"></i>
+            </div>
+        </div>
+    </div>
+    <!--maincontent-adds-->
+    <div class="apdad-mbdy">
+        <div class="apd-admcntwrpr">
+            <div class="row apdeo-adForm01">
+	            <div>
+	                <div class="aped-apiconttlewr">
+	                    <i class="{{moduleCardContent.icon_name}} aped-apiconttle" style="color: rgb(250, 113, 38);"></i> <span class="font_20 apd-rbtrgfnfmly clr1b639e aped-apiconttlewr">{{moduleCardContent.module_name}}</span>
+	                </div>
+	            </div>
+	            <form class="apd-rbtrgfnfmly font_12" name="slaMapRuleAction">
+	                    <!--  first column  -->
+		                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	                  		<div class="apd-fldwdt01" style="margin-top: 15px;" >
+							<label class="font_14">Available Action Name<font size="3px" color="red"><sup>*</sup></font></label>
+								<div class="" style="border:1px solid #B0ABAB; height: 300px; overflow: auto;">
+									<div class="" ng-repeat="action in actions" align="left" style="">
+										<div class="chekbx" style="margin-left: 10px;">
+											<label>
+												<input class="font_12" type="checkbox" class="col-md-1" name="action" id="" 
+												ng-model="action.isSelected" value="{{action.action_id}}" ng-click="validateActions()"/>
+												<span class="font_12" style="">{{action.actionName}}</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			                 <div class="apd-fldwdt01" style="margin-top: 15px;" >
+								<label class="font_14">Selected Actions<font size="3px" color="red"><sup>*</sup></font></label>
+									<div class="">
+										<div class="" style="border:1px solid #B0ABAB; height: 300px; overflow: auto;">
+											<div  ng-repeat="action in selectedActions">
+												<div class="chekbx" ng-show="action.isSelected" style="margin-left: 10px;">
+													<label for="action_{{action.actionName}}">
+														<input class="font_12 clr1b639e" type="checkbox" class="col-md-1" name="selectedaction" id="action_{{action.actionName}}"
+														ng-model="action.isSelected"value="{{action.action_id}}" ng-click="validateActions()"/>
+														<span class="font_12" style="">{{action.actionName}}</span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+							</div>
+						</div>
+	                <!-- label class="alert alert-danger apd-frmfld control-label font_14"
+						ng-show="showConfigCountersErrorMsg"> {{ConfigCountersErrorMsg}} </label-->
+	                <div class="pull-right" data-ng-controller="form_controller">
+	                    <button type="submit" class="apdo-adbtn btn btn-success" ng-disabled="!submitted" data-ng-click="saveMappedActions()">SAVE</button>
+	                </div>
+	                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

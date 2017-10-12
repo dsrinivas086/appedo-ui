@@ -1,0 +1,5 @@
+[
+{"clrVersionType":"v2", "description": "It supports .net framework 1.0, 2.0, 3.0, 3.5"},
+{"clrVersionType":"v4", "description": "It supports .net framework 4.0, 4.5"}
+]
+
