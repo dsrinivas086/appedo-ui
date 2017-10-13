@@ -65,7 +65,7 @@ public class Controller extends HttpServlet {
 			
 			try {
 				// loads agents latest build version and agents download file path
-				Constants.loadAgentsLatestVersionAndFilePath(request);
+				//Constants.loadAgentsLatestVersionAndFilePath(request);
 
 				// html format
 				sbRtnAgentDetails	.append("<B>Latest Build Version:</B> ").append(Constants.AGENT_LATEST_BUILD_VERSION).append("<BR><BR><BR>")
