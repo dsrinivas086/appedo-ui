@@ -19,15 +19,15 @@
              <mkdir dir="${wars}"/>
         </target>
         <target name="compile" depends="prepare">
-            <javac destdir="${classes}" debug="true" includeantruntime="false">
-                 <src path="${src_dir}/bean"/>
+            <javac srcdir="${src_dir}/*" destdir="${classes}" debug="true" includeantruntime="false">
+              <!-   <src path="${src_dir}/bean"/>
                  <src path="${src_dir}/common"/>
                  <src path="${src_dir}/controller"/>
                  <src path="${src_dir}/listener"/>
                  <src path="${src_dir}/manager"/>
                  <src path="${src_dir}/model"/>
                  <src path="${src_dir}/servlet"/>
-                 <src path="${src_dir}/utils"/>
+                 <src path="${src_dir}/utils"/> ->
                  <classpath refid="libpath"/>
             </javac>
         </target>
