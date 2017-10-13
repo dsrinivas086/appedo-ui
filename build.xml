@@ -19,7 +19,7 @@
              <mkdir dir="${wars}"/>
         </target>
         <target name="compile" depends="prepare">
-            <javac srcdir="${src_dir}/*" destdir="${classes}" debug="true" includeantruntime="false">
+            <javac srcdir="${src_dir}" destdir="${classes}" debug="true" includeantruntime="false">
                                <classpath refid="libpath"/>
             </javac>
         </target>
