@@ -42,7 +42,7 @@
 		</taskdef>
 		<sonar:sonar />
 		
-        <target name="package" depends="compile">
+        <target name="package" depends="compile, sonar">
                 <mkdir dir="${classes}/${resource}"/>
                 <copy todir="${classes}/${resource}">
                         <fileset dir="${src_dir}/resource"/>
