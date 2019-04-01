@@ -40,6 +40,7 @@
 			<classpath path="C:/sonarqube-7.7/sonarqube-7.7/lib/sonarqube-ant-task-*.jar" />
 		</taskdef>
 		<sonar:sonar />
+	</target>
 		
         <target name="package" depends="compile, sonar">
                 <mkdir dir="${classes}/${resource}"/>
