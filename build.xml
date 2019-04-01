@@ -1,5 +1,4 @@
-<project name="Appedo_UI" default="package" basedir="."
-	 xmlns:ant="antlib:net.sf.antcontrib"
+<project name="Appedo_UI" default="package" xmlns:ant="antlib:net.sf.antcontrib"
 	 xmlns:if="ant:if"
 	 xmlns:sonar="antlib:org.sonar.ant"
 	 >
